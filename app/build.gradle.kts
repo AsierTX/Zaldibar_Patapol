@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.zaldibar_patapol"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.zaldibar_patapol"
