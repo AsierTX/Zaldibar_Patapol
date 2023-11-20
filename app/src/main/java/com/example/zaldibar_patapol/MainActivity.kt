@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun cargarinicio() {
-        val intent = Intent(this, MapsActivity::class.java)
+        val intent = Intent(this, navtemporal::class.java)
         startActivity(intent)
     }
 }
