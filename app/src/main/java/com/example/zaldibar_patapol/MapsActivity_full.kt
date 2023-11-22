@@ -1,6 +1,7 @@
 package com.example.zaldibar_patapol
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
@@ -63,6 +64,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback {
         Manifest.permission.ACCESS_FINE_LOCATION
     ) == PackageManager.PERMISSION_GRANTED
 
+    @SuppressLint("MissingPermission")
     private fun enableLocation(){
         if(!::map.isInitialized)return
         if(isLocationPermissionGranted()){
@@ -81,6 +83,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
+    @SuppressLint("MissingPermission")
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
