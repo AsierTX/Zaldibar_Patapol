@@ -23,4 +23,9 @@ class navtemporal : AppCompatActivity() {
                 transaction.commit()
             }
     }
+    private fun cargarmapa() {
+        val intent = Intent(this, MapsActivity_full::class.java)
+        startActivity(intent)
+    }
+
 }
