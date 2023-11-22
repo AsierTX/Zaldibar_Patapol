@@ -10,6 +10,8 @@ import androidx.navigation.Navigation
 
 class navtemporal : AppCompatActivity() {
     private lateinit var birziklapen: Button
+    private lateinit var mapa: Button
+
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +24,10 @@ class navtemporal : AppCompatActivity() {
                 transaction.replace(R.id.fragment, fragment)
                 transaction.commit()
             }
+        mapa = findViewById(R.id.button6)
+        mapa.setOnClickListener{
+            cargarmapa()
+        }
     }
     private fun cargarmapa() {
         val intent = Intent(this, MapsActivity_full::class.java)
