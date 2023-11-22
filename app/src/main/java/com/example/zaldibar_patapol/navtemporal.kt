@@ -17,7 +17,7 @@ class navtemporal : AppCompatActivity() {
 
         birziklapen = findViewById(R.id.birziklapenjolasa)
             birziklapen.setOnClickListener {
-                val fragment = BirziklapenJolasa()
+                val fragment = entradaaljuego()
                 val transaction = supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.fragment, fragment)
                 transaction.commit()
