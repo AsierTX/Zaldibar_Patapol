@@ -22,7 +22,32 @@ class BirziklapenJolasa : Fragment() {
 
         val platano: ImageView? = view?.findViewById(R.id.platano)
         val marron: ImageView? = view?.findViewById(R.id.marron)
+        val carton: ImageView? = view?.findViewById(R.id.carton)
+        val azul: ImageView? = view?.findViewById(R.id.azul)
+        val amarillo: ImageView? = view?.findViewById(R.id.amarillo)
 
+        carton?.setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    offsetX = event.x - carton.x
+                    offsetY = event.y - carton.y
+                }
+                MotionEvent.ACTION_MOVE -> {
+                    carton.x = event.x - offsetX
+                    carton.y = event.y - offsetY
+                }
+                MotionEvent.ACTION_UP -> {
+                    if (isViewOverlapping(carton, azul)) {
+                        // La ImageView "carton" se soltó sobre "azul"
+                        // Realiza las acciones necesarias aquí
+                    } else if (isViewOverlapping(carton, amarillo)) {
+                        // La ImageView "carton" se soltó sobre "amarillo"
+                        // Realiza las acciones necesarias aquí
+                    }
+                }
+            }
+            true
+        }
 
 
         return view
