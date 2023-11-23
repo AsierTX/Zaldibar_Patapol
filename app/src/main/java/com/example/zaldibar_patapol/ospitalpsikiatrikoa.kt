@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.Button
+import android.widget.ImageButton
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -14,10 +16,11 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [entradaaljuego.newInstance] factory method to
+ * Use the [ospitalpsikiatrikoa.newInstance] factory method to
  * create an instance of this fragment.
  */
-class entradaaljuego : Fragment() {
+@Suppress("UNREACHABLE_CODE")
+class ospitalpsikiatrikoa : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,10 +38,18 @@ class entradaaljuego : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_entradaaljuego, container, false)
+        return inflater.inflate(R.layout.fragment_ospitalpsikiatrikoa, container, false)
+        val playbutton : ImageButton? = view?.findViewById(R.id.play)
 
 
 
+        playbutton?.setOnClickListener {
+            val fragmentB = BirziklapenJolasa()
+            val transaction = navtemporal().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmento, fragmentB)
+            transaction.commit()
+        }
+        return view
     }
 
     companion object {
@@ -53,7 +64,7 @@ class entradaaljuego : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            entradaaljuego().apply {
+            ospitalpsikiatrikoa().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

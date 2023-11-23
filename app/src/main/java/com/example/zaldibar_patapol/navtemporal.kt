@@ -5,8 +5,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.Navigation
 
 class navtemporal : AppCompatActivity() {
     private lateinit var birziklapen: Button
@@ -19,11 +17,12 @@ class navtemporal : AppCompatActivity() {
 
         birziklapen = findViewById(R.id.birziklapenjolasa)
             birziklapen.setOnClickListener {
-                val fragment = entradaaljuego()
+                val fragment = ospitalpsikiatrikoa()
                 val transaction = supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.fragment, fragment)
+                transaction.replace(R.id.fragmento, fragment)
                 transaction.commit()
             }
+
         mapa = findViewById(R.id.button6)
         mapa.setOnClickListener{
             cargarmapa()
