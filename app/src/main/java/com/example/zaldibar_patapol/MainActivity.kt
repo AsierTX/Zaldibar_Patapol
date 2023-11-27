@@ -46,4 +46,5 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, navtemporal::class.java)
         startActivity(intent)
     }
+
 }

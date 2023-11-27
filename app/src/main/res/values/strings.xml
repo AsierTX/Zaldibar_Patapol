@@ -3,4 +3,6 @@
     <string name="title_activity_maps">MapsActivity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="juegotitulo">OSPITAL PSIKIATRIKOA</string>
+    <string name="juegotexto">Ez ditugu bainuetxeak ahaztu behar, zeren eta, haiengatik ez balitz, orain ez genituzke ez ospitalerik ezta Zaldibarko herririk izango. Haien oroimena zorionez oroitzeko gai zara? Erakutsi zure oroimen-trebetasunak!</string>
 </resources>
