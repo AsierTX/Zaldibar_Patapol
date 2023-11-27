@@ -130,7 +130,7 @@ class diferentziakjuego : AppCompatActivity() {
             updateCount()
         }
         if (dif1.alpha==1f && dif2.alpha==1f && dif3.alpha==1f && dif4.alpha==1f && dif5.alpha==1f && dif6.alpha==1f){
-           mediaplayer.start() 
+           mediaplayer.start()
         }
 
     }
