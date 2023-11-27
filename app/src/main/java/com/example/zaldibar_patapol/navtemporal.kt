@@ -10,6 +10,7 @@ class navtemporal : AppCompatActivity() {
     private lateinit var birziklapen: Button
     private lateinit var mapa: Button
     private lateinit var juegozaborra: Button
+    private lateinit var juego7: Button
 
 
     @SuppressLint("SuspiciousIndentation", "MissingInflatedId")
@@ -22,6 +23,11 @@ class navtemporal : AppCompatActivity() {
         juegozaborra.setOnClickListener{
             val intentjuego = Intent(this, zaborrajuego::class.java)
             startActivity(intentjuego)
+        }
+        juego7 = findViewById(R.id.juego7)
+        juego7.setOnClickListener{
+            val intentjuego7 = Intent(this, diferentziakjuego::class.java)
+            startActivity(intentjuego7)
         }
         birziklapen = findViewById(R.id.birziklapenjolasa)
             birziklapen.setOnClickListener {
