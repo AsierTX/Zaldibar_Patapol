@@ -42,13 +42,6 @@ class ospitalpsikiatrikoa : Fragment() {
         val playbutton : ImageButton? = view?.findViewById(R.id.play)
 
 
-
-        playbutton?.setOnClickListener {
-            val fragmentB = BirziklapenJolasa()
-            val transaction = navtemporal().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragmento, fragmentB)
-            transaction.commit()
-        }
         return view
     }
 
