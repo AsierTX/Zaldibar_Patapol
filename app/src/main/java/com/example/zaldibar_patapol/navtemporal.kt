@@ -9,6 +9,7 @@ import android.widget.Button
 class navtemporal : AppCompatActivity() {
     private lateinit var birziklapen: Button
     private lateinit var mapa: Button
+    private lateinit var button3: Button
 
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,11 @@ class navtemporal : AppCompatActivity() {
         mapa.setOnClickListener{
             cargarmapa()
         }
+        button3 = findViewById(R.id.button3)
+        button3.setOnClickListener {
+            val juego3 = Intent(this, HerriKirolak::class.java)
+            startActivity(juego3)        }
+
     }
     private fun cargarmapa() {
         val intent = Intent(this, MapsActivity_full::class.java)

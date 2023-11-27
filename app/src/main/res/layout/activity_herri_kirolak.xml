@@ -5,25 +5,27 @@
     android:layout_height="match_parent"
     android:columnCount="2"
     android:rowCount="6"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/baserri_background">
 
     <!-- Imagen -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="175dp"
-        android:layout_marginTop="50dp"
-        android:layout_rowSpan="2"
-        android:layout_columnSpan="2"
-        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:scaleType="fitXY"
-        android:src="@drawable/herrikirolakdefault" />
+        android:src="@drawable/herrikirolakdefault"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_rowSpan="2" />
 
     <!-- Botones -->
     <Button
         android:id="@+id/button7"
         style="@style/ButtonStyle"
-        android:text="Aizkolaritza"
+        android:text="Esku-pilota"
         android:layout_row="4"
         android:layout_column="0"
         android:layout_columnSpan="1" />
@@ -31,7 +33,7 @@
     <Button
         android:id="@+id/button8"
         style="@style/ButtonStyle"
-        android:text="Estroprobak"
+        android:text="Txinga erute"
         android:layout_row="4"
         android:layout_column="1"
         android:layout_columnSpan="1" />
@@ -39,7 +41,7 @@
     <Button
         android:id="@+id/button5"
         style="@style/ButtonStyle"
-        android:text="Txinga erute"
+        android:text="Aizkolaritza"
         android:layout_row="3"
         android:layout_column="0"
         android:layout_columnSpan="1" />
@@ -47,7 +49,7 @@
     <Button
         android:id="@+id/button6"
         style="@style/ButtonStyle"
-        android:text="Esku-pilota"
+        android:text="Astoproba"
         android:layout_row="3"
         android:layout_column="1"
         android:layout_columnSpan="1" />
@@ -55,7 +57,7 @@
     <Button
         android:id="@+id/button3"
         style="@style/ButtonStyle"
-        android:text="Sokatira"
+        android:text="Segaproba"
         android:layout_row="2"
         android:layout_column="0"
         android:layout_columnSpan="1" />
@@ -63,7 +65,7 @@
     <Button
         android:id="@+id/button4"
         style="@style/ButtonStyle"
-        android:text="Harri jasotze"
+        android:text="Sokatira"
         android:layout_row="2"
         android:layout_column="1"
         android:layout_columnSpan="1" />
@@ -72,7 +74,7 @@
         android:id="@+id/button1"
         style="@style/ButtonStyle"
         android:layout_marginTop="350dp"
-        android:text="Asto probak"
+        android:text="Estroprobak"
         android:layout_row="1"
         android:layout_column="0"
         android:layout_columnSpan="1" />
@@ -81,7 +83,7 @@
         android:id="@+id/button2"
         style="@style/ButtonStyle"
         android:layout_marginTop="350dp"
-        android:text="Sega proba"
+        android:text="Harrijasotze"
         android:layout_row="1"
         android:layout_column="1"
         android:layout_columnSpan="1" />
