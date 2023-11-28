@@ -44,8 +44,9 @@ class navtemporal : AppCompatActivity() {
         }
         button3 = findViewById(R.id.button3)
         button3.setOnClickListener {
-            val juego3 = Intent(this, HerriKirolak::class.java)
-            startActivity(juego3)        }
+            val intent = Intent(this, HerriKirolak::class.java)
+            startActivity(intent)
+        }
 
     }
     private fun cargarmapa() {
