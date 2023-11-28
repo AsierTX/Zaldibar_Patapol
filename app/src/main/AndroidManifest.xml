@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Zaldibar_Patapol"
         tools:targetApi="31">
         <activity
+            android:name=".SanMartin_ermita"
+            android:exported="false" />
+        <activity
             android:name=".diferentziakjuego"
             android:exported="false" />
         <activity
