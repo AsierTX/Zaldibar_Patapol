@@ -1,10 +1,40 @@
 <resources>
     <string name="app_name">Zaldibar_Patapol</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="boton_fragment_inicio">Hasi Gaitezan!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="juegotitulo">OSPITAL PSIKIATRIKOA</string>
     <string name="juegotexto">Ez ditugu bainuetxeak ahaztu behar, zeren eta, haiengatik ez balitz, orain ez genituzke ez ospitalerik ezta Zaldibarko herririk izango. Haien oroimena zorionez oroitzeko gai zara? Erakutsi zure oroimen-trebetasunak!</string>
+
+    <string name="fragment_inico_juego1_titulo">San Martin Ermita</string>
+    <string name="fragment_inico_juego1_texto">San Martin ermita orain dela urte asko eraiki zen, baina gaur egungo ermita 1862. urtean eraiki zen, udalak eskainitako eta herritarrek gehitutako diruarekin. Mende bat igaro ostean, hau da, 1977. urtean,  ermita hau berriztatu egin zen, gaur egun arte. Oso egoera onean dagoela esan daiteke, modu egokian zaintzen baitute. Ermita honen jaia, hau da, San Martin jaia, uztailaren 8aren hurrengoko igandean ospatzen da (udako San Andres osteko jaia). Baselizan meza egon ondoren, dantzak, herri kirolak eta erromeria egiten da.</string>
+
+    <string name="fragment_inico_juego2_titulo">Bainuetxe-Ospitala</string>
+    <string name="fragment_inico_juego2_texto">Aspaldian Zaldibar herriak, Zaldua zuen izena. Izan ere, jente aberatsa eta ezaguna hasi zen trenez herrira etortzen, konkretuki bainuetxe hauetara. Beraz, bertoko geltokiaren izenaz (Zaldibar) ezagutzen zuten herria, bere izena bilakatuz. Hortaz, esan dezakegu bainuetxe hauen arrakastak herriaren izena aldatu zuela. Bestalde, XX. mendearen hasieran, medikuntzaren garapenak bainuetxeen porrota ekarri zuen, ospea galtzen hasi baitziren haietako gehienak ixtera eramanez. Orduan, 1922an, Zaldibarreko bainuetxeak zarratu eta eraikinak ospitale psikiatriko bilakatu ziren (2.2 Argazkia).
+</string>
+
+    <string name="fragment_inico_juego3_titulo">Zaldibarko Pilotalekuak</string>
+    <string name="fragment_inico_juego3_texto">1933. urterarte, herritarrek elizpea erabiltzen zuten pilotan jolasteko, hau baitzen jolas zezaketen leku bakarra. Aldiz, hortik aurrera beste hainbat frontoi eraiki ziren, hala nola, eskolakoa, San Martin plazakoa...
+1943. urtean markinaldeko txapelketak hasi ziren, lehena Zaldibarren ospaturik. Geroago elizpeko, herrien arteko, durangaldeko, eskualdeko… txapelketak ere ospatu zituzten. Gaur egun oso famatua den Olazar pilotalekua dugu hemen aurrean, 1988an inauguratua.</string>
+
+    <string name="fragment_inico_juego4_titulo">Zaldibarko Dorrea</string>
+    <string name="fragment_inico_juego4_texto">Gaur egun, Zaldibarreko Dorrean lehen arkitektonika interesgarria zuen gotorleku-dorrearen aztarna gutxi batzuk ikus daitezke. XV. gizaldian bota edo desegin zen eta, horren ondorioz, eraitsi egin zen dorre gehienekin gertatu zen bezala. Baina XVI. mendearen hasieran, Zaldibarren leinuak dorrea berreraiki zuen eta denboran zehar beste jabe batzuengana pasa zen. XX. mendean, jabeak Bizkaiko Foru Aldundiari saldu zion, baina honek ez zuen bere gain hartu mantentzeko ardura, beraz, dorrea 1961ean erori zen.
+</string>
+
+    <string name="fragment_inico_juego5_titulo">Santamañeko istripua</string>
+    <string name="fragment_inico_juego5_texto">2002. urtean, Zaldibarreko Santamañeko istripua gertatu zen. Hegazkin batek, Santa Marina Zahar mendiaren kontra egin zuen, mendia sahiestu ezinean (sartu hurrengo bi audioak, hegazkina hegan egiten eta bat-batean istripua: Bi audioak). Barruan, hiru pertsona zihoazen soilik, baina hirurak istripuan hil egin ziren. Kontu handiz egin behar dira horrelako gauzak, hegazkin bat gidatzea edota sortzea ez da lan erraza, istripuak frogatu zuen bezala. Hegazkina zati txikitan apurtuta agertu zen, horiek guztiak menditik sakabanatuta.
+</string>
+
+    <string name="fragment_inico_juego6_titulo">Zabortegia</string>
+    <string name="fragment_inico_juego6_texto">2020ko otsailaren 6an aurrean dugun zabortegiak mendian behera egin zuen (audio batez zarata izugarri bat gehitu (txertatu luizi soinua)). Bertan lanean ari ziren bi gizon desagertu egin ziren: Joaquin eta Alberto. Haiek salbatzeko ahal zuten guztia egin zen arren, bilaketa lanak ezinezkoak bilakatu ziren lurra oso desegonkorra baitzen, bertan substantzia oso kaltegarriak aurkiturik.
+Gertatu zenaren ondorioz manifestazioak, protestak… egiten hastetik abestiak eta bideoak sortzerarte. Askok pentsatzen zuten langileen egoera desegokia eta arriskutsua zela eta egoera hori aldatzeko saiakerak egin zituzten.</string>
+
+    <string name="fragment_inico_juego7_titulo">Jaietako txopoa</string>
+    <string name="fragment_inico_juego7_texto">Uztailaren erdian, San Andres jaiak ospatzen dira Zaldibarren. Durangaldea osatzen duten herri guztietan jaiei hasiera emateko txopo izeneko enbor handi bat altxatzen da,  eta hau udalerriko landaketen artean aurreko egunetan aukeratzen den pinu handi bat da. Jaiei hasiera emateko asmoz, herritarrak udaletxeko plazara hurbiltzen dira eta hainbat gizon eta emakumeren artean txopoa altxatzen dute. Bere altxaerak jaien hasiera zehazten du eta hauek bukatzean bota egiten da.
+</string>
+
+
     <string name="title_activity_juego6">juego6</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
