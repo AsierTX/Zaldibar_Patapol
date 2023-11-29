@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     private var progressStatus = 0
     private val handler = Handler()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

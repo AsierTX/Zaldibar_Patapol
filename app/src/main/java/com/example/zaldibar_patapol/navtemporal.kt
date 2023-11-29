@@ -11,6 +11,7 @@ class navtemporal : AppCompatActivity() {
     private lateinit var mapa: Button
     private lateinit var juegozaborra: Button
     private lateinit var juego7: Button
+    private lateinit var button3: Button
 
 
     @SuppressLint("SuspiciousIndentation", "MissingInflatedId")
@@ -41,6 +42,12 @@ class navtemporal : AppCompatActivity() {
         mapa.setOnClickListener{
             cargarmapa()
         }
+        button3 = findViewById(R.id.button3)
+        button3.setOnClickListener {
+            val intent = Intent(this, HerriKirolak::class.java)
+            startActivity(intent)
+        }
+
     }
     private fun cargarmapa() {
         val intent = Intent(this, MapsActivity_full::class.java)
