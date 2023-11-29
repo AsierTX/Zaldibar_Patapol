@@ -17,7 +17,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 
-class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragment_juego1.OnFragmentInteractionListener {
+class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragment_juego1.OnFragmentInteractionListener, inicio_fragment_juego2.OnFragmentInteractionListener, inicio_fragment_juego3.OnFragmentInteractionListener, inicio_fragment_juego4.OnFragmentInteractionListener, inicio_fragment_juego5.OnFragmentInteractionListener, inicio_fragment_juego6.OnFragmentInteractionListener, inicio_fragment_juego7.OnFragmentInteractionListener {
 
 
     //Objeto que usamos para definir todos los datos de la array
@@ -175,8 +175,16 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     }
 
     private fun onMarker1Click() {
+        //no deja interactuar con el mapa
         apagarmapa()
+
+        // Crea una instancia del fragmento
         val fragment = inicio_fragment_juego1()
+
+        // Establece la actividad como el listener del fragmento
+        fragment.setOnFragmentInteractionListener(this)
+
+        // Realiza la transacción del fragmento
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmento, fragment)
         transaction.commit()
@@ -186,6 +194,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     private fun onMarker2Click() {
         apagarmapa()
         val fragment = inicio_fragment_juego2()
+        fragment.setOnFragmentInteractionListener(this)
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmento, fragment)
         transaction.commit()
@@ -195,6 +204,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     private fun onMarker3Click() {
         apagarmapa()
         val fragment = inicio_fragment_juego3()
+        fragment.setOnFragmentInteractionListener(this)
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmento, fragment)
         transaction.commit()
@@ -203,6 +213,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     private fun onMarker4Click() {
         apagarmapa()
         val fragment = inicio_fragment_juego4()
+        fragment.setOnFragmentInteractionListener(this)
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmento, fragment)
         transaction.commit()
@@ -211,6 +222,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     private fun onMarker5Click() {
         apagarmapa()
         val fragment = inicio_fragment_juego5()
+        fragment.setOnFragmentInteractionListener(this)
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmento, fragment)
         transaction.commit()
@@ -219,6 +231,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     private fun onMarker6Click() {
         apagarmapa()
         val fragment = inicio_fragment_juego6()
+        fragment.setOnFragmentInteractionListener(this)
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmento, fragment)
         transaction.commit()
@@ -227,6 +240,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     private fun onMarker7Click() {
         apagarmapa()
         val fragment = inicio_fragment_juego7()
+        fragment.setOnFragmentInteractionListener(this)
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmento, fragment)
         transaction.commit()
