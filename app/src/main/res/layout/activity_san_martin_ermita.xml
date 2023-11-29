@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/baserri_background"
     tools:context=".SanMartin_ermita">
 
     <ImageView
@@ -119,8 +120,9 @@
         android:layout_marginStart="102dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="102dp"
-        android:text="STRING"
+        android:text="Atea"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
