@@ -1,6 +1,7 @@
 package com.example.zaldibar_patapol
 
 import android.annotation.SuppressLint
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -182,7 +183,7 @@ class laberintojuego : AppCompatActivity() {
     private lateinit var m33: ImageView
     private lateinit var m34: ImageView
     private lateinit var m35: ImageView
-
+    private lateinit var mediaplayer: MediaPlayer
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -195,6 +196,8 @@ class laberintojuego : AppCompatActivity() {
         izquierda = findViewById(R.id.izquierda)
 
         berriro = findViewById<Button>(R.id.berriro)
+
+        mediaplayer = MediaPlayer.create(this, R.raw.aplausos)
 
 
         a = findViewById(R.id.a)
@@ -1539,6 +1542,175 @@ class laberintojuego : AppCompatActivity() {
                 l14.alpha=0f
                 l15.alpha=1f
             }
+        }
+        berriro.setOnClickListener{
+            g2.alpha=0f
+            g3.alpha=0f
+            g4.alpha=0f
+            g5.alpha=0f
+            g6.alpha=0f
+            g7.alpha=0f
+            g8.alpha=0f
+            g9.alpha=0f
+            g10.alpha=0f
+            j.alpha=0f
+            k.alpha=0f
+            a.alpha=1f
+            b.alpha=0f
+            c.alpha=0f
+            d.alpha=0f
+            e.alpha=0f
+            f.alpha=0f
+            g.alpha=0f
+            h.alpha=0f
+            i.alpha=0f
+            j.alpha=0f
+            k.alpha=0f
+            l.alpha=0f
+            m.alpha=0f
+            n.alpha=0f
+            nn.alpha=0f
+            o.alpha=0f
+            p.alpha=0f
+            q.alpha=0f
+            j2.alpha=0f
+            j3.alpha=0f
+            j4.alpha=0f
+            j5.alpha=0f
+            o2.alpha=0f
+            o3.alpha=0f
+            o4.alpha=0f
+            o5.alpha=0f
+            o6.alpha=0f
+            o7.alpha=0f
+            a2.alpha=0f
+            a3.alpha=0f
+            a4.alpha=0f
+            a5.alpha=0f
+            a6.alpha=0f
+            b2.alpha=0f
+            b3.alpha=0f
+            b4.alpha=0f
+            b5.alpha=0f
+            b6.alpha=0f
+            c2.alpha=0f
+            c3.alpha=0f
+            d2.alpha=0f
+            d3.alpha=0f
+            d4.alpha=0f
+            d5.alpha=0f
+            d6.alpha=0f
+            d7.alpha=0f
+            n2.alpha=0f
+            n3.alpha=0f
+            n4.alpha=0f
+            n5.alpha=0f
+            n6.alpha=0f
+            n7.alpha=0f
+            n8.alpha=0f
+            n9.alpha=0f
+            n10.alpha=0f
+            i2.alpha=0f
+            i3.alpha=0f
+            i4.alpha=0f
+            i5.alpha=0f
+            i6.alpha=0f
+            h2.alpha=0f
+            h3.alpha=0f
+            h4.alpha=0f
+            h6.alpha=0f
+            h7.alpha=0f
+            h8.alpha=0f
+            h9.alpha=0f
+            h10.alpha=0f
+            h11.alpha=0f
+            h12.alpha=0f
+            f2.alpha=0f
+            f3.alpha=0f
+            f4.alpha=0f
+            f5.alpha=0f
+            f6.alpha=0f
+            f7.alpha=0f
+            f8.alpha=0f
+            f9.alpha=0f
+            f11.alpha=0f
+            f12.alpha=0f
+            f13.alpha=0f
+            f14.alpha=0f
+            f15.alpha=0f
+            f16.alpha=0f
+            f17.alpha=0f
+            f18.alpha=0f
+            f19.alpha=0f
+            f20.alpha=0f
+            f21.alpha=0f
+            f22.alpha=0f
+            f23.alpha=0f
+            p2.alpha=0f
+            p3.alpha=0f
+            p4.alpha=0f
+            p5.alpha=0f
+            p7.alpha=0f
+            p8.alpha=0f
+            p9.alpha=0f
+            p11.alpha=0f
+            p12.alpha=0f
+            p14.alpha=0f
+            p18.alpha=0f
+            p16.alpha=0f
+            p19.alpha=0f
+            l2.alpha=0f
+            l3.alpha=0f
+            l4.alpha=0f
+            l5.alpha=0f
+            l7.alpha=0f
+            l8.alpha=0f
+            l9.alpha=0f
+            l10.alpha=0f
+            l12.alpha=0f
+            l13.alpha=0f
+            l14.alpha=0f
+            l15.alpha=0f
+            l16.alpha=0f
+            l17.alpha=0f
+            l18.alpha=0f
+            l20.alpha=0f
+            l21.alpha=0f
+            l22.alpha=0f
+            l23.alpha=0f
+            l24.alpha=0f
+            l25.alpha=0f
+            m2.alpha=0f
+            m3.alpha=0f
+            m4.alpha=0f
+            m5.alpha=0f
+            m6.alpha=0f
+            m7.alpha=0f
+            m8.alpha=0f
+            m9.alpha=0f
+            m11.alpha=0f
+            m12.alpha=0f
+            m13.alpha=0f
+            m15.alpha=0f
+            m16.alpha=0f
+            m17.alpha=0f
+            m18.alpha=0f
+            m19.alpha=0f
+            m20.alpha=0f
+            m21.alpha=0f
+            m22.alpha=0f
+            m23.alpha=0f
+            m24.alpha=0f
+            m25.alpha=0f
+            m26.alpha=0f
+            m28.alpha=0f
+            m29.alpha=0f
+            m30.alpha=0f
+            m31.alpha=0f
+            m32.alpha=0f
+            m33.alpha=0f
+            m34.alpha=0f
+            m35.alpha=0f
         }
     }
 }
