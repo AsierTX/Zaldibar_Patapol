@@ -17,7 +17,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 
-class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback {
+class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragment_juego1.OnFragmentInteractionListener {
 
 
     //Objeto que usamos para definir todos los datos de la array
@@ -50,7 +50,23 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps_full)
         createFragment()
+
+        try {
+            val fragment = navegador_superior()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmento2, fragment)
+            transaction.commit()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
     }
+
+    override fun onCerrarFragmento() {
+        // Llama a la función de la actividad
+        encendermapa()
+    }
+
 
     private fun createFragment() {
         val mapFragment: SupportMapFragment =
@@ -134,36 +150,89 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
+
+    private fun apagarmapa() {
+
+        map.uiSettings.isScrollGesturesEnabled = false
+        map.uiSettings.isZoomGesturesEnabled = false
+        map.uiSettings.isRotateGesturesEnabled = false
+        map.uiSettings.isTiltGesturesEnabled = false
+        map.uiSettings.isMapToolbarEnabled = false
+        map.uiSettings.isZoomControlsEnabled = false
+
+
+    }
+
+    private fun encendermapa() {
+
+        map.uiSettings.isScrollGesturesEnabled = true
+        map.uiSettings.isZoomGesturesEnabled = true
+        map.uiSettings.isRotateGesturesEnabled = true
+        map.uiSettings.isTiltGesturesEnabled = true
+        map.uiSettings.isMapToolbarEnabled = true
+        map.uiSettings.isZoomControlsEnabled = true
+
+    }
+
     private fun onMarker1Click() {
-        Toast.makeText(this, "Clic en Marcador 1", Toast.LENGTH_SHORT).show()
+        apagarmapa()
+        val fragment = inicio_fragment_juego1()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragmento, fragment)
+        transaction.commit()
 
     }
 
     private fun onMarker2Click() {
-        Toast.makeText(this, "Clic en Marcador 2", Toast.LENGTH_SHORT).show()
+        apagarmapa()
+        val fragment = inicio_fragment_juego2()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragmento, fragment)
+        transaction.commit()
 
     }
 
     private fun onMarker3Click() {
-        Toast.makeText(this, "Clic en Marcador 3", Toast.LENGTH_SHORT).show()
+        apagarmapa()
+        val fragment = inicio_fragment_juego3()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragmento, fragment)
+        transaction.commit()
 
     }
     private fun onMarker4Click() {
-        Toast.makeText(this, "Clic en Marcador 4", Toast.LENGTH_SHORT).show()
+        apagarmapa()
+        val fragment = inicio_fragment_juego4()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragmento, fragment)
+        transaction.commit()
 
     }
     private fun onMarker5Click() {
-        Toast.makeText(this, "Clic en Marcador 5", Toast.LENGTH_SHORT).show()
+        apagarmapa()
+        val fragment = inicio_fragment_juego5()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragmento, fragment)
+        transaction.commit()
 
     }
     private fun onMarker6Click() {
-        Toast.makeText(this, "Clic en Marcador 6", Toast.LENGTH_SHORT).show()
+        apagarmapa()
+        val fragment = inicio_fragment_juego6()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragmento, fragment)
+        transaction.commit()
 
     }
     private fun onMarker7Click() {
-        Toast.makeText(this, "Clic en Marcador 7", Toast.LENGTH_SHORT).show()
+        apagarmapa()
+        val fragment = inicio_fragment_juego7()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragmento, fragment)
+        transaction.commit()
 
     }
+
 
 
 
