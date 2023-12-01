@@ -31,6 +31,7 @@
             android:label="@string/title_activity_juego6"
             android:theme="@style/Theme.Zaldibar_Patapol" />
         <activity android:name=".HerriKirolak" />
+        <activity android:name=".Puzzle" />
         <activity
             android:name=".MapsActivity_full"
             android:exported="false" />
