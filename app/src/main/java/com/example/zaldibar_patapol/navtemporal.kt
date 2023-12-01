@@ -56,6 +56,12 @@ class navtemporal : AppCompatActivity() {
             startActivity(intent)
         }
 
+        button = findViewById(R.id.button)
+        button.setOnClickListener {
+            val intent = Intent(this, Puzzle::class.java)
+            startActivity(intent)
+        }
+
     }
     private fun cargarmapa() {
         val intent = Intent(this, MapsActivity_full::class.java)
