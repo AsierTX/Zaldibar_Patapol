@@ -12,6 +12,7 @@ class navtemporal : AppCompatActivity() {
     private lateinit var juegozaborra: Button
     private lateinit var juego7: Button
     private lateinit var button3: Button
+    private lateinit var button: Button
 
 
     @SuppressLint("SuspiciousIndentation", "MissingInflatedId")
@@ -45,6 +46,12 @@ class navtemporal : AppCompatActivity() {
         button3 = findViewById(R.id.button3)
         button3.setOnClickListener {
             val intent = Intent(this, HerriKirolak::class.java)
+            startActivity(intent)
+        }
+
+        button = findViewById(R.id.button)
+        button.setOnClickListener {
+            val intent = Intent(this, Puzzle::class.java)
             startActivity(intent)
         }
 

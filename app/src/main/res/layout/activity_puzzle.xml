@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF">
+
+    <!-- Zona de juego (donde se arma el rompecabezas) -->
+    <TableLayout
+        android:id="@+id/tableLayoutRompecabezas"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_margin="16dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toTopOf="@+id/guiaPiezas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Generar las celdas de la tabla de 4x4 dinámicamente -->
+        <!-- Puedes usar un bucle en el código Kotlin para crear las celdas -->
+
+    </TableLayout>
+
+    <!-- Guía o separación entre la zona de juego y las piezas -->
+    <View
+        android:id="@+id/guiaPiezas"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayoutRompecabezas"
+        app:layout_constraintBottom_toTopOf="@+id/piezasContainer" />
+
+    <!-- Contenedor de las piezas para el jugador -->
+    <LinearLayout
+        android:id="@+id/piezasContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/guiaPiezas"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <ImageView
+            android:id="@+id/pieza2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle2"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle3"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle4"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle5"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle6"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle7"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle8"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle9"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza10"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle10"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle1"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza11"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle11"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza12"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle12"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza13"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle13"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza14"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle14"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza15"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle15"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/pieza16"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/puzzle16"
+            android:layout_margin="8dp" />
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
