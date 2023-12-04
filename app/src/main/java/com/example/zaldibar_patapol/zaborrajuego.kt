@@ -48,32 +48,36 @@ class zaborrajuego : AppCompatActivity() {
 
 
         marroia.setOnClickListener{
-            if (marroia.alpha!=0f) {
-                marroia.alpha = 1f
-            }
-            if (marroia2.alpha!=0f) {
-                marroia2.alpha = 0.2f
-            }
-            if (marroia3.alpha!=0f) {
-                marroia3.alpha = 0.2f
-            }
-            if (horia.alpha!=0f) {
-                horia.alpha = 0.2f
-            }
-            if (horia2.alpha!=0f) {
-                horia2.alpha = 0.2f
-            }
-            if (horia3.alpha!=0f) {
-                horia3.alpha = 0.2f
-            }
-            if (urdina.alpha!=0f) {
-                urdina.alpha = 0.2f
-            }
-            if (urdina2.alpha!=0f) {
-                urdina2.alpha = 0.2f
-            }
-            if (urdina3.alpha!=0f) {
-                urdina3.alpha = 0.2f
+            if (marroia.alpha==0f){
+                marroia.isClickable = false
+            }else {
+                if (marroia.alpha != 0f) {
+                    marroia.alpha = 1f
+                }
+                if (marroia2.alpha != 0f) {
+                    marroia2.alpha = 0.2f
+                }
+                if (marroia3.alpha != 0f) {
+                    marroia3.alpha = 0.2f
+                }
+                if (horia.alpha != 0f) {
+                    horia.alpha = 0.2f
+                }
+                if (horia2.alpha != 0f) {
+                    horia2.alpha = 0.2f
+                }
+                if (horia3.alpha != 0f) {
+                    horia3.alpha = 0.2f
+                }
+                if (urdina.alpha != 0f) {
+                    urdina.alpha = 0.2f
+                }
+                if (urdina2.alpha != 0f) {
+                    urdina2.alpha = 0.2f
+                }
+                if (urdina3.alpha != 0f) {
+                    urdina3.alpha = 0.2f
+                }
             }
             (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
@@ -119,32 +123,36 @@ class zaborrajuego : AppCompatActivity() {
             }
         }
         marroia2.setOnClickListener{
-            if (marroia.alpha!=0f) {
-                marroia.alpha = 0.2f
-            }
-            if (marroia2.alpha!=0f) {
-                marroia2.alpha = 1f
-            }
-            if (marroia3.alpha!=0f) {
-                marroia3.alpha = 0.2f
-            }
-            if (horia.alpha!=0f) {
-                horia.alpha = 0.2f
-            }
-            if (horia2.alpha!=0f) {
-                horia2.alpha = 0.2f
-            }
-            if (horia3.alpha!=0f) {
-                horia3.alpha = 0.2f
-            }
-            if (urdina.alpha!=0f) {
-                urdina.alpha = 0.2f
-            }
-            if (urdina2.alpha!=0f) {
-                urdina2.alpha = 0.2f
-            }
-            if (urdina3.alpha!=0f) {
-                urdina3.alpha = 0.2f
+            if (marroia2.alpha==0f){
+                marroia2.isClickable = false
+            }else {
+                if (marroia.alpha != 0f) {
+                    marroia.alpha = 0.2f
+                }
+                if (marroia2.alpha != 0f) {
+                    marroia2.alpha = 1f
+                }
+                if (marroia3.alpha != 0f) {
+                    marroia3.alpha = 0.2f
+                }
+                if (horia.alpha != 0f) {
+                    horia.alpha = 0.2f
+                }
+                if (horia2.alpha != 0f) {
+                    horia2.alpha = 0.2f
+                }
+                if (horia3.alpha != 0f) {
+                    horia3.alpha = 0.2f
+                }
+                if (urdina.alpha != 0f) {
+                    urdina.alpha = 0.2f
+                }
+                if (urdina2.alpha != 0f) {
+                    urdina2.alpha = 0.2f
+                }
+                if (urdina3.alpha != 0f) {
+                    urdina3.alpha = 0.2f
+                }
             }
             (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
@@ -191,32 +199,36 @@ class zaborrajuego : AppCompatActivity() {
             }
         }
         marroia3.setOnClickListener{
-            if (marroia.alpha!=0f) {
-                marroia.alpha = 0.2f
-            }
-            if (marroia2.alpha!=0f) {
-                marroia2.alpha = 0.2f
-            }
-            if (marroia3.alpha!=0f) {
-                marroia3.alpha = 1f
-            }
-            if (horia.alpha!=0f) {
-                horia.alpha = 0.2f
-            }
-            if (horia2.alpha!=0f) {
-                horia2.alpha = 0.2f
-            }
-            if (horia3.alpha!=0f) {
-                horia3.alpha = 0.2f
-            }
-            if (urdina.alpha!=0f) {
-                urdina.alpha = 0.2f
-            }
-            if (urdina2.alpha!=0f) {
-                urdina2.alpha = 0.2f
-            }
-            if (urdina3.alpha!=0f) {
-                urdina3.alpha = 0.2f
+            if (marroia3.alpha==0f){
+                marroia3.isClickable = false
+            }else {
+                if (marroia.alpha != 0f) {
+                    marroia.alpha = 0.2f
+                }
+                if (marroia2.alpha != 0f) {
+                    marroia2.alpha = 0.2f
+                }
+                if (marroia3.alpha != 0f) {
+                    marroia3.alpha = 1f
+                }
+                if (horia.alpha != 0f) {
+                    horia.alpha = 0.2f
+                }
+                if (horia2.alpha != 0f) {
+                    horia2.alpha = 0.2f
+                }
+                if (horia3.alpha != 0f) {
+                    horia3.alpha = 0.2f
+                }
+                if (urdina.alpha != 0f) {
+                    urdina.alpha = 0.2f
+                }
+                if (urdina2.alpha != 0f) {
+                    urdina2.alpha = 0.2f
+                }
+                if (urdina3.alpha != 0f) {
+                    urdina3.alpha = 0.2f
+                }
             }
             (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
@@ -262,32 +274,36 @@ class zaborrajuego : AppCompatActivity() {
             }
         }
         horia.setOnClickListener{
-            if (marroia.alpha!=0f) {
-                marroia.alpha = 0.2f
-            }
-            if (marroia2.alpha!=0f) {
-                marroia2.alpha = 0.2f
-            }
-            if (marroia3.alpha!=0f) {
-                marroia3.alpha = 0.2f
-            }
-            if (horia.alpha!=0f) {
-                horia.alpha = 1f
-            }
-            if (horia2.alpha!=0f) {
-                horia2.alpha = 0.2f
-            }
-            if (horia3.alpha!=0f) {
-                horia3.alpha = 0.2f
-            }
-            if (urdina.alpha!=0f) {
-                urdina.alpha = 0.2f
-            }
-            if (urdina2.alpha!=0f) {
-                urdina2.alpha = 0.2f
-            }
-            if (urdina3.alpha!=0f) {
-                urdina3.alpha = 0.2f
+            if (horia.alpha==0f){
+                horia.isClickable = false
+            }else {
+                if (marroia.alpha != 0f) {
+                    marroia.alpha = 0.2f
+                }
+                if (marroia2.alpha != 0f) {
+                    marroia2.alpha = 0.2f
+                }
+                if (marroia3.alpha != 0f) {
+                    marroia3.alpha = 0.2f
+                }
+                if (horia.alpha != 0f) {
+                    horia.alpha = 1f
+                }
+                if (horia2.alpha != 0f) {
+                    horia2.alpha = 0.2f
+                }
+                if (horia3.alpha != 0f) {
+                    horia3.alpha = 0.2f
+                }
+                if (urdina.alpha != 0f) {
+                    urdina.alpha = 0.2f
+                }
+                if (urdina2.alpha != 0f) {
+                    urdina2.alpha = 0.2f
+                }
+                if (urdina3.alpha != 0f) {
+                    urdina3.alpha = 0.2f
+                }
             }
             (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
@@ -333,32 +349,36 @@ class zaborrajuego : AppCompatActivity() {
             }
         }
         horia2.setOnClickListener{
-            if (marroia.alpha!=0f) {
-                marroia.alpha = 0.2f
-            }
-            if (marroia2.alpha!=0f) {
-                marroia2.alpha = 0.2f
-            }
-            if (marroia3.alpha!=0f) {
-                marroia3.alpha = 0.2f
-            }
-            if (horia.alpha!=0f) {
-                horia.alpha = 0.2f
-            }
-            if (horia2.alpha!=0f) {
-                horia2.alpha = 1f
-            }
-            if (horia3.alpha!=0f) {
-                horia3.alpha = 0.2f
-            }
-            if (urdina.alpha!=0f) {
-                urdina.alpha = 0.2f
-            }
-            if (urdina2.alpha!=0f) {
-                urdina2.alpha = 0.2f
-            }
-            if (urdina3.alpha!=0f) {
-                urdina3.alpha = 0.2f
+            if (horia2.alpha==0f){
+                horia2.isClickable = false
+            }else {
+                if (marroia.alpha != 0f) {
+                    marroia.alpha = 0.2f
+                }
+                if (marroia2.alpha != 0f) {
+                    marroia2.alpha = 0.2f
+                }
+                if (marroia3.alpha != 0f) {
+                    marroia3.alpha = 0.2f
+                }
+                if (horia.alpha != 0f) {
+                    horia.alpha = 0.2f
+                }
+                if (horia2.alpha != 0f) {
+                    horia2.alpha = 1f
+                }
+                if (horia3.alpha != 0f) {
+                    horia3.alpha = 0.2f
+                }
+                if (urdina.alpha != 0f) {
+                    urdina.alpha = 0.2f
+                }
+                if (urdina2.alpha != 0f) {
+                    urdina2.alpha = 0.2f
+                }
+                if (urdina3.alpha != 0f) {
+                    urdina3.alpha = 0.2f
+                }
             }
             (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
@@ -404,32 +424,36 @@ class zaborrajuego : AppCompatActivity() {
             }
         }
         horia3.setOnClickListener{
-            if (marroia.alpha!=0f) {
-                marroia.alpha = 0.2f
-            }
-            if (marroia2.alpha!=0f) {
-                marroia2.alpha = 0.2f
-            }
-            if (marroia3.alpha!=0f) {
-                marroia3.alpha = 0.2f
-            }
-            if (horia.alpha!=0f) {
-                horia.alpha = 0.2f
-            }
-            if (horia2.alpha!=0f) {
-                horia2.alpha = 0.2f
-            }
-            if (horia3.alpha!=0f) {
-                horia3.alpha = 1f
-            }
-            if (urdina.alpha!=0f) {
-                urdina.alpha = 0.2f
-            }
-            if (urdina2.alpha!=0f) {
-                urdina2.alpha = 0.2f
-            }
-            if (urdina3.alpha!=0f) {
-                urdina3.alpha = 0.2f
+            if (horia3.alpha==0f){
+                horia3.isClickable = false
+            }else {
+                if (marroia.alpha != 0f) {
+                    marroia.alpha = 0.2f
+                }
+                if (marroia2.alpha != 0f) {
+                    marroia2.alpha = 0.2f
+                }
+                if (marroia3.alpha != 0f) {
+                    marroia3.alpha = 0.2f
+                }
+                if (horia.alpha != 0f) {
+                    horia.alpha = 0.2f
+                }
+                if (horia2.alpha != 0f) {
+                    horia2.alpha = 0.2f
+                }
+                if (horia3.alpha != 0f) {
+                    horia3.alpha = 1f
+                }
+                if (urdina.alpha != 0f) {
+                    urdina.alpha = 0.2f
+                }
+                if (urdina2.alpha != 0f) {
+                    urdina2.alpha = 0.2f
+                }
+                if (urdina3.alpha != 0f) {
+                    urdina3.alpha = 0.2f
+                }
             }
             (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
@@ -475,32 +499,36 @@ class zaborrajuego : AppCompatActivity() {
             }
         }
         urdina.setOnClickListener{
-            if (marroia.alpha!=0f) {
-                marroia.alpha = 0.2f
-            }
-            if (marroia2.alpha!=0f) {
-                marroia2.alpha = 0.2f
-            }
-            if (marroia3.alpha!=0f) {
-                marroia3.alpha = 0.2f
-            }
-            if (horia.alpha!=0f) {
-                horia.alpha = 0.2f
-            }
-            if (horia2.alpha!=0f) {
-                horia2.alpha = 0.2f
-            }
-            if (horia3.alpha!=0f) {
-                horia3.alpha = 0.2f
-            }
-            if (urdina.alpha!=0f) {
-                urdina.alpha = 1f
-            }
-            if (urdina2.alpha!=0f) {
-                urdina2.alpha = 0.2f
-            }
-            if (urdina3.alpha!=0f) {
-                urdina3.alpha = 0.2f
+            if (urdina.alpha==0f){
+                urdina.isClickable = false
+            }else {
+                if (marroia.alpha != 0f) {
+                    marroia.alpha = 0.2f
+                }
+                if (marroia2.alpha != 0f) {
+                    marroia2.alpha = 0.2f
+                }
+                if (marroia3.alpha != 0f) {
+                    marroia3.alpha = 0.2f
+                }
+                if (horia.alpha != 0f) {
+                    horia.alpha = 0.2f
+                }
+                if (horia2.alpha != 0f) {
+                    horia2.alpha = 0.2f
+                }
+                if (horia3.alpha != 0f) {
+                    horia3.alpha = 0.2f
+                }
+                if (urdina.alpha != 0f) {
+                    urdina.alpha = 1f
+                }
+                if (urdina2.alpha != 0f) {
+                    urdina2.alpha = 0.2f
+                }
+                if (urdina3.alpha != 0f) {
+                    urdina3.alpha = 0.2f
+                }
             }
             (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
@@ -547,32 +575,36 @@ class zaborrajuego : AppCompatActivity() {
             }
         }
         urdina2.setOnClickListener{
-            if (marroia.alpha!=0f) {
-                marroia.alpha = 0.2f
-            }
-            if (marroia2.alpha!=0f) {
-                marroia2.alpha = 0.2f
-            }
-            if (marroia3.alpha!=0f) {
-                marroia3.alpha = 0.2f
-            }
-            if (horia.alpha!=0f) {
-                horia.alpha = 0.2f
-            }
-            if (horia2.alpha!=0f) {
-                horia2.alpha = 0.2f
-            }
-            if (horia3.alpha!=0f) {
-                horia3.alpha = 0.2f
-            }
-            if (urdina.alpha!=0f) {
-                urdina.alpha = 0.2f
-            }
-            if (urdina2.alpha!=0f) {
-                urdina2.alpha = 1f
-            }
-            if (urdina3.alpha!=0f) {
-                urdina3.alpha = 0.2f
+            if (urdina2.alpha==0f){
+                urdina2.isClickable = false
+            }else {
+                if (marroia.alpha != 0f) {
+                    marroia.alpha = 0.2f
+                }
+                if (marroia2.alpha != 0f) {
+                    marroia2.alpha = 0.2f
+                }
+                if (marroia3.alpha != 0f) {
+                    marroia3.alpha = 0.2f
+                }
+                if (horia.alpha != 0f) {
+                    horia.alpha = 0.2f
+                }
+                if (horia2.alpha != 0f) {
+                    horia2.alpha = 0.2f
+                }
+                if (horia3.alpha != 0f) {
+                    horia3.alpha = 0.2f
+                }
+                if (urdina.alpha != 0f) {
+                    urdina.alpha = 0.2f
+                }
+                if (urdina2.alpha != 0f) {
+                    urdina2.alpha = 1f
+                }
+                if (urdina3.alpha != 0f) {
+                    urdina3.alpha = 0.2f
+                }
             }
             (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
@@ -618,32 +650,36 @@ class zaborrajuego : AppCompatActivity() {
             }
         }
         urdina3.setOnClickListener{
-            if (marroia.alpha!=0f) {
-                marroia.alpha = 0.2f
-            }
-            if (marroia2.alpha!=0f) {
-                marroia2.alpha = 0.2f
-            }
-            if (marroia3.alpha!=0f) {
-                marroia3.alpha = 0.2f
-            }
-            if (horia.alpha!=0f) {
-                horia.alpha = 0.2f
-            }
-            if (horia2.alpha!=0f) {
-                horia2.alpha = 0.2f
-            }
-            if (horia3.alpha!=0f) {
-                horia3.alpha = 0.2f
-            }
-            if (urdina.alpha!=0f) {
-                urdina.alpha = 0.2f
-            }
-            if (urdina2.alpha!=0f) {
-                urdina2.alpha = 0.2f
-            }
-            if (urdina3.alpha!=0f) {
-                urdina3.alpha = 1f
+            if (urdina3.alpha==0f){
+                urdina3.isClickable = false
+            }else {
+                if (marroia.alpha != 0f) {
+                    marroia.alpha = 0.2f
+                }
+                if (marroia2.alpha != 0f) {
+                    marroia2.alpha = 0.2f
+                }
+                if (marroia3.alpha != 0f) {
+                    marroia3.alpha = 0.2f
+                }
+                if (horia.alpha != 0f) {
+                    horia.alpha = 0.2f
+                }
+                if (horia2.alpha != 0f) {
+                    horia2.alpha = 0.2f
+                }
+                if (horia3.alpha != 0f) {
+                    horia3.alpha = 0.2f
+                }
+                if (urdina.alpha != 0f) {
+                    urdina.alpha = 0.2f
+                }
+                if (urdina2.alpha != 0f) {
+                    urdina2.alpha = 0.2f
+                }
+                if (urdina3.alpha != 0f) {
+                    urdina3.alpha = 1f
+                }
             }
             (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
@@ -703,7 +739,6 @@ class zaborrajuego : AppCompatActivity() {
                 dialog()
             }
         }
-
 
     }
     private fun dialog() {
