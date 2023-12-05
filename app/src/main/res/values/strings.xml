@@ -42,6 +42,15 @@ Gertatu zenaren ondorioz manifestazioak, protestak… egiten hastetik abestiak e
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="hurrengo">Hurrengo jokoa!</string>
+    <string name="pista">Pistak hurrengo motxilan gorde dira!</string>
+    <string name="zorionak">Zorionak, hemen daukazu gune honen pista:</string>
+    <string name="bukatu">Zorionak, jokoa bukatu duzu!</string>
+    <string name="berriro">BERRIRO SAIATU</string>
+    <string name="aurkituta">AURKITUTA:</string>
+    <string name="zabor">ZABOR GUZTI HAU DAGOKION KUTXAN SARTU</string>
+    <string name="aurkitu">AURKITU 6 EZBERDINTASUNAK</string>
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
