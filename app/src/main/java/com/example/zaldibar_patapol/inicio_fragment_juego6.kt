@@ -1,10 +1,12 @@
 package com.example.zaldibar_patapol
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 
 // TODO: Rename parameter arguments, choose names that match
@@ -52,8 +54,26 @@ class inicio_fragment_juego6 : Fragment() {
 
             // Cierra el fragmento
             requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
-
         }
+            val iniciaractivity6 = view.findViewById<Button>(R.id.iniciar_activity)
+            iniciaractivity6.setOnClickListener{
+                mListener?.onCerrarFragmento()
+
+                // Cierra el fragmento
+                requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+
+                abrirjuego6()
+            }
+            val iniciaractivity = view.findViewById<Button>(R.id.iniciar_activity)
+            iniciaractivity.setOnClickListener{
+                mListener?.onCerrarFragmento()
+
+                // Cierra el fragmento
+                requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+
+                abrirjuego6()
+            }
+
 
         return view
 
@@ -77,6 +97,10 @@ class inicio_fragment_juego6 : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+    private fun abrirjuego6() {
+        val intent6 = Intent(activity, zaborrajuego::class.java)
+        startActivity(intent6)
     }
     fun setOnFragmentInteractionListener(listener: inicio_fragment_juego1.OnFragmentInteractionListener) {
         mListener = listener
