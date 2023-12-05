@@ -1500,7 +1500,7 @@
             app:srcCompat="@drawable/punto" />
 
         <ImageView
-            android:id="@+id/c3"
+            android:id="@+id/c1"
             android:layout_width="19dp"
             android:layout_height="14dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView4"

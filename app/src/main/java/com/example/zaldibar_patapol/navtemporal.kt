@@ -59,8 +59,8 @@ class navtemporal : AppCompatActivity() {
 
         juego5 = findViewById(R.id.juego5)
         juego5.setOnClickListener {
-            val intent = Intent(this, Puzzle::class.java)
-            startActivity(intent)
+            val intent5 = Intent(this, puzzle::class.java)
+            startActivity(intent5)
         }
 
     }
