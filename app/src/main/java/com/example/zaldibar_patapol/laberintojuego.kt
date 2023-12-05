@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.Toast
 
 class laberintojuego : AppCompatActivity() {
 
@@ -248,7 +247,7 @@ class laberintojuego : AppCompatActivity() {
         b5 = findViewById(R.id.b5)
         b6 = findViewById(R.id.b6)
         c2 = findViewById(R.id.c2)
-        c3 = findViewById(R.id.c3)
+        c3 = findViewById(R.id.c1)
         d2 = findViewById(R.id.d2)
         d3 = findViewById(R.id.d3)
         d4 = findViewById(R.id.d4)

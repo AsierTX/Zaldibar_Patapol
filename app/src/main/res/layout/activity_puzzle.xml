@@ -1,160 +1,558 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFF">
 
-    <!-- Zona de juego (donde se arma el rompecabezas) -->
-    <TableLayout
-        android:id="@+id/tableLayoutRompecabezas"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
-        android:layout_margin="16dp"
-        android:stretchColumns="*"
-        app:layout_constraintBottom_toTopOf="@+id/guiaPiezas"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="409dp"
+        android:layout_height="205dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <!-- Generar las celdas de la tabla de 4x4 dinámicamente -->
-        <!-- Puedes usar un bucle en el código Kotlin para crear las celdas -->
-
-    </TableLayout>
-
-    <!-- Guía o separación entre la zona de juego y las piezas -->
-    <View
-        android:id="@+id/guiaPiezas"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#000000"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayoutRompecabezas"
-        app:layout_constraintBottom_toTopOf="@+id/piezasContainer" />
-
-    <!-- Contenedor de las piezas para el jugador -->
-    <LinearLayout
-        android:id="@+id/piezasContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/guiaPiezas"
-        app:layout_constraintBottom_toBottomOf="parent">
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.228">
 
         <ImageView
-            android:id="@+id/pieza2"
+            android:id="@+id/imageView11"
+            android:layout_width="402dp"
+            android:layout_height="199dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/puzzle_completo" />
+
+        <ImageButton
+            android:id="@+id/c12"
+            android:layout_width="74dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="66dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.776"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.653"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c10"
+            android:layout_width="72dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="66dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.248"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.653"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c8"
+            android:layout_width="74dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="66dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.778"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.308"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c11"
+            android:layout_width="69dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="66dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.655"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c15"
+            android:layout_width="72dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="66dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c16"
+            android:layout_width="73dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="66dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.773"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/c14"
+            android:layout_width="68dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="66dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.251"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c7"
+            android:layout_width="68dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="66dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.317"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c13"
+            android:layout_width="68dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="66dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c9"
+            android:layout_width="68dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="66dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.655"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c6"
+            android:layout_width="74dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="66dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.248"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.315"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c5"
+            android:layout_width="68dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="66dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.317"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c4"
+            android:layout_width="72dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="66dp"
+            android:layout_marginEnd="2dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.774"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c3"
+            android:layout_width="68dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="66dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c1"
+            android:layout_width="67dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="66dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/c2"
+            android:layout_width="72dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="66dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintHorizontal_bias="0.251"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="281dp"
+            android:layout_height="201dp"
+            android:background="@drawable/bordepuzzle"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView11"
+            app:layout_constraintTop_toTopOf="@+id/imageView11">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="411dp"
+        android:layout_height="307dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintVertical_bias="0.106">
+
+        <ImageButton
+            android:id="@+id/im13"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.066"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle13"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/im10"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.329"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.063"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle10"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/im16"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.625"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.063"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle16"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/im8"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.914"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.063"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle8"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/im5"
             android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle2"
-            android:layout_margin="8dp" />
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.354"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle5"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza3"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle3"
-            android:layout_margin="8dp" />
+        <ImageButton
+            android:id="@+id/im11"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.329"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.354"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle11"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza4"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle4"
-            android:layout_margin="8dp" />
+        <ImageButton
+            android:id="@+id/im15"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.625"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.354"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle15"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza5"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle5"
-            android:layout_margin="8dp" />
+        <ImageButton
+            android:id="@+id/im4"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.914"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.354"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle4"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza6"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle6"
-            android:layout_margin="8dp" />
+        <ImageButton
+            android:id="@+id/im14"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.637"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle14"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza7"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle7"
-            android:layout_margin="8dp" />
+        <ImageButton
+            android:id="@+id/im2"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.329"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.637"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle2"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza8"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle8"
-            android:layout_margin="8dp" />
+        <ImageButton
+            android:id="@+id/im6"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.625"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.637"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle6"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza9"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle9"
-            android:layout_margin="8dp" />
+        <ImageButton
+            android:id="@+id/im12"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.914"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.637"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle12"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza10"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle10"
-            android:layout_margin="8dp" />
+        <ImageButton
+            android:id="@+id/im1"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.896"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle1"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle1"
-            android:layout_margin="8dp" />
+        <ImageButton
+            android:id="@+id/im9"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.329"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.896"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle9"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza11"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle11"
-            android:layout_margin="8dp" />
+        <ImageButton
+            android:id="@+id/im7"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.625"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.896"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle7"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza12"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle12"
-            android:layout_margin="8dp" />
+        <ImageButton
+            android:id="@+id/im3"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.914"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.896"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/puzzle3"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/pieza13"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle13"
-            android:layout_margin="8dp" />
-
-        <ImageView
-            android:id="@+id/pieza14"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle14"
-            android:layout_margin="8dp" />
-
-        <ImageView
-            android:id="@+id/pieza15"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle15"
-            android:layout_margin="8dp" />
-
-        <ImageView
-            android:id="@+id/pieza16"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/puzzle16"
-            android:layout_margin="8dp" />
-
-
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
