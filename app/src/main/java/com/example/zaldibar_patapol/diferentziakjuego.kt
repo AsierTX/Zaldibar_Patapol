@@ -72,61 +72,85 @@ class diferentziakjuego : AppCompatActivity() {
         dif1.setOnClickListener {
             dif1.alpha = 1f
             dif0.alpha = 1f
+            dif1.isClickable = false
+            dif0.isClickable = false
             updateCount()
         }
         dif2.setOnClickListener{
             dif2.alpha = 1f
             dif11.alpha = 1f
+            dif2.isClickable = false
+            dif11.isClickable = false
             updateCount()
         }
         dif3.setOnClickListener{
             dif3.alpha = 1f
             dif22.alpha = 1f
+            dif3.isClickable = false
+            dif22.isClickable = false
             updateCount()
         }
         dif4.setOnClickListener{
             dif4.alpha = 1f
             dif33.alpha = 1f
+            dif4.isClickable = false
+            dif33.isClickable = false
             updateCount()
         }
         dif5.setOnClickListener{
             dif5.alpha = 1f
             dif44.alpha = 1f
+            dif5.isClickable = false
+            dif44.isClickable = false
             updateCount()
         }
         dif6.setOnClickListener{
             dif6.alpha = 1f
             dif55.alpha = 1f
+            dif6.isClickable = false
+            dif55.isClickable = false
             updateCount()
         }
         dif0.setOnClickListener {
             dif1.alpha = 1f
             dif0.alpha = 1f
+            dif1.isClickable = false
+            dif0.isClickable = false
             updateCount()
         }
         dif11.setOnClickListener{
             dif2.alpha = 1f
             dif11.alpha = 1f
+            dif2.isClickable = false
+            dif11.isClickable = false
             updateCount()
         }
         dif22.setOnClickListener{
             dif3.alpha = 1f
             dif22.alpha = 1f
+            dif3.isClickable = false
+            dif22.isClickable = false
             updateCount()
         }
         dif33.setOnClickListener{
             dif4.alpha = 1f
             dif33.alpha = 1f
+            dif4.isClickable = false
+            dif33.isClickable = false
             updateCount()
         }
         dif44.setOnClickListener{
             dif5.alpha = 1f
             dif44.alpha = 1f
+            dif5.isClickable = false
+            dif44.isClickable = false
             updateCount()
         }
         dif55.setOnClickListener{
             dif6.alpha = 1f
             dif55.alpha = 1f
+            dif6.isClickable = false
+            dif55.isClickable = false
             updateCount()
         }
         if (dif1.alpha==1f && dif2.alpha==1f && dif3.alpha==1f && dif4.alpha==1f && dif5.alpha==1f && dif6.alpha==1f){
