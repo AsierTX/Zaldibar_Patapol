@@ -1,5 +1,6 @@
 package com.example.zaldibar_patapol
 
+import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.Button
