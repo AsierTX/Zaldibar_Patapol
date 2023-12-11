@@ -46,6 +46,12 @@ Gertatu zenaren ondorioz manifestazioak, protestak… egiten hastetik abestiak e
     <string name="libre">Modu askea aktibatu!</string>
     <string name="librepas">Sartu pasahitza modu askean sartzeko:</string>
 
+    <string name="zorionaksave">Zorionak!
+    Joku guztiak bukatu dituzu!
+    2:10:30 denbora barruan bukatu duzu</string>
+    <string name="izenasave">Sartu izen bat partida gordetzeko:</string>
+
+
     <string name="hurrengo">Hurrengo jokoa!</string>
     <string name="pista">Pistak hurrengo motxilan gorde dira!</string>
     <string name="zorionak">Zorionak, hemen daukazu gune honen pista:</string>
