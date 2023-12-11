@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 
 class zaborrajuego : AppCompatActivity() {
 
@@ -111,6 +113,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    openGameResultFragment()
                 }
             }
             azul.setOnClickListener{
@@ -186,7 +189,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
-
+                    openGameResultFragment()
                 }
             }
             azul.setOnClickListener{
@@ -262,6 +265,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    openGameResultFragment()
                 }
             }
             azul.setOnClickListener{
@@ -345,6 +349,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    openGameResultFragment()
                 }
             }
         }
@@ -420,6 +425,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    openGameResultFragment()
                 }
             }
         }
@@ -495,6 +501,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    openGameResultFragment()
                 }
             }
         }
@@ -567,6 +574,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    openGameResultFragment()
                 }
             }
             amarillo.setOnClickListener{
@@ -642,6 +650,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    openGameResultFragment()
                 }
             }
             amarillo.setOnClickListener{
@@ -717,6 +726,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    openGameResultFragment()
                 }
             }
             amarillo.setOnClickListener{
@@ -740,6 +750,15 @@ class zaborrajuego : AppCompatActivity() {
             }
         }
 
+    }
+    private fun openGameResultFragment() {
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+
+        val gameResultFragment = final_fragment_juego6()
+        fragmentTransaction.replace(R.id.fragmento, gameResultFragment)
+
+        fragmentTransaction.commit()
     }
     private fun dialog() {
         val builder = AlertDialog.Builder(this)

@@ -13,10 +13,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [final_fragment_juego7.newInstance] factory method to
+ * Use the [modulibrea_fragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class final_fragment_juego7 : Fragment() {
+class modulibrea_fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,8 +34,7 @@ class final_fragment_juego7 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_final_juego7, container, false)
-
+        return inflater.inflate(R.layout.fragment_modulibrea_fragment, container, false)
     }
 
     companion object {
@@ -45,12 +44,12 @@ class final_fragment_juego7 : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment final_fragment_juego7.
+         * @return A new instance of fragment modulibrea_fragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            final_fragment_juego7().apply {
+            modulibrea_fragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

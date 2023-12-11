@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 
 class diferentziakjuego : AppCompatActivity() {
 
@@ -153,13 +155,27 @@ class diferentziakjuego : AppCompatActivity() {
             dif55.isClickable = false
             updateCount()
         }
-        if (dif1.alpha==1f && dif2.alpha==1f && dif3.alpha==1f && dif4.alpha==1f && dif5.alpha==1f && dif6.alpha==1f){
+        if (countaurkituta==6){
            mediaplayer.start()
+            openGameResultFragment()
         }
 
     }
     private fun updateCount() {
         countaurkituta++
         aurkituta.text = "AURKITUTA: $countaurkituta"
+        if (countaurkituta==6){
+            mediaplayer.start()
+            openGameResultFragment()
+        }
+    }
+    private fun openGameResultFragment() {
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+
+        val gameResultFragment = final_fragment_juego7()
+        fragmentTransaction.replace(R.id.fragmento, gameResultFragment)
+
+        fragmentTransaction.commit()
     }
 }
