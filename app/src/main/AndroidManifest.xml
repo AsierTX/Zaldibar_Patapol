@@ -20,6 +20,9 @@
         android:theme="@style/Theme.Zaldibar_Patapol"
         tools:targetApi="31">
         <activity
+            android:name=".RankingActivity"
+            android:exported="false" />
+        <activity
             android:name=".laberintojuego"
             android:exported="false" />
         <activity
@@ -31,8 +34,7 @@
             android:label="@string/title_activity_juego6"
             android:theme="@style/Theme.Zaldibar_Patapol" />
         <activity android:name=".HerriKirolak" />
-        <activity
-            android:name=".puzzle" />
+        <activity android:name=".puzzle" />
         <activity
             android:name=".MapsActivity_full"
             android:exported="false" />
