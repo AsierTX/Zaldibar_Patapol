@@ -97,4 +97,13 @@ Gertatu zenaren ondorioz manifestazioak, protestak… egiten hastetik abestiak e
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+
+    <string name="button_esku_pilota">Esku-pilota</string>
+    <string name="button_txinga_erute">Txinga erute</string>
+    <string name="button_aizkolaritza">Aizkolaritza</string>
+    <string name="button_astoproba">Astoproba</string>
+    <string name="button_segaproba">Segaproba</string>
+    <string name="button_sokatira">Sokatira</string>
+    <string name="button_estroprobak">Estroprobak</string>
+    <string name="button_harrijasotze">Harrijasotze</string>
 </resources>
