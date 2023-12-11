@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 
 class laberintojuego : AppCompatActivity() {
 
@@ -549,6 +551,7 @@ class laberintojuego : AppCompatActivity() {
             } else if (m34.alpha==1f){
                 m34.alpha=0f
                 m35.alpha=1f
+                openGameResultFragment()
             }else if (m22.alpha==1f){
                 m22.alpha=0f
                 m21.alpha=1f
@@ -1711,5 +1714,15 @@ class laberintojuego : AppCompatActivity() {
             m34.alpha=0f
             m35.alpha=0f
         }
+
+    }
+    private fun openGameResultFragment() {
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+
+        val gameResultFragment = final_fragment_juego4()
+        fragmentTransaction.replace(R.id.fragmento, gameResultFragment)
+
+        fragmentTransaction.commit()
     }
 }
