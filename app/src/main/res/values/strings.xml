@@ -51,6 +51,17 @@ Gertatu zenaren ondorioz manifestazioak, protestak… egiten hastetik abestiak e
     2:10:30 denbora barruan bukatu duzu</string>
     <string name="izenasave">Sartu izen bat partida gordetzeko:</string>
 
+    <string name="secretword">Motxilan bildu dituzuen letrak batuta elizatea edo hiribildua den jakingo duzue. Has zaitezte letrak ordenean jartzen!</string>
+    <string name="konprobatu">Konprobatu!</string>
+    <string name="E">E</string>
+    <string name="L">L</string>
+    <string name="I">I</string>
+    <string name="Z">Z</string>
+    <string name="A">A</string>
+    <string name="T">T</string>
+    <string name="E2">E</string>
+
+
 
     <string name="hurrengo">Hurrengo jokoa!</string>
     <string name="pista">Pistak hurrengo motxilan gorde dira!</string>
