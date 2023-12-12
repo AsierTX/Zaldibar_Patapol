@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="578dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="150dp"
         android:background="@drawable/fragment_inicio1">
 
@@ -86,42 +86,46 @@
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="172dp"
-            android:layout_height="108dp"
+            android:layout_width="182dp"
+            android:layout_height="109dp"
+            android:background="@drawable/bordecircular"
+            android:clipToOutline="true"
             android:src="@drawable/foto_fragment_j4_inicio"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.112"
+            app:layout_constraintHorizontal_bias="0.069"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.695"
-            app:shapeAppearanceOverlay="@style/radius" />
+            app:layout_constraintVertical_bias="0.699" />
+
 
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="153dp"
-            android:layout_height="107dp"
+            android:layout_width="162dp"
+            android:layout_height="108dp"
+            android:background="@drawable/bordecircular"
+            android:clipToOutline="true"
             android:src="@drawable/foto_fragment_j42_inicio"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.868"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.786"
-            app:shapeAppearanceOverlay="@style/radius" />
+            app:layout_constraintVertical_bias="0.786" />
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="164dp"
-            android:layout_height="117dp"
+            android:layout_width="160dp"
+            android:layout_height="107dp"
+            android:background="@drawable/bordecircular"
+            android:clipToOutline="true"
             android:src="@drawable/foto_fragment_j43_inicio"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.109"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.965"
-            app:shapeAppearanceOverlay="@style/radius" />
+            app:layout_constraintVertical_bias="0.965" />
 
         <Button
             android:id="@+id/iniciar_activity"

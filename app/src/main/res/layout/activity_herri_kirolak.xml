@@ -1,92 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnCount="2"
-    android:rowCount="6"
-    android:padding="16dp"
-    android:background="@drawable/baserri_background">
+    android:background="@drawable/baserri_background"
+    tools:context=".HerriKirolak">
 
-    <!-- Imagen -->
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:scaleType="fitXY"
-        android:src="@drawable/herrikirolakdefault"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:layout_columnSpan="2"
-        android:layout_rowSpan="2" />
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:rowCount="6"
+        android:padding="16dp"
+        android:background="@drawable/baserri_background">
 
-    <!-- Botones -->
-    <Button
-        android:id="@+id/button7"
-        style="@style/ButtonStyle"
-        android:layout_row="4"
-        android:layout_column="0"
-        android:layout_columnSpan="1"
-        android:text="Esku-pilota"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <!-- Imagen -->
 
-    <Button
-        android:id="@+id/button8"
-        style="@style/ButtonStyle"
-        android:text="Txinga erute"
-        android:layout_row="4"
-        android:layout_column="1"
-        android:layout_columnSpan="1" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/herrikirolakdefault"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_rowSpan="2" />
 
-    <Button
-        android:id="@+id/button5"
-        style="@style/ButtonStyle"
-        android:text="Aizkolaritza"
-        android:layout_row="3"
-        android:layout_column="0"
-        android:layout_columnSpan="1" />
+        <!-- Botones -->
+        <Button
+            android:id="@+id/button7"
+            style="@style/ButtonStyle"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:layout_columnSpan="1"
+            android:background="@drawable/herrikirolak_buttons"
+            android:text="@string/button_esku_pilota"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/button6"
-        style="@style/ButtonStyle"
-        android:text="Astoproba"
-        android:layout_row="3"
-        android:layout_column="1"
-        android:layout_columnSpan="1" />
+        <Button
+            android:id="@+id/button8"
+            style="@style/ButtonStyle"
+            android:text="@string/button_txinga_erute"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:layout_columnSpan="1" />
 
-    <Button
-        android:id="@+id/button3"
-        style="@style/ButtonStyle"
-        android:text="Segaproba"
-        android:layout_row="2"
-        android:layout_column="0"
-        android:layout_columnSpan="1" />
+        <Button
+            android:id="@+id/button5"
+            style="@style/ButtonStyle"
+            android:text="@string/button_aizkolaritza"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_columnSpan="1" />
 
-    <Button
-        android:id="@+id/button4"
-        style="@style/ButtonStyle"
-        android:text="Sokatira"
-        android:layout_row="2"
-        android:layout_column="1"
-        android:layout_columnSpan="1" />
+        <Button
+            android:id="@+id/button6"
+            style="@style/ButtonStyle"
+            android:text="@string/button_astoproba"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_columnSpan="1" />
 
-    <Button
-        android:id="@+id/button1"
-        style="@style/ButtonStyle"
-        android:layout_marginTop="350dp"
-        android:text="Estroprobak"
-        android:layout_row="1"
-        android:layout_column="0"
-        android:layout_columnSpan="1" />
+        <Button
+            android:id="@+id/button3"
+            style="@style/ButtonStyle"
+            android:text="@string/button_segaproba"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_columnSpan="1" />
 
-    <Button
-        android:id="@+id/button2"
-        style="@style/ButtonStyle"
-        android:layout_marginTop="350dp"
-        android:text="Harrijasotze"
-        android:layout_row="1"
-        android:layout_column="1"
-        android:layout_columnSpan="1" />
+        <Button
+            android:id="@+id/button4"
+            style="@style/ButtonStyle"
+            android:text="@string/button_sokatira"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_columnSpan="1" />
 
-</GridLayout>
+        <Button
+            android:id="@+id/button1"
+            style="@style/ButtonStyle"
+            android:layout_marginTop="350dp"
+            android:text="@string/button_estroprobak"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnSpan="1" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/ButtonStyle"
+            android:layout_marginTop="350dp"
+            android:text="@string/button_harrijasotze"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnSpan="1" />
+
+
+
+    </GridLayout>
+
+    <FrameLayout
+        android:id="@+id/fragmento"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/fragmento2"
+            android:layout_width="match_parent"
+            android:layout_height="104dp">
+
+        </FrameLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

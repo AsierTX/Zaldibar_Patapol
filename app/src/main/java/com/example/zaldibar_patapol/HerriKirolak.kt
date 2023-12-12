@@ -1,10 +1,13 @@
 package com.example.zaldibar_patapol
 
+import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 
 class HerriKirolak : AppCompatActivity() {
 
@@ -59,6 +62,8 @@ class HerriKirolak : AppCompatActivity() {
     private fun showRandomImage() {
         if (shownImages.size == imageList.size) {
             mediaPlayerAplausos.start()
+
+            openGameResultFragment()
             // Aquí puedes realizar las acciones finales del juego, ya que todas las imágenes se han mostrado
         } else {
             var randomIndex: Int
@@ -98,5 +103,15 @@ class HerriKirolak : AppCompatActivity() {
         mediaPlayerAcierto.release()
         mediaPlayerFallo.release()
         mediaPlayerAplausos.release()
+    }
+
+    private fun openGameResultFragment() {
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+
+        val gameResultFragment = final_fragment_juego3()
+        fragmentTransaction.replace(R.id.fragmento, gameResultFragment)
+
+        fragmentTransaction.commit()
     }
 }

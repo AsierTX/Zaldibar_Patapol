@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="581dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="150dp"
         android:background="@drawable/fragment_inicio1">
 
@@ -84,16 +84,17 @@
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="249dp"
-            android:layout_height="191dp"
+            android:layout_width="317dp"
+            android:layout_height="147dp"
+            android:background="@drawable/bordecircular"
+            android:clipToOutline="true"
             android:src="@drawable/foto_fragment_j7_inicio"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.415"
+            app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.815"
-            app:shapeAppearanceOverlay="@style/radius" />
+            app:layout_constraintVertical_bias="0.784" />
 
         <Button
             android:id="@+id/iniciar_activity"

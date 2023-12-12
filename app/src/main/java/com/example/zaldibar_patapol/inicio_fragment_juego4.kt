@@ -1,10 +1,12 @@
 package com.example.zaldibar_patapol
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,7 +38,7 @@ class inicio_fragment_juego4 : Fragment() {
     }
 
     private var mListener: OnFragmentInteractionListener? = null
-    //
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,9 +48,22 @@ class inicio_fragment_juego4 : Fragment() {
 
         val btnSalir = view.findViewById<ImageButton>(R.id.btnsalir)!!
         btnSalir.setOnClickListener {
+
+            //llamamos a la funcion para enlazar el fragment con el activiy
+            mListener?.onCerrarFragmento()
+
             // Cierra el fragmento
             requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
         }
+            val iniciaractivity6 = view.findViewById<Button>(R.id.iniciar_activity)
+            iniciaractivity6.setOnClickListener{
+                mListener?.onCerrarFragmento()
+
+                // Cierra el fragmento
+                requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+
+                abrirjuego4()
+            }
 
         return view
 
@@ -72,5 +87,12 @@ class inicio_fragment_juego4 : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+    private fun abrirjuego4() {
+        val intent4 = Intent(activity, laberintojuego::class.java)
+        startActivity(intent4)
+    }
+    fun setOnFragmentInteractionListener(listener: inicio_fragment_juego1.OnFragmentInteractionListener) {
+        mListener = listener
     }
 }

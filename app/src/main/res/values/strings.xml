@@ -42,6 +42,25 @@ Gertatu zenaren ondorioz manifestazioak, protestak… egiten hastetik abestiak e
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="sartu">Sartu</string>
+    <string name="libre">Modu askea aktibatu!</string>
+    <string name="librepas">Sartu pasahitza modu askean sartzeko:</string>
+
+    <string name="zorionaksave">Zorionak!
+    Joku guztiak bukatu dituzu!
+    2:10:30 denbora barruan bukatu duzu</string>
+    <string name="izenasave">Sartu izen bat partida gordetzeko:</string>
+
+
+    <string name="hurrengo">Hurrengo jokoa!</string>
+    <string name="pista">Pistak hurrengo motxilan gorde dira!</string>
+    <string name="zorionak">Zorionak, hemen daukazu gune honen pista:</string>
+    <string name="bukatu">Zorionak, jokoa bukatu duzu!</string>
+    <string name="berriro">BERRIRO SAIATU</string>
+    <string name="aurkituta">AURKITUTA:</string>
+    <string name="zabor">ZABOR GUZTI HAU DAGOKION KUTXAN SARTU</string>
+    <string name="aurkitu">AURKITU 6 EZBERDINTASUNAK</string>
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
@@ -78,4 +97,13 @@ Gertatu zenaren ondorioz manifestazioak, protestak… egiten hastetik abestiak e
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+
+    <string name="button_esku_pilota">Esku-pilota</string>
+    <string name="button_txinga_erute">Txinga erute</string>
+    <string name="button_aizkolaritza">Aizkolaritza</string>
+    <string name="button_astoproba">Astoproba</string>
+    <string name="button_segaproba">Segaproba</string>
+    <string name="button_sokatira">Sokatira</string>
+    <string name="button_estroprobak">Estroprobak</string>
+    <string name="button_harrijasotze">Harrijasotze</string>
 </resources>

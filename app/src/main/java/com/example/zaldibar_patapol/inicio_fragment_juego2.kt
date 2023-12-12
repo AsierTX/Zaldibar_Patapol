@@ -36,7 +36,7 @@ class inicio_fragment_juego2 : Fragment() {
     }
 
     private var mListener: OnFragmentInteractionListener? = null
-    //
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,8 +46,13 @@ class inicio_fragment_juego2 : Fragment() {
 
         val btnSalir = view.findViewById<ImageButton>(R.id.btnsalir)!!
         btnSalir.setOnClickListener {
+
+            //llamamos a la funcion para enlazar el fragment con el activiy
+            mListener?.onCerrarFragmento()
+
             // Cierra el fragmento
             requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+
         }
 
         return view
@@ -72,5 +77,8 @@ class inicio_fragment_juego2 : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+    fun setOnFragmentInteractionListener(listener: inicio_fragment_juego1.OnFragmentInteractionListener) {
+        mListener = listener
     }
 }

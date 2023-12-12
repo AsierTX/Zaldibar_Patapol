@@ -34,23 +34,34 @@ class inicio_fragment_juego1 : Fragment() {
     }
 
     // Define la interfaz de comunicación entre el fragment
-    interface OnFragmentInteractionListener {
-        fun onCerrarFragmento()
+    interface OnFragmentInteractionListener : inicio_fragment_juego2.OnFragmentInteractionListener,
+        inicio_fragment_juego3.OnFragmentInteractionListener,
+        inicio_fragment_juego4.OnFragmentInteractionListener,
+        inicio_fragment_juego5.OnFragmentInteractionListener,
+        inicio_fragment_juego6.OnFragmentInteractionListener,
+        inicio_fragment_juego7.OnFragmentInteractionListener {
+        override fun onCerrarFragmento()
     }
 
     private var mListener: OnFragmentInteractionListener? = null
-//
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
     // Inflate the layout for this fragment
     val view = inflater.inflate(R.layout.fragment_inicio_juego1, container, false)
 
     val btnSalir = view.findViewById<ImageButton>(R.id.btnsalir)!!
     btnSalir.setOnClickListener {
+
+        //llamamos a la funcion para enlazar el fragment con el activiy
+        mListener?.onCerrarFragmento()
+
         // Cierra el fragmento
         requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+
     }
 
         return view
@@ -82,3 +93,4 @@ class inicio_fragment_juego1 : Fragment() {
         mListener = listener
     }
 }
+
