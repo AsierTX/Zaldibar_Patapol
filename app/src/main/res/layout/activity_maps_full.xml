@@ -20,18 +20,24 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".MapsActivity" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="135dp"
-        android:layout_height="50dp"
+
+    <ImageButton
+        android:id="@+id/imagebutton"
+        android:layout_width="105dp"
+        android:layout_height="75dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.988"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.975"
+        android:src="@drawable/bag" />
+
+
 
     <FrameLayout
         android:id="@+id/fragmento"
@@ -46,7 +52,7 @@
         <FrameLayout
             android:id="@+id/fragmento2"
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="match_parent">
 
         </FrameLayout>
     </FrameLayout>
