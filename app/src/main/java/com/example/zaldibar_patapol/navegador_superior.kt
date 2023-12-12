@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +35,18 @@ class navegador_superior : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navegador_superior, container, false)
+        val view = inflater.inflate(R.layout.fragment_navegador_superior, container, false)
+
+        // Cargar imágenes en los ImageButtons
+        val imageButton3: ImageButton = view.findViewById(R.id.imageButton3)
+        val imageButton4: ImageButton = view.findViewById(R.id.imageButton4)
+
+
+        imageButton3.setImageResource(R.drawable.escudozaldibar)
+        imageButton4.setImageResource(R.drawable.upv)
+
+
+        return view
     }
 
     companion object {
