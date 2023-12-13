@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="71dp">
+        android:layout_height="100dp">
 
 
         <ImageButton
@@ -25,22 +25,24 @@
             app:layout_constraintVertical_bias="0.545"
             tools:ignore="MissingConstraints"
             tools:src="@drawable/escudozaldibar"
+            android:background="@android:color/transparent"
             android:contentDescription="TODO" />
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="118dp"
-            android:layout_height="70dp"
+            android:layout_width="151dp"
+            android:layout_height="95dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="TODO"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="0.466"
             tools:ignore="MissingConstraints"
-            tools:src="@drawable/logoupvreducido"
-            android:contentDescription="TODO" />
+            tools:src="@drawable/upv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

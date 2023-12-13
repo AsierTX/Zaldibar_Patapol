@@ -29,7 +29,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="113dp"
                 android:layout_height="96dp"
-                android:text="E"
+                android:text="@string/Z"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="75dp"
