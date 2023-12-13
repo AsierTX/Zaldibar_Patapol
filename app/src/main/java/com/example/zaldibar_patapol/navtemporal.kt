@@ -14,6 +14,8 @@ class navtemporal : AppCompatActivity() {
     private lateinit var juego4: Button
     private lateinit var juego3: Button
     private lateinit var juego5: Button
+    private lateinit var ranking: Button
+
 
 
 
@@ -61,6 +63,12 @@ class navtemporal : AppCompatActivity() {
         juego5.setOnClickListener {
             val intent5 = Intent(this, puzzle::class.java)
             startActivity(intent5)
+        }
+
+        ranking = findViewById(R.id.button)
+        ranking.setOnClickListener {
+            val intent6 = Intent(this, RankingActivity::class.java)
+            startActivity(intent6)
         }
 
     }
