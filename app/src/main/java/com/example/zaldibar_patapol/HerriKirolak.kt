@@ -36,6 +36,15 @@ class HerriKirolak : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_herri_kirolak)
 
+        try {
+            val fragment = navegador_superior()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmento2, fragment)
+            transaction.commit()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
         imageView = findViewById(R.id.imageView)
         buttons = listOf(
             findViewById(R.id.button1),
