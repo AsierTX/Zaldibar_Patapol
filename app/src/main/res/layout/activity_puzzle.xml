@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@drawable/baserri_background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
@@ -567,7 +567,7 @@
         <FrameLayout
             android:id="@+id/fragmento2"
             android:layout_width="match_parent"
-            android:layout_height="104dp">
+            android:layout_height="100dp">
 
         </FrameLayout>
     </FrameLayout>

@@ -53,6 +53,15 @@ class puzzle : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_puzzle)
 
+        try {
+            val fragment = navegador_superior()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmento2, fragment)
+            transaction.commit()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
         im1 = findViewById(R.id.im1)
         im2 = findViewById(R.id.im2)
         im3 = findViewById(R.id.im3)
