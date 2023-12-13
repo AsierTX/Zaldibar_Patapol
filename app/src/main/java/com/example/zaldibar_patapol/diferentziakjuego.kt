@@ -37,6 +37,15 @@ class diferentziakjuego : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diferentziakjuego)
 
+        try {
+            val fragment = navegador_superior()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmento2, fragment)
+            transaction.commit()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
         dif1 = findViewById(R.id.dif)
         dif2 = findViewById(R.id.dif1)
         dif3 = findViewById(R.id.dif2)

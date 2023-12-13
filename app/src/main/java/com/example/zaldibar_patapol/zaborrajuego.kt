@@ -32,6 +32,15 @@ class zaborrajuego : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zaborrajuego)
 
+        try {
+            val fragment = navegador_superior()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmento2, fragment)
+            transaction.commit()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
         marroia = findViewById(R.id.marroia)
         marroia2 = findViewById(R.id.marroia2)
         marroia3 = findViewById(R.id.marroia3)
