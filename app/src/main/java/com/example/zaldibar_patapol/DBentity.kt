@@ -13,4 +13,6 @@ data class DBentity(
     var nombre: String,
     @ColumnInfo(name = "tiempo")
     var pagar: String,
-)
+    @ColumnInfo(name = "top")
+    var top: Int,
+    )
