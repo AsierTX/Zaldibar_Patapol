@@ -191,6 +191,15 @@ class laberintojuego : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_laberintojuego)
 
+        try {
+            val fragment = navegador_superior()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmento2, fragment)
+            transaction.commit()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
         arriba = findViewById(R.id.arriba)
         abajo = findViewById(R.id.abajo)
         derecha = findViewById(R.id.derecha)
