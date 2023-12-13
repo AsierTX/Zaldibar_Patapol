@@ -100,4 +100,8 @@ class secretword : Fragment() {
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
+
+    fun setOnFragmentInteractionListener(mapsactivityFull: MapsActivity_full) {
+        TODO("Not yet implemented")
+    }
 }

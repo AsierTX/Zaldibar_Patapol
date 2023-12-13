@@ -2,10 +2,14 @@ package com.example.zaldibar_patapol
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -18,6 +22,8 @@ import com.google.android.gms.maps.model.MarkerOptions
 
 
 class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragment_juego1.OnFragmentInteractionListener, inicio_fragment_juego2.OnFragmentInteractionListener, inicio_fragment_juego3.OnFragmentInteractionListener, inicio_fragment_juego4.OnFragmentInteractionListener, inicio_fragment_juego5.OnFragmentInteractionListener, inicio_fragment_juego6.OnFragmentInteractionListener, inicio_fragment_juego7.OnFragmentInteractionListener {
+
+
 
 
     //Objeto que usamos para definir todos los datos de la array
@@ -39,8 +45,9 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
 
 
-
     private lateinit var map: GoogleMap
+    private lateinit var botonMochila: ImageButton
+    private var fragmentoVisible = false
 
     companion object{
         const val REQUEST_CODE_LOCATION = 0
@@ -51,6 +58,8 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         setContentView(R.layout.activity_maps_full)
         createFragment()
 
+
+        botonMochila = findViewById(R.id.imagebutton)
         try {
             val fragment = navegador_superior()
             val transaction = supportFragmentManager.beginTransaction()
@@ -59,6 +68,35 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         } catch (e: Exception) {
             e.printStackTrace()
         }
+
+
+
+        botonMochila.setOnClickListener {
+            try {
+                val fragment = secretword()
+
+                val transaction = supportFragmentManager.beginTransaction()
+
+                // Verificar si el fragmento ya está agregado
+                val existingFragment = supportFragmentManager.findFragmentById(R.id.fragmento)
+
+                if (existingFragment != null) {
+                    // Si el fragmento está presente, lo quitamos
+                    transaction.remove(existingFragment)
+                    fragmentoVisible = false
+                } else {
+                    // Si el fragmento no está presente, lo agregamos
+                    transaction.replace(R.id.fragmento, fragment)
+                    fragmentoVisible = true
+                }
+
+                transaction.commit()
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
 
     }
 
@@ -122,8 +160,8 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         enableLocation()
 
         // Zoom en coordenadas específicas de zaldibar
-        val location = LatLng(43.1709413,-2.5466649) // coordenadas de Zaldibar
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16f))
+        val location = LatLng(43.169689,-2.546189) // coordenadas de Zaldibar
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 17f))
 
 
         for (markerInfo in markerList) {
@@ -150,6 +188,23 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
     }
 
+    private fun openGoogleMapsWithDirections(context: Context) {
+        val destinationLat = 43.169689
+        val destinationLon = -2.546189
+
+        val gmmIntentUri = Uri.parse("google.navigation:q=$destinationLat,$destinationLon&mode=w")
+
+        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
+
+        if (mapIntent.resolveActivity(context.packageManager) != null) {
+            context.startActivity(mapIntent)
+        }
+    }
+
+
+
+
 
     private fun apagarmapa() {
 
@@ -163,6 +218,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
     }
 
+
     private fun encendermapa() {
 
         map.uiSettings.isScrollGesturesEnabled = true
@@ -175,7 +231,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     }
 
     private fun onMarker1Click() {
-        //no deja interactuar con el mapa
+/*        //no deja interactuar con el mapa
         apagarmapa()
 
         // Crea una instancia del fragmento
@@ -187,7 +243,9 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         // Realiza la transacción del fragmento
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmento, fragment)
-        transaction.commit()
+        transaction.commit()*/
+        openGoogleMapsWithDirections(this)
+
 
     }
 
@@ -246,6 +304,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         transaction.commit()
 
     }
+
 
 
 
