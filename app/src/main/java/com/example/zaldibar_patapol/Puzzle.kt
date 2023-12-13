@@ -7,6 +7,8 @@ import android.text.Layout
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 
 class puzzle : AppCompatActivity() {
 
@@ -44,6 +46,7 @@ class puzzle : AppCompatActivity() {
     private lateinit var c16:ImageButton
     private lateinit var mediaPlayercorrecto: MediaPlayer
     private lateinit var mediaPlayererror: MediaPlayer
+    private lateinit var mediaPlayeraplausos: MediaPlayer
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,6 +89,7 @@ class puzzle : AppCompatActivity() {
 
         mediaPlayercorrecto = MediaPlayer.create(this, R.raw.sonido_acierto)
         mediaPlayererror = MediaPlayer.create(this, R.raw.sonido_fallo)
+        mediaPlayeraplausos = MediaPlayer.create(this, R.raw.sonido_aplausos)
 
         im1.setOnClickListener{
             if (im1.alpha==0f){
@@ -194,6 +198,10 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
                 }
             }
             c2.setOnClickListener {
@@ -393,6 +401,10 @@ class puzzle : AppCompatActivity() {
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
                 }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
@@ -583,7 +595,12 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
-                }            }
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
+            }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaPlayererror.start()
@@ -773,6 +790,10 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
                 }
             }
             c5.setOnClickListener {
@@ -964,6 +985,10 @@ class puzzle : AppCompatActivity() {
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
                 }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
@@ -1154,7 +1179,12 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
-                }            }
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
+            }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaPlayererror.start()
@@ -1344,7 +1374,12 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
-                }            }
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
+            }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaPlayererror.start()
@@ -1533,6 +1568,10 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
                 }
             }
             c9.setOnClickListener {
@@ -1725,6 +1764,10 @@ class puzzle : AppCompatActivity() {
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
                 }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
@@ -1913,7 +1956,12 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
-                }            }
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
+            }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaPlayererror.start()
@@ -2102,7 +2150,12 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
-                }            }
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
+            }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaPlayererror.start()
@@ -2290,7 +2343,12 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
-                }            }
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
+            }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaPlayererror.start()
@@ -2477,7 +2535,12 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
-                }            }
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
+            }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaPlayererror.start()
@@ -2665,7 +2728,12 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
-                }            }
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
+            }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaPlayererror.start()
@@ -2854,7 +2922,12 @@ class puzzle : AppCompatActivity() {
                 }
                 if (im16.alpha!=0f) {
                     im16.alpha = 1f
-                }            }
+                }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
+            }
             c16.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
             }
@@ -3026,8 +3099,21 @@ class puzzle : AppCompatActivity() {
                 if (im16.alpha != 0f) {
                     im16.alpha = 0f
                 }
+                if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
+                    mediaPlayeraplausos.start()
+                    openGameResultFragment()
+                }
             }
         }
 
+    }
+    private fun openGameResultFragment() {
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+
+        val gameResultFragment = final_fragment_juego5()
+        fragmentTransaction.replace(R.id.fragmento, gameResultFragment)
+
+        fragmentTransaction.commit()
     }
 }
