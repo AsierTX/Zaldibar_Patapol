@@ -51,7 +51,7 @@ class SanMartinJokua : AppCompatActivity() {
             // Set the new random word
             textView.text = words[currentIndex]
         }   else {
-            textView.text = "No more words"
+            textView.text = "Amaitu duzu!"
             imageButtons.forEach { it.isEnabled = false }
         }
     }
