@@ -71,9 +71,9 @@ class navtemporal : AppCompatActivity() {
             startActivity(intentJ1)
         }
 
-        juego2 = findViewById(R.id.juego1)
+        juego2 = findViewById(R.id.juego2)
         juego2.setOnClickListener {
-            val intentJ2 = Intent(this, SanMartinJokua::class.java)
+            val intentJ2 = Intent(this, BainuOspitalJokua::class.java)
             startActivity(intentJ2)
         }
 

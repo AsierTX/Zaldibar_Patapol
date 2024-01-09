@@ -105,14 +105,29 @@
 
     <FrameLayout
         android:id="@+id/fragmento"
-        android:layout_width="388dp"
-        android:layout_height="731dp"
+        android:layout_width="392dp"
+        android:layout_height="729dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
+
+    <Button
+        android:id="@+id/juego2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="171dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="42dp"
+        android:text="juego2"
+        app:layout_constraintBottom_toTopOf="@+id/birziklapenjolasa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/juego1"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
