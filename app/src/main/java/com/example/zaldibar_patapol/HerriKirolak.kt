@@ -1,6 +1,5 @@
 package com.example.zaldibar_patapol
 
-import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.Button
@@ -8,6 +7,10 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.room.Room
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class HerriKirolak : AppCompatActivity() {
 
@@ -27,7 +30,10 @@ class HerriKirolak : AppCompatActivity() {
         R.drawable.eskupilota,
         R.drawable.txingak
     )
-
+    companion object{
+        lateinit var database: appdatabase
+            private set
+    }
     private val shownImages = mutableListOf<Int>() // Lista para rastrear las imágenes mostradas
 
     private var isPlayingAudio = false // Control del estado de reproducción del audio de aplausos
@@ -35,6 +41,14 @@ class HerriKirolak : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_herri_kirolak)
+
+        database = Room.databaseBuilder(
+            application,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
 
         try {
             val fragment = navegador_superior()
@@ -71,7 +85,9 @@ class HerriKirolak : AppCompatActivity() {
     private fun showRandomImage() {
         if (shownImages.size == imageList.size) {
             mediaPlayerAplausos.start()
-
+            GlobalScope.launch(Dispatchers.IO) {
+                database.DBdao.juego3pasado()
+            }
             openGameResultFragment()
             // Aquí puedes realizar las acciones finales del juego, ya que todas las imágenes se han mostrado
         } else {
