@@ -6,19 +6,22 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.room.Room
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragment_juego1.OnFragmentInteractionListener, inicio_fragment_juego2.OnFragmentInteractionListener, inicio_fragment_juego3.OnFragmentInteractionListener, inicio_fragment_juego4.OnFragmentInteractionListener, inicio_fragment_juego5.OnFragmentInteractionListener, inicio_fragment_juego6.OnFragmentInteractionListener, inicio_fragment_juego7.OnFragmentInteractionListener {
@@ -50,14 +53,18 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     private var fragmentoVisible = false
 
     companion object{
+        lateinit var database: appdatabase
+            private set
         const val REQUEST_CODE_LOCATION = 0
+
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps_full)
         createFragment()
-
+        crearBD()
 
         botonMochila = findViewById(R.id.imagebutton)
         try {
@@ -99,7 +106,10 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
 
     }
-
+    override fun onDestroy() {
+        database.close()
+        super.onDestroy()
+    }
     override fun onCerrarFragmento() {
         // Llama a la función de la actividad
         encendermapa()
@@ -305,8 +315,39 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
     }
 
+    private fun crearBD() {
+        database = Room.databaseBuilder(
+            application,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
+
+        val juego1 = DBletrak(juego="juego1", ganado = false)
+        val juego2 = DBletrak(juego="juego2", ganado = false)
+        val juego3 = DBletrak(juego="juego3", ganado = false)
+        val juego4 = DBletrak(juego="juego4", ganado = false)
+        val juego5 = DBletrak(juego="juego5", ganado = false)
+        val juego6 = DBletrak(juego="juego6", ganado = false)
+        val juego7 = DBletrak(juego="juego7", ganado = false)
 
 
-
+        GlobalScope.launch(Dispatchers.IO) {
+            try{
+                if (database.DBdao.countletrak() == 0) {
+                    database.DBdao.insertletra(juego1)
+                    database.DBdao.insertletra(juego2)
+                    database.DBdao.insertletra(juego3)
+                    database.DBdao.insertletra(juego4)
+                    database.DBdao.insertletra(juego5)
+                    database.DBdao.insertletra(juego6)
+                    database.DBdao.insertletra(juego7)
+                }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        }
+    }
 
 }
