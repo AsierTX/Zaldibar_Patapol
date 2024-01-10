@@ -2,22 +2,31 @@ package com.example.zaldibar_patapol
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.room.Room
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragment_juego1.OnFragmentInteractionListener, inicio_fragment_juego2.OnFragmentInteractionListener, inicio_fragment_juego3.OnFragmentInteractionListener, inicio_fragment_juego4.OnFragmentInteractionListener, inicio_fragment_juego5.OnFragmentInteractionListener, inicio_fragment_juego6.OnFragmentInteractionListener, inicio_fragment_juego7.OnFragmentInteractionListener {
+
+
 
 
     //Objeto que usamos para definir todos los datos de la array
@@ -39,18 +48,25 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
 
 
-
     private lateinit var map: GoogleMap
+    private lateinit var botonMochila: ImageButton
+    private var fragmentoVisible = false
 
     companion object{
+        lateinit var database: appdatabase
+            private set
         const val REQUEST_CODE_LOCATION = 0
+
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps_full)
         createFragment()
+        crearBD()
 
+        botonMochila = findViewById(R.id.imagebutton)
         try {
             val fragment = navegador_superior()
             val transaction = supportFragmentManager.beginTransaction()
@@ -60,8 +76,40 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
             e.printStackTrace()
         }
 
-    }
 
+
+        botonMochila.setOnClickListener {
+            try {
+                val fragment = secretword()
+
+                val transaction = supportFragmentManager.beginTransaction()
+
+                // Verificar si el fragmento ya está agregado
+                val existingFragment = supportFragmentManager.findFragmentById(R.id.fragmento)
+
+                if (existingFragment != null) {
+                    // Si el fragmento está presente, lo quitamos
+                    transaction.remove(existingFragment)
+                    fragmentoVisible = false
+                } else {
+                    // Si el fragmento no está presente, lo agregamos
+                    transaction.replace(R.id.fragmento, fragment)
+                    fragmentoVisible = true
+                }
+
+                transaction.commit()
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
+
+    }
+    override fun onDestroy() {
+        database.close()
+        super.onDestroy()
+    }
     override fun onCerrarFragmento() {
         // Llama a la función de la actividad
         encendermapa()
@@ -122,8 +170,8 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         enableLocation()
 
         // Zoom en coordenadas específicas de zaldibar
-        val location = LatLng(43.1709413,-2.5466649) // coordenadas de Zaldibar
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16f))
+        val location = LatLng(43.169689,-2.546189) // coordenadas de Zaldibar
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 17f))
 
 
         for (markerInfo in markerList) {
@@ -150,6 +198,23 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
     }
 
+    private fun openGoogleMapsWithDirections(context: Context) {
+        val destinationLat = 43.169689
+        val destinationLon = -2.546189
+
+        val gmmIntentUri = Uri.parse("google.navigation:q=$destinationLat,$destinationLon&mode=w")
+
+        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
+
+        if (mapIntent.resolveActivity(context.packageManager) != null) {
+            context.startActivity(mapIntent)
+        }
+    }
+
+
+
+
 
     private fun apagarmapa() {
 
@@ -163,6 +228,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
     }
 
+
     private fun encendermapa() {
 
         map.uiSettings.isScrollGesturesEnabled = true
@@ -175,7 +241,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     }
 
     private fun onMarker1Click() {
-        //no deja interactuar con el mapa
+/*        //no deja interactuar con el mapa
         apagarmapa()
 
         // Crea una instancia del fragmento
@@ -187,7 +253,9 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         // Realiza la transacción del fragmento
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmento, fragment)
-        transaction.commit()
+        transaction.commit()*/
+        openGoogleMapsWithDirections(this)
+
 
     }
 
@@ -247,7 +315,39 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
     }
 
+    private fun crearBD() {
+        database = Room.databaseBuilder(
+            application,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
+
+        val juego1 = DBletrak(juego="juego1", ganado = false)
+        val juego2 = DBletrak(juego="juego2", ganado = false)
+        val juego3 = DBletrak(juego="juego3", ganado = false)
+        val juego4 = DBletrak(juego="juego4", ganado = false)
+        val juego5 = DBletrak(juego="juego5", ganado = false)
+        val juego6 = DBletrak(juego="juego6", ganado = false)
+        val juego7 = DBletrak(juego="juego7", ganado = false)
 
 
+        GlobalScope.launch(Dispatchers.IO) {
+            try{
+                if (database.DBdao.countletrak() == 0) {
+                    database.DBdao.insertletra(juego1)
+                    database.DBdao.insertletra(juego2)
+                    database.DBdao.insertletra(juego3)
+                    database.DBdao.insertletra(juego4)
+                    database.DBdao.insertletra(juego5)
+                    database.DBdao.insertletra(juego6)
+                    database.DBdao.insertletra(juego7)
+                }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        }
+    }
 
 }

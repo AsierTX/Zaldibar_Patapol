@@ -1,11 +1,13 @@
 package com.example.zaldibar_patapol
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.constraintlayout.widget.ConstraintLayout
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,10 +42,27 @@ class navegador_superior : Fragment() {
         // Cargar imágenes en los ImageButtons
         val imageButton3: ImageButton = view.findViewById(R.id.imageButton3)
         val imageButton4: ImageButton = view.findViewById(R.id.imageButton4)
+        val constraintLayoutreal: ConstraintLayout = view.findViewById(R.id.constraintLayoutreal)
+
+        constraintLayoutreal.visibility = View.INVISIBLE
+        
 
 
-        imageButton3.setImageResource(R.drawable.escudozaldibar)
-        imageButton4.setImageResource(R.drawable.upv)
+        imageButton3.setOnClickListener {
+            val intent = Intent(context, MapsActivity_full::class.java)
+            startActivity(intent)
+        }
+
+        imageButton4.setOnClickListener {
+            if (constraintLayoutreal.visibility == View.VISIBLE) {
+                constraintLayoutreal.visibility = View.INVISIBLE
+            } else {
+                constraintLayoutreal.visibility = View.VISIBLE
+            }
+        }
+
+
+
 
 
         return view
