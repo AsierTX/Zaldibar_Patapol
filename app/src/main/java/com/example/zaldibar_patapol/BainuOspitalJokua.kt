@@ -2,11 +2,14 @@ package com.example.zaldibar_patapol
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import kotlinx.coroutines.*
 
 class BainuOspitalJokua : AppCompatActivity() {
 
     private lateinit var imageLoaderService: ImageLoaderService
+    private val scope = CoroutineScope(Dispatchers.Main)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,12 +52,26 @@ class BainuOspitalJokua : AppCompatActivity() {
 
         for (i in imageResIds.indices) {
             val pairImageViews = shuffledImageViews.slice(i * 2 until i * 2 + 2)
-            imageLoaderService.loadImage(imageResIds[i], pairImageViews, "Pair${i + 1}")
+            val tag = "Pair${i + 1}"
+            imageLoaderService.loadImage(imageResIds[i], pairImageViews, tag)
 
-            // Change the color of the ImageView to black
-            pairImageViews.forEach { imageView ->
-                imageView.setColorFilter(resources.getColor(android.R.color.black))
+            // Cambiar el color de la ImageView a negro con una animación
+            scope.launch {
+                delay(3000) // Retrasar 3 segundos
+                val animation = AnimationUtils.loadAnimation(this@BainuOspitalJokua, R.anim.fade_out)
+                pairImageViews.forEach { imageView ->
+                    imageView.startAnimation(animation)
+                    imageView.setColorFilter(resources.getColor(android.R.color.black))
+
+                    // Imprimir el tag y el identificador de la ImageView en la terminal
+                    println("El ImageView con el ID ${imageView.id} tiene el tag: $tag")
+                }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        scope.cancel() // Cancelar todas las corutinas cuando la actividad se destruye
     }
 }
