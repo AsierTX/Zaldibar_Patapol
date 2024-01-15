@@ -36,6 +36,13 @@ class BainuOspitalJokua : AppCompatActivity() {
         for (imageView in imageViews) {
             imageView.layoutParams.width = imageSize
             imageView.layoutParams.height = imageSize
+
+            // Add click listener to each ImageView
+            imageView.setOnClickListener {
+                // Make the image visible again
+                imageView.clearAnimation()
+                imageView.setColorFilter(null)
+            }
         }
 
         // Mezclar la lista de ImageViews
