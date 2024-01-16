@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import kotlinx.coroutines.*
+import android.view.View
+import android.widget.Toast
 
 class BainuOspitalJokua : AppCompatActivity() {
 
     private lateinit var imageLoaderService: ImageLoaderService
     private val scope = CoroutineScope(Dispatchers.Main)
+    private var selectedImageView: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,46 +42,69 @@ class BainuOspitalJokua : AppCompatActivity() {
 
             // Add click listener to each ImageView
             imageView.setOnClickListener {
-                // Make the image visible again
-                imageView.clearAnimation()
-                imageView.setColorFilter(null)
+                if (selectedImageView == null) {
+                    // First image selected
+                    selectedImageView = imageView
+                    imageView.setColorFilter(null)
+                } else {
+                    // Second image selected
+                    if (selectedImageView?.tag == imageView.tag) {
+                        // Images have the same tag
+                        selectedImageView?.isClickable = false
+                        imageView.isClickable = false
+                        imageView.setColorFilter(null)
+                    } else {
+                        // Images have different tags
+                        selectedImageView?.setColorFilter(resources.getColor(android.R.color.black))
+                        imageView.setColorFilter(null)
+
+                        // Add a delay of 1 second (1000 milliseconds) before adding the color filters
+                        scope.launch {
+                            delay(1000)
+                            selectedImageView?.setColorFilter(null)
+                            imageView.setColorFilter(resources.getColor(android.R.color.black))
+                            selectedImageView = null                        }
+                        selectedImageView = null
+                    }
+                }
             }
-        }
 
-        // Mezclar la lista de ImageViews
-        val shuffledImageViews = imageViews.shuffled()
+            // Mezclar la lista de ImageViews
+            val shuffledImageViews = imageViews.shuffled()
 
-        // Asignar imágenes a pares de ImageViews de manera aleatoria
-        val imageResIds = listOf(
-            R.drawable.img_p1,
-            R.drawable.img_p2,
-            R.drawable.img_p3,
-            R.drawable.img_p4,
-            R.drawable.img_p5
-        )
+            // Asignar imágenes a pares de ImageViews de manera aleatoria
+            val imageResIds = listOf(
+                R.drawable.img_p1,
+                R.drawable.img_p2,
+                R.drawable.img_p3,
+                R.drawable.img_p4,
+                R.drawable.img_p5
+            )
 
-        for (i in imageResIds.indices) {
-            val pairImageViews = shuffledImageViews.slice(i * 2 until i * 2 + 2)
-            val tag = "Pair${i + 1}"
-            imageLoaderService.loadImage(imageResIds[i], pairImageViews, tag)
+            for (i in imageResIds.indices) {
+                val pairImageViews = shuffledImageViews.slice(i * 2 until i * 2 + 2)
+                val tag = "Pair${i + 1}"
+                imageLoaderService.loadImage(imageResIds[i], pairImageViews, tag)
 
-            // Cambiar el color de la ImageView a negro con una animación
-            scope.launch {
-                delay(3000) // Retrasar 3 segundos
-                val animation = AnimationUtils.loadAnimation(this@BainuOspitalJokua, R.anim.fade_out)
-                pairImageViews.forEach { imageView ->
-                    imageView.startAnimation(animation)
-                    imageView.setColorFilter(resources.getColor(android.R.color.black))
+                // Cambiar el color de la ImageView a negro con una animación
+                scope.launch {
+                    delay(3000) // Retrasar 3 segundos
+                    val animation =
+                        AnimationUtils.loadAnimation(this@BainuOspitalJokua, R.anim.fade_out)
+                    pairImageViews.forEach { imageView ->
+                        imageView.startAnimation(animation)
+                        imageView.setColorFilter(resources.getColor(android.R.color.black))
 
-                    // Imprimir el tag y el identificador de la ImageView en la terminal
-                    println("El ImageView con el ID ${imageView.id} tiene el tag: $tag")
+                        // Imprimir el tag y el identificador de la ImageView en la terminal
+                        println("El ImageView con el ID ${imageView.id} tiene el tag: $tag")
+                    }
                 }
             }
         }
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        scope.cancel() // Cancelar todas las corutinas cuando la actividad se destruye
+        fun onDestroy() {
+            super.onDestroy()
+            scope.cancel() // Cancelar todas las corutinas cuando la actividad se destruye
+        }
     }
 }
