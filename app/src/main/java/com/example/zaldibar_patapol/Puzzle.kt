@@ -46,9 +46,7 @@ class puzzle : AppCompatActivity() {
     private lateinit var c14:ImageButton
     private lateinit var c15:ImageButton
     private lateinit var c16:ImageButton
-    private lateinit var mediaPlayercorrecto: MediaPlayer
-    private lateinit var mediaPlayererror: MediaPlayer
-    private lateinit var mediaPlayeraplausos: MediaPlayer
+    private lateinit var soundService: SoundService
 
     companion object{
         lateinit var database: appdatabase
@@ -109,9 +107,7 @@ class puzzle : AppCompatActivity() {
         c15= findViewById(R.id.c15)
         c16= findViewById(R.id.c16)
 
-        mediaPlayercorrecto = MediaPlayer.create(this, R.raw.sonido_acierto)
-        mediaPlayererror = MediaPlayer.create(this, R.raw.sonido_fallo)
-        mediaPlayeraplausos = MediaPlayer.create(this, R.raw.sonido_aplausos)
+        soundService = SoundService(this)
 
         im1.setOnClickListener{
             if (im1.alpha==0f){
@@ -170,7 +166,7 @@ class puzzle : AppCompatActivity() {
 
             c1.setOnClickListener {
                 c1.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 0f
@@ -222,7 +218,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -231,77 +227,77 @@ class puzzle : AppCompatActivity() {
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -369,13 +365,13 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
                 c2.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -427,7 +423,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -436,72 +432,72 @@ class puzzle : AppCompatActivity() {
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -562,19 +558,19 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
                 c3.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -625,7 +621,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -634,67 +630,67 @@ class puzzle : AppCompatActivity() {
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -755,24 +751,24 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 c4.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -823,7 +819,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -832,62 +828,62 @@ class puzzle : AppCompatActivity() {
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -948,28 +944,28 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 c5.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -1020,7 +1016,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -1029,57 +1025,57 @@ class puzzle : AppCompatActivity() {
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -1140,34 +1136,34 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 c6.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -1218,7 +1214,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -1227,52 +1223,52 @@ class puzzle : AppCompatActivity() {
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -1333,39 +1329,39 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 c7.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -1416,7 +1412,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -1425,47 +1421,47 @@ class puzzle : AppCompatActivity() {
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -1526,43 +1522,43 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
                 c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                    mediaPlayererror.start()
+                    soundService.playIncorrectSound()
 
                 }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 c8.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -1613,7 +1609,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -1622,42 +1618,42 @@ class puzzle : AppCompatActivity() {
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -1718,49 +1714,49 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 c9.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -1811,7 +1807,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -1820,37 +1816,37 @@ class puzzle : AppCompatActivity() {
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -1911,52 +1907,52 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 c10.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -2007,7 +2003,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -2016,32 +2012,32 @@ class puzzle : AppCompatActivity() {
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -2102,58 +2098,58 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 c11.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -2204,7 +2200,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -2213,27 +2209,27 @@ class puzzle : AppCompatActivity() {
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -2294,62 +2290,62 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 c12.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -2400,7 +2396,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -2409,22 +2405,22 @@ class puzzle : AppCompatActivity() {
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
 
         }
@@ -2484,67 +2480,67 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 c13.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -2595,7 +2591,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -2604,17 +2600,17 @@ class puzzle : AppCompatActivity() {
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -2675,72 +2671,72 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 c14.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -2791,7 +2787,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -2800,12 +2796,12 @@ class puzzle : AppCompatActivity() {
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
                 (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
 
@@ -2866,78 +2862,78 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
                 c15.alpha=0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha!=0f) {
                     im1.alpha = 1f
@@ -2988,7 +2984,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 1f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }
@@ -3056,67 +3052,67 @@ class puzzle : AppCompatActivity() {
             }
             c1.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c2.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c3.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c4.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c5.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c6.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c7.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c8.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c9.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c10.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c11.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c12.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c13.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c14.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c15.setOnClickListener {
                 (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
-                mediaPlayererror.start()
+                soundService.playIncorrectSound()
             }
             c16.setOnClickListener {
                 c16.alpha = 0f
-                mediaPlayercorrecto.start()
+                soundService.playCorrectSound()
 
                 if (im1.alpha != 0f) {
                     im1.alpha = 1f
@@ -3167,7 +3163,7 @@ class puzzle : AppCompatActivity() {
                     im16.alpha = 0f
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
-                    mediaPlayeraplausos.start()
+                    soundService.playAplausosSound()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego5pasado()
                     }

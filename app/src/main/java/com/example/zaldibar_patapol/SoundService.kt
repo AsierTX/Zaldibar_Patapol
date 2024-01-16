@@ -19,6 +19,12 @@ class SoundService(private val context: Context) {
         mediaPlayer?.start()
     }
 
+    fun playAplausosSound() {
+        stopMediaPlayer()
+        mediaPlayer = MediaPlayer.create(context, R.raw.sonido_aplausos)
+        mediaPlayer?.start()
+    }
+
     fun playF1audio() {
         stopMediaPlayer()
         mediaPlayer = MediaPlayer.create(context, R.raw.audiojuego1)
