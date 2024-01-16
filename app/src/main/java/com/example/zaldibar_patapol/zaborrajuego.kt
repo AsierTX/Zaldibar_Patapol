@@ -2,13 +2,13 @@ package com.example.zaldibar_patapol
 
 import android.app.AlertDialog
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.room.Room
 
 class zaborrajuego : AppCompatActivity() {
 
@@ -28,6 +28,11 @@ class zaborrajuego : AppCompatActivity() {
     private lateinit var mediaplayer2: MediaPlayer
     var pulsado: Boolean = false
 
+    companion object{
+        lateinit var database: appdatabase
+            private set
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zaborrajuego)
@@ -40,6 +45,14 @@ class zaborrajuego : AppCompatActivity() {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+
+        database = Room.databaseBuilder(
+            application,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
 
         marroia = findViewById(R.id.marroia)
         marroia2 = findViewById(R.id.marroia2)
@@ -122,6 +135,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    database.DBdao.juego6pasado()
                     openGameResultFragment()
                 }
             }
@@ -198,6 +212,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    database.DBdao.juego6pasado()
                     openGameResultFragment()
                 }
             }
@@ -274,6 +289,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    database.DBdao.juego6pasado()
                     openGameResultFragment()
                 }
             }
@@ -358,6 +374,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    database.DBdao.juego6pasado()
                     openGameResultFragment()
                 }
             }
@@ -434,6 +451,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    database.DBdao.juego6pasado()
                     openGameResultFragment()
                 }
             }
@@ -510,6 +528,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    database.DBdao.juego6pasado()
                     openGameResultFragment()
                 }
             }
@@ -583,6 +602,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    database.DBdao.juego6pasado()
                     openGameResultFragment()
                 }
             }
@@ -659,6 +679,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    database.DBdao.juego6pasado()
                     openGameResultFragment()
                 }
             }
@@ -735,6 +756,7 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
+                    database.DBdao.juego6pasado()
                     openGameResultFragment()
                 }
             }

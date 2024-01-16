@@ -107,6 +107,7 @@ class HerriKirolak : AppCompatActivity() {
     private fun handleButtonClick(buttonIndex: Int, button: Button) {
         if (shownImages.contains(buttonIndex)) {
             mediaPlayerAcierto.start()
+            database.DBdao.juego3pasado()
             button.alpha = 0.5f // Reduce la opacidad del botón al acertar
             button.isClickable = false // Deshabilita el botón al acertar
             showRandomImage()

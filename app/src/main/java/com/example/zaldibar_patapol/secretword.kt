@@ -2,18 +2,19 @@ package com.example.zaldibar_patapol
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.room.Room
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,10 +44,110 @@ class secretword : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        database = Room.databaseBuilder(
+            requireContext().applicationContext,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
+
+
         val view = inflater.inflate(R.layout.fragment_secretword, container, false)
 
+        val textE = view.findViewById<TextView>(R.id.textE)
+        val textL = view.findViewById<TextView>(R.id.textL)
+        val textI = view.findViewById<TextView>(R.id.textI)
+        val textZ = view.findViewById<TextView>(R.id.textZ)
+        val textA = view.findViewById<TextView>(R.id.textA)
+        val textT = view.findViewById<TextView>(R.id.textT)
+        val textEE = view.findViewById<TextView>(R.id.textEE)
+
+        GlobalScope.launch(Dispatchers.IO) {
+            if (database.DBdao.juegoganado("juego1") == true) {
+                textZ.text = getString(R.string.Z)
+            }
+            if (database.DBdao.juegoganado("juego2") == true) {
+                textL.text = getString(R.string.L)
+            }
+            if (database.DBdao.juegoganado("juego3") == true) {
+                textA.text = getString(R.string.A)
+            }
+            if (database.DBdao.juegoganado("juego4") == true) {
+                textEE.text = getString(R.string.E2)
+            }
+            if (database.DBdao.juegoganado("juego5") == true) {
+                textI.text = getString(R.string.I)
+            }
+            if (database.DBdao.juegoganado("juego6") == true) {
+                textE.text = getString(R.string.E)
+            }
+            if (database.DBdao.juegoganado("juego7") == true) {
+                textT.text = getString(R.string.T)
+            }
+        }
         val hitza = view.findViewById<EditText>(R.id.editTextText2)
 
+        val berriz = view.findViewById<Button>(R.id.berriz)
+
+        berriz.setOnClickListener{
+            val builder = AlertDialog.Builder(context)
+            builder.setTitle("KONTUZ!")
+            builder.setMessage("Berriro hasi nahi duzu Zaldibarreko ibiblbidea?")
+
+            builder.setPositiveButton("Sí") { dialog, which ->
+                GlobalScope.launch(Dispatchers.IO) {
+                    database.DBdao.removeletra()
+
+                    val juego1 = DBletrak(juego="juego1", ganado = false)
+                    val juego2 = DBletrak(juego="juego2", ganado = false)
+                    val juego3 = DBletrak(juego="juego3", ganado = false)
+                    val juego4 = DBletrak(juego="juego4", ganado = false)
+                    val juego5 = DBletrak(juego="juego5", ganado = false)
+                    val juego6 = DBletrak(juego="juego6", ganado = false)
+                    val juego7 = DBletrak(juego="juego7", ganado = false)
+
+                        try{
+                            database.DBdao.insertletra(juego1)
+                            database.DBdao.insertletra(juego2)
+                            database.DBdao.insertletra(juego3)
+                            database.DBdao.insertletra(juego4)
+                            database.DBdao.insertletra(juego5)
+                            database.DBdao.insertletra(juego6)
+                            database.DBdao.insertletra(juego7)
+                        } catch (e: Exception) {
+                            e.printStackTrace()
+                        }
+                    if (database.DBdao.juegoganado("juego1") == true) {
+                        textZ.text = getString(R.string.Z)
+                    }o
+                    if (database.DBdao.juegoganado("juego2") == true) {
+                        textL.text = getString(R.string.L)
+                    }
+                    if (database.DBdao.juegoganado("juego3") == true) {
+                        textA.text = getString(R.string.A)
+                    }
+                    if (database.DBdao.juegoganado("juego4") == true) {
+                        textEE.text = getString(R.string.E2)
+                    }
+                    if (database.DBdao.juegoganado("juego5") == true) {
+                        textI.text = getString(R.string.I)
+                    }
+                    if (database.DBdao.juegoganado("juego6") == true) {
+                        textE.text = getString(R.string.E)
+                    }
+                    if (database.DBdao.juegoganado("juego7") == true) {
+                        textT.text = getString(R.string.T)
+                    }
+                    }
+            }
+
+            builder.setNegativeButton("No") { dialog, which ->
+            }
+            val dialog = builder.create()
+            dialog.show()
+        }
         val btnkonprobatu = view.findViewById<Button>(R.id.konprobatu)!!
         btnkonprobatu.setOnClickListener {
             val textoIngresado = hitza.text.toString().toLowerCase()
@@ -72,6 +173,8 @@ class secretword : Fragment() {
     }
 
     companion object {
+        lateinit var database: appdatabase
+            private set
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.

@@ -2,16 +2,21 @@ package com.example.zaldibar_patapol
 
 import android.annotation.SuppressLint
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.room.Room
 
 class laberintojuego : AppCompatActivity() {
 
+    companion object{
+        lateinit var database: appdatabase
+            private set
+    }
 
     private lateinit var berriro: Button
 
@@ -199,6 +204,14 @@ class laberintojuego : AppCompatActivity() {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+
+        database = Room.databaseBuilder(
+            application,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
 
         arriba = findViewById(R.id.arriba)
         abajo = findViewById(R.id.abajo)
@@ -560,6 +573,8 @@ class laberintojuego : AppCompatActivity() {
             } else if (m34.alpha==1f){
                 m34.alpha=0f
                 m35.alpha=1f
+                mediaplayer.start()
+                database.DBdao.juego4pasado()
                 openGameResultFragment()
             }else if (m22.alpha==1f){
                 m22.alpha=0f
