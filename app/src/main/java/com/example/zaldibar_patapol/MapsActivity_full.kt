@@ -260,9 +260,11 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
     }
 
-    private fun openGoogleMapsWithDirections(context: Context) {
-        val destinationLat = 43.169689
-        val destinationLon = -2.546189
+    private fun openGoogleMapsWithDirections(context: Context, selectedMarkerLocation:LatLng) {
+
+        //desglosamos la variable en dos para usar el el url
+        val destinationLat = selectedMarkerLocation.latitude
+        val destinationLon = selectedMarkerLocation.longitude
 
         val gmmIntentUri = Uri.parse("google.navigation:q=$destinationLat,$destinationLon&mode=w")
 
@@ -356,7 +358,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
             transaction.commit()
         } else {
             //Abrir el maps
-            openGoogleMapsWithDirections(this)
+            openGoogleMapsWithDirections(this, selectedMarkerLocation)
         }
 
 
@@ -377,7 +379,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
             transaction.replace(R.id.fragmento, fragment)
             transaction.commit()
         } else {
-            openGoogleMapsWithDirections(this)
+            openGoogleMapsWithDirections(this, selectedMarkerLocation)
         }
 
 
@@ -399,7 +401,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
             transaction.commit()
 
         } else {
-            openGoogleMapsWithDirections(this)
+            openGoogleMapsWithDirections(this, selectedMarkerLocation)
         }
 
     }
@@ -419,7 +421,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
             transaction.commit()
 
         } else {
-            openGoogleMapsWithDirections(this)
+            openGoogleMapsWithDirections(this, selectedMarkerLocation)
         }
 
     }
@@ -439,12 +441,12 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
             transaction.commit()
 
         } else {
-            openGoogleMapsWithDirections(this)
+            openGoogleMapsWithDirections(this, selectedMarkerLocation)
         }
 
     }
     private fun onMarker6Click() {
-        selectedMarkerLocation = LatLng(43.170217, -2.547697)
+        selectedMarkerLocation = LatLng(43.171058, -2.545683)
 
         getCurrentLocation()
 
@@ -459,7 +461,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
             transaction.commit()
 
         } else {
-            openGoogleMapsWithDirections(this)
+            openGoogleMapsWithDirections(this, selectedMarkerLocation)
         }
 
     }
@@ -479,7 +481,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
             transaction.commit()
 
         } else {
-            openGoogleMapsWithDirections(this)
+            openGoogleMapsWithDirections(this, selectedMarkerLocation)
         }
     }
 
