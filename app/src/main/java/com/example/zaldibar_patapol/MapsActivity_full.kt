@@ -159,10 +159,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
 
     }
-    override fun onDestroy() {
-        database.close()
-        super.onDestroy()
-    }
+
     override fun onCerrarFragmento() {
         // Llama a la función de la actividad
         encendermapa()
@@ -504,17 +501,17 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
             .allowMainThreadQueries()
             .build()
 
-        val juego1 = DBletrak(juego="juego1", ganado = false)
-        val juego2 = DBletrak(juego="juego2", ganado = false)
-        val juego3 = DBletrak(juego="juego3", ganado = false)
-        val juego4 = DBletrak(juego="juego4", ganado = false)
-        val juego5 = DBletrak(juego="juego5", ganado = false)
-        val juego6 = DBletrak(juego="juego6", ganado = false)
-        val juego7 = DBletrak(juego="juego7", ganado = false)
+        val juego1 = DBletrak(juego = "juego1", ganado = false)
+        val juego2 = DBletrak(juego = "juego2", ganado = false)
+        val juego3 = DBletrak(juego = "juego3", ganado = false)
+        val juego4 = DBletrak(juego = "juego4", ganado = false)
+        val juego5 = DBletrak(juego = "juego5", ganado = false)
+        val juego6 = DBletrak(juego = "juego6", ganado = false)
+        val juego7 = DBletrak(juego = "juego7", ganado = false)
 
 
         GlobalScope.launch(Dispatchers.IO) {
-            try{
+            try {
                 if (database.DBdao.countletrak() == 0) {
                     database.DBdao.insertletra(juego1)
                     database.DBdao.insertletra(juego2)
@@ -524,11 +521,13 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                     database.DBdao.insertletra(juego6)
                     database.DBdao.insertletra(juego7)
                 }
-        } catch (e: Exception) {
-            e.printStackTrace()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
-        }
+    }
     override fun onDestroy() {
+        database.close()
         super.onDestroy()
         // Detener las actualizaciones de ubicación
         fusedLocationProviderClient.removeLocationUpdates(locationCallback)
