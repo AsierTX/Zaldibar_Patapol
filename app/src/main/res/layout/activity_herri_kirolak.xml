@@ -46,6 +46,7 @@
             android:id="@+id/button8"
             style="@style/ButtonStyle"
             android:text="@string/button_txinga_erute"
+            android:background="@drawable/herrikirolak_buttons"
             android:layout_row="4"
             android:layout_column="1"
             android:layout_columnSpan="1" />
@@ -54,6 +55,7 @@
             android:id="@+id/button5"
             style="@style/ButtonStyle"
             android:text="@string/button_aizkolaritza"
+            android:background="@drawable/herrikirolak_buttons"
             android:layout_row="3"
             android:layout_column="0"
             android:layout_columnSpan="1" />
@@ -62,6 +64,7 @@
             android:id="@+id/button6"
             style="@style/ButtonStyle"
             android:text="@string/button_astoproba"
+            android:background="@drawable/herrikirolak_buttons"
             android:layout_row="3"
             android:layout_column="1"
             android:layout_columnSpan="1" />
@@ -70,6 +73,7 @@
             android:id="@+id/button3"
             style="@style/ButtonStyle"
             android:text="@string/button_segaproba"
+            android:background="@drawable/herrikirolak_buttons"
             android:layout_row="2"
             android:layout_column="0"
             android:layout_columnSpan="1" />
@@ -78,6 +82,7 @@
             android:id="@+id/button4"
             style="@style/ButtonStyle"
             android:text="@string/button_sokatira"
+            android:background="@drawable/herrikirolak_buttons"
             android:layout_row="2"
             android:layout_column="1"
             android:layout_columnSpan="1" />
@@ -87,6 +92,7 @@
             style="@style/ButtonStyle"
             android:layout_marginTop="350dp"
             android:text="@string/button_estroprobak"
+            android:background="@drawable/herrikirolak_buttons"
             android:layout_row="1"
             android:layout_column="0"
             android:layout_columnSpan="1" />
@@ -96,6 +102,7 @@
             style="@style/ButtonStyle"
             android:layout_marginTop="350dp"
             android:text="@string/button_harrijasotze"
+            android:background="@drawable/herrikirolak_buttons"
             android:layout_row="1"
             android:layout_column="1"
             android:layout_columnSpan="1" />
