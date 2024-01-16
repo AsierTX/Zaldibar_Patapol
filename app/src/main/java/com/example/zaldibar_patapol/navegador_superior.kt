@@ -53,17 +53,18 @@ class navegador_superior : Fragment() {
             startActivity(intent)
         }
 
-        imageButton4.setOnClickListener {
-            if (constraintLayoutreal.visibility == View.VISIBLE) {
-                constraintLayoutreal.visibility = View.INVISIBLE
-            } else {
-                constraintLayoutreal.visibility = View.VISIBLE
+        if (requireActivity() is MapsActivity_full) {
+            imageButton4.setOnClickListener {
+                if (constraintLayoutreal.visibility == View.VISIBLE) {
+                    constraintLayoutreal.visibility = View.INVISIBLE
+                } else {
+                    constraintLayoutreal.visibility = View.VISIBLE
+                }
             }
+        } else {
+            // Si no estás en MapsActivity_full, puedes deshabilitar el ImageButton4 o manejarlo de otra manera.
+            imageButton4.isEnabled = false
         }
-
-
-
-
 
         return view
     }

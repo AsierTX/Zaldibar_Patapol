@@ -13,9 +13,7 @@ class HerriKirolak : AppCompatActivity() {
 
     private lateinit var imageView: ImageView
     private lateinit var buttons: List<Button>
-    private lateinit var mediaPlayerAcierto: MediaPlayer
-    private lateinit var mediaPlayerFallo: MediaPlayer
-    private lateinit var mediaPlayerAplausos: MediaPlayer
+    private lateinit var soundService: SoundService
 
     private val imageList = mutableListOf(
         R.drawable.estroprobak,
@@ -57,9 +55,7 @@ class HerriKirolak : AppCompatActivity() {
             findViewById(R.id.button8)
         )
 
-        mediaPlayerAcierto = MediaPlayer.create(this, R.raw.sonido_acierto)
-        mediaPlayerFallo = MediaPlayer.create(this, R.raw.sonido_fallo)
-        mediaPlayerAplausos = MediaPlayer.create(this, R.raw.sonido_aplausos)
+        soundService = SoundService(this)
 
         buttons.forEachIndexed { index, button ->
             button.setOnClickListener { handleButtonClick(index, button) }
@@ -70,7 +66,7 @@ class HerriKirolak : AppCompatActivity() {
 
     private fun showRandomImage() {
         if (shownImages.size == imageList.size) {
-            mediaPlayerAplausos.start()
+            soundService.playAplausosSound()
 
             openGameResultFragment()
             // Aquí puedes realizar las acciones finales del juego, ya que todas las imágenes se han mostrado
@@ -90,12 +86,12 @@ class HerriKirolak : AppCompatActivity() {
 
     private fun handleButtonClick(buttonIndex: Int, button: Button) {
         if (shownImages.contains(buttonIndex)) {
-            mediaPlayerAcierto.start()
+            soundService.playCorrectSound()
             button.alpha = 0.5f // Reduce la opacidad del botón al acertar
             button.isClickable = false // Deshabilita el botón al acertar
             showRandomImage()
         } else {
-            mediaPlayerFallo.start()
+            soundService.playIncorrectSound()
             button.alpha = 0.5f // Reduce la opacidad del botón al fallar
             button.isClickable = false // Deshabilita el botón al fallar
 
@@ -107,12 +103,6 @@ class HerriKirolak : AppCompatActivity() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mediaPlayerAcierto.release()
-        mediaPlayerFallo.release()
-        mediaPlayerAplausos.release()
-    }
 
     private fun openGameResultFragment() {
         val fragmentManager: FragmentManager = supportFragmentManager
