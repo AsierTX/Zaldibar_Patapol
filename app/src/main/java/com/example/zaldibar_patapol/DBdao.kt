@@ -27,6 +27,8 @@ interface DBdao {
     fun getAllDatos(): List<DBentity>
     @Insert
     fun insertletra(entity: DBletrak)
+    @Insert
+    fun insertadmin(entity: DBadmin)
     @Query("SELECT COUNT(*) FROM letrak")
     fun countletrak(): Int?
 
@@ -54,4 +56,10 @@ interface DBdao {
 
     @Query("UPDATE letrak SET ganado=1 WHERE juego='juego7'")
     fun juego7pasado()
+
+    @Query("SELECT activado FROM admin")
+    fun selectactivado():Boolean?
+
+    @Query("UPDATE admin SET activado=1")
+    fun updateactivado()
 }

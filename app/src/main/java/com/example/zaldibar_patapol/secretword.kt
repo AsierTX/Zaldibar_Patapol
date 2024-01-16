@@ -87,7 +87,7 @@ class secretword : Fragment() {
                 textT.text = getString(R.string.T)
             }
         }
-        val hitza = view.findViewById<EditText>(R.id.editTextText2)
+        val hitza = view.findViewById<EditText>(R.id.pasahitza)
 
         val berriz = view.findViewById<Button>(R.id.berriz)
 
@@ -121,7 +121,7 @@ class secretword : Fragment() {
                         }
                     if (database.DBdao.juegoganado("juego1") == true) {
                         textZ.text = getString(R.string.Z)
-                    }o
+                    }
                     if (database.DBdao.juegoganado("juego2") == true) {
                         textL.text = getString(R.string.L)
                     }

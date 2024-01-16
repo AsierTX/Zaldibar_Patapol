@@ -508,7 +508,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         val juego5 = DBletrak(juego = "juego5", ganado = false)
         val juego6 = DBletrak(juego = "juego6", ganado = false)
         val juego7 = DBletrak(juego = "juego7", ganado = false)
-
+        val admin = DBadmin(activado = false)
 
         GlobalScope.launch(Dispatchers.IO) {
             try {
@@ -520,6 +520,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                     database.DBdao.insertletra(juego5)
                     database.DBdao.insertletra(juego6)
                     database.DBdao.insertletra(juego7)
+                    database.DBdao.insertadmin(admin)
                 }
             } catch (e: Exception) {
                 e.printStackTrace()

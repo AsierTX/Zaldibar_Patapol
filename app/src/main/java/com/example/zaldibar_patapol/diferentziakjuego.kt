@@ -8,6 +8,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.room.Room
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class diferentziakjuego : AppCompatActivity() {
 
@@ -30,12 +34,24 @@ class diferentziakjuego : AppCompatActivity() {
 
     private var countaurkituta = 0
 
+    companion object{
+        lateinit var database: appdatabase
+            private set
+    }
 
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diferentziakjuego)
+
+        database = Room.databaseBuilder(
+            application,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
 
         try {
             val fragment = navegador_superior()
@@ -166,6 +182,9 @@ class diferentziakjuego : AppCompatActivity() {
         }
         if (countaurkituta==6){
            mediaplayer.start()
+            GlobalScope.launch(Dispatchers.IO) {
+                database.DBdao.juego3pasado()
+            }
             openGameResultFragment()
         }
 
@@ -175,6 +194,9 @@ class diferentziakjuego : AppCompatActivity() {
         aurkituta.text = "AURKITUTA: $countaurkituta"
         if (countaurkituta==6){
             mediaplayer.start()
+            GlobalScope.launch(Dispatchers.IO) {
+                database.DBdao.juego7pasado()
+            }
             openGameResultFragment()
         }
     }

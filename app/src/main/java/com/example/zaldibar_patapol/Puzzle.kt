@@ -1,14 +1,16 @@
 package com.example.zaldibar_patapol
 
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.room.Room
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class puzzle : AppCompatActivity() {
 
@@ -48,10 +50,21 @@ class puzzle : AppCompatActivity() {
     private lateinit var mediaPlayererror: MediaPlayer
     private lateinit var mediaPlayeraplausos: MediaPlayer
 
-
+    companion object{
+        lateinit var database: appdatabase
+            private set
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_puzzle)
+
+        database = Room.databaseBuilder(
+            application,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
 
         try {
             val fragment = navegador_superior()
@@ -210,6 +223,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -412,6 +428,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -607,6 +626,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -802,6 +824,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -996,6 +1021,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -1191,6 +1219,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -1386,6 +1417,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -1580,6 +1614,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -1775,6 +1812,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -1968,6 +2008,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -2162,6 +2205,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -2355,6 +2401,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -2547,6 +2596,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -2740,6 +2792,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -2934,6 +2989,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -3110,6 +3168,9 @@ class puzzle : AppCompatActivity() {
                 }
                 if (c1.alpha==0f && c2.alpha==0f && c3.alpha==0f && c4.alpha==0f && c5.alpha==0f && c6.alpha==0f && c7.alpha==0f && c8.alpha==0f && c9.alpha==0f && c10.alpha==0f && c11.alpha==0f && c12.alpha==0f && c13.alpha==0f && c14.alpha==0f && c15.alpha==0f && c16.alpha==0f){
                     mediaPlayeraplausos.start()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego5pasado()
+                    }
                     openGameResultFragment()
                 }
             }

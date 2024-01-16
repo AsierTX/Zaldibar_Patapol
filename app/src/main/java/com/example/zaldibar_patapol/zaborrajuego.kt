@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.room.Room
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class zaborrajuego : AppCompatActivity() {
 
@@ -135,7 +138,9 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
-                    database.DBdao.juego6pasado()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego6pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -212,7 +217,9 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
-                    database.DBdao.juego6pasado()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego6pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -289,7 +296,9 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
-                    database.DBdao.juego6pasado()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego6pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -374,7 +383,9 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
-                    database.DBdao.juego6pasado()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego6pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -451,7 +462,9 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
-                    database.DBdao.juego6pasado()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego6pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -528,7 +541,9 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
-                    database.DBdao.juego6pasado()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego6pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -602,7 +617,9 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
-                    database.DBdao.juego6pasado()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego6pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -679,7 +696,9 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
-                    database.DBdao.juego6pasado()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego6pasado()
+                    }
                     openGameResultFragment()
                 }
             }
@@ -756,7 +775,9 @@ class zaborrajuego : AppCompatActivity() {
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
                     (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
-                    database.DBdao.juego6pasado()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego6pasado()
+                    }
                     openGameResultFragment()
                 }
             }

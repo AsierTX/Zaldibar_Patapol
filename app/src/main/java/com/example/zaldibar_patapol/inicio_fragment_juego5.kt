@@ -2,17 +2,18 @@ package com.example.zaldibar_patapol
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.fragment.app.Fragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+private lateinit var soundService: SoundService
 
 /**
  * A simple [Fragment] subclass.
@@ -65,7 +66,8 @@ class inicio_fragment_juego5 : Fragment() {
             requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
             cargarjuego()
         }
-
+        soundService = SoundService(requireContext().applicationContext)
+        soundService.playF5audio()
         return view
 
     }
