@@ -82,10 +82,7 @@ class navegador_superior : Fragment() {
                 constraintLayoutreal.visibility = View.VISIBLE
                 constraintLayoutreal.isClickable = true
             }
-        } else {
-            // Si no estás en MapsActivity_full, puedes deshabilitar el ImageButton4 o manejarlo de otra manera.
-            imageButton4.isEnabled = false
-        }
+        } 
         salirbtn.setOnClickListener{
             constraintLayoutreal.visibility = View.INVISIBLE
             constraintLayoutreal.isClickable = false
