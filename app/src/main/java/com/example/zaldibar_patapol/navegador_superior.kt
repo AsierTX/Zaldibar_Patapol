@@ -82,7 +82,7 @@ class navegador_superior : Fragment() {
                 constraintLayoutreal.visibility = View.VISIBLE
                 constraintLayoutreal.isClickable = true
             }
-        } 
+        }
         salirbtn.setOnClickListener{
             constraintLayoutreal.visibility = View.INVISIBLE
             constraintLayoutreal.isClickable = false
