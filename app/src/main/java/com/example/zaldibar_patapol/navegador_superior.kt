@@ -1,13 +1,21 @@
 package com.example.zaldibar_patapol
 
+import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.Fragment
+import androidx.room.Room
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,6 +40,7 @@ class navegador_superior : Fragment() {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,9 +52,21 @@ class navegador_superior : Fragment() {
         val imageButton3: ImageButton = view.findViewById(R.id.imageButton3)
         val imageButton4: ImageButton = view.findViewById(R.id.imageButton4)
         val constraintLayoutreal: ConstraintLayout = view.findViewById(R.id.constraintLayoutreal)
+        val textpasahitza: EditText = view.findViewById(R.id.textpasahitza)
+        val salirbtn: ImageButton = view.findViewById(R.id.salirbtn)
+        val sartubtn: Button = view.findViewById(R.id.sartubtn)
+        val aterabtn: Button = view.findViewById(R.id.aterabtn)
+
 
         constraintLayoutreal.visibility = View.INVISIBLE
-        
+
+        database = Room.databaseBuilder(
+            requireContext().applicationContext,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
 
 
         imageButton3.setOnClickListener {
@@ -53,23 +74,57 @@ class navegador_superior : Fragment() {
             startActivity(intent)
         }
 
-        if (requireActivity() is MapsActivity_full) {
-            imageButton4.setOnClickListener {
-                if (constraintLayoutreal.visibility == View.VISIBLE) {
-                    constraintLayoutreal.visibility = View.INVISIBLE
-                } else {
-                    constraintLayoutreal.visibility = View.VISIBLE
-                }
+        imageButton4.setOnClickListener {
+            if (constraintLayoutreal.visibility == View.VISIBLE) {
+                constraintLayoutreal.visibility = View.INVISIBLE
+                constraintLayoutreal.isClickable = false
+            } else {
+                constraintLayoutreal.visibility = View.VISIBLE
+                constraintLayoutreal.isClickable = true
             }
         } else {
             // Si no estás en MapsActivity_full, puedes deshabilitar el ImageButton4 o manejarlo de otra manera.
             imageButton4.isEnabled = false
         }
+        salirbtn.setOnClickListener{
+            constraintLayoutreal.visibility = View.INVISIBLE
+            constraintLayoutreal.isClickable = false
+        }
+        sartubtn.setOnClickListener{
+            if (textpasahitza.text.toString() == getString(R.string.contraseña)){
+                GlobalScope.launch(Dispatchers.IO) {
+                    database.DBdao.updateactivado()
+                }
+                constraintLayoutreal.visibility = View.INVISIBLE
+                constraintLayoutreal.isClickable = false
+            }else{
+                dialog()
+            }
+        }
+        aterabtn.setOnClickListener{
+            val builder = AlertDialog.Builder(context)
+            builder.setTitle("MODU LIBREA")
+            builder.setMessage("Modu librea desaktibatu nahi duzu?")
 
+            builder.setPositiveButton("Bai") { dialog, which ->
+                GlobalScope.launch(Dispatchers.IO) {
+                    database.DBdao.updatedesactivado()
+                }
+                constraintLayoutreal.visibility = View.INVISIBLE
+                constraintLayoutreal.isClickable = false
+            }
+
+            builder.setNegativeButton("Ez") { dialog, which ->
+            }
+            val dialog = builder.create()
+            dialog.show()
+        }
         return view
     }
 
     companion object {
+        lateinit var database: appdatabase
+            private set
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
@@ -87,5 +142,16 @@ class navegador_superior : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+    private fun dialog() {
+        val builder = AlertDialog.Builder(context)
+
+        builder.setTitle("ERROR")
+            .setMessage("Pasahitza ez da zuzena!")
+            .setPositiveButton("Jarraitu") { dialog, which ->
+            }
+
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }

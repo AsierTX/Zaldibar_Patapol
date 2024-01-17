@@ -157,7 +157,6 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
             }
         }
 
-
     }
 
     override fun onCerrarFragmento() {
@@ -353,21 +352,27 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
         // Calcular la distancia entre la ubicación actual y la del marcador
         val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
-
-        // Verificar si la distancia es menor o igual al radio
-        if (distance <= radiusInMeters) {
-            // Si estás dentro del radio, ejecutar la función específica
-            apagarmapa()
-            val fragment = inicio_fragment_juego2()
+        if (database.DBdao.selectactivado()==true){
+            val fragment = inicio_fragment_juego1()
             fragment.setOnFragmentInteractionListener(this)
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmento, fragment)
             transaction.commit()
-        } else {
-            //Abrir el maps
-            openGoogleMapsWithDirections(this, selectedMarkerLocation)
+        }else {
+            // Verificar si la distancia es menor o igual al radio
+            if (distance <= radiusInMeters) {
+                // Si estás dentro del radio, ejecutar la función específica
+                apagarmapa()
+                val fragment = inicio_fragment_juego2()
+                fragment.setOnFragmentInteractionListener(this)
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragmento, fragment)
+                transaction.commit()
+            } else {
+                //Abrir el maps
+                openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            }
         }
-
 
     }
 
@@ -378,17 +383,24 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
         val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
 
-        if (distance <= radiusInMeters) {
-            apagarmapa()
+        if (database.DBdao.selectactivado()==true){
             val fragment = inicio_fragment_juego2()
             fragment.setOnFragmentInteractionListener(this)
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmento, fragment)
             transaction.commit()
-        } else {
-            openGoogleMapsWithDirections(this, selectedMarkerLocation)
+        }else {
+            if (distance <= radiusInMeters) {
+                apagarmapa()
+                val fragment = inicio_fragment_juego2()
+                fragment.setOnFragmentInteractionListener(this)
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragmento, fragment)
+                transaction.commit()
+            } else {
+                openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            }
         }
-
 
     }
 
@@ -399,16 +411,24 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
         val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
 
-        if (distance <= radiusInMeters) {
-            apagarmapa()
+        if (database.DBdao.selectactivado()==true){
             val fragment = inicio_fragment_juego3()
             fragment.setOnFragmentInteractionListener(this)
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmento, fragment)
             transaction.commit()
+        }else {
+            if (distance <= radiusInMeters) {
+                apagarmapa()
+                val fragment = inicio_fragment_juego3()
+                fragment.setOnFragmentInteractionListener(this)
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragmento, fragment)
+                transaction.commit()
 
-        } else {
-            openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            } else {
+                openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            }
         }
 
     }
@@ -419,18 +439,25 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
         val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
 
-        if (distance <= radiusInMeters) {
-            apagarmapa()
+        if (database.DBdao.selectactivado()==true){
             val fragment = inicio_fragment_juego4()
             fragment.setOnFragmentInteractionListener(this)
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmento, fragment)
             transaction.commit()
+        }else {
+            if (distance <= radiusInMeters) {
+                apagarmapa()
+                val fragment = inicio_fragment_juego4()
+                fragment.setOnFragmentInteractionListener(this)
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragmento, fragment)
+                transaction.commit()
 
-        } else {
-            openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            } else {
+                openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            }
         }
-
     }
     private fun onMarker5Click() {
         selectedMarkerLocation = LatLng(43.168128, -2.545681)
@@ -438,19 +465,25 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         getCurrentLocation()
 
         val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
-
-        if (distance <= radiusInMeters) {
-            apagarmapa()
+        if (database.DBdao.selectactivado()==true){
             val fragment = inicio_fragment_juego5()
             fragment.setOnFragmentInteractionListener(this)
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmento, fragment)
             transaction.commit()
+        }else {
+            if (distance <= radiusInMeters) {
+                apagarmapa()
+                val fragment = inicio_fragment_juego5()
+                fragment.setOnFragmentInteractionListener(this)
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragmento, fragment)
+                transaction.commit()
 
-        } else {
-            openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            } else {
+                openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            }
         }
-
     }
     private fun onMarker6Click() {
         selectedMarkerLocation = LatLng(43.171058, -2.545683)
@@ -459,18 +492,25 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
 
         val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
 
-        if (distance <= radiusInMeters) {
-            apagarmapa()
+        if (database.DBdao.selectactivado()==true){
             val fragment = inicio_fragment_juego6()
             fragment.setOnFragmentInteractionListener(this)
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmento, fragment)
             transaction.commit()
+        }else {
+            if (distance <= radiusInMeters) {
+                apagarmapa()
+                val fragment = inicio_fragment_juego6()
+                fragment.setOnFragmentInteractionListener(this)
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragmento, fragment)
+                transaction.commit()
 
-        } else {
-            openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            } else {
+                openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            }
         }
-
     }
     private fun onMarker7Click() {
         selectedMarkerLocation = LatLng(43.170783, -2.545906)
@@ -478,17 +518,24 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         getCurrentLocation()
 
         val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
-
-        if (distance <= radiusInMeters) {
-            apagarmapa()
+        if (database.DBdao.selectactivado()==true){
             val fragment = inicio_fragment_juego7()
             fragment.setOnFragmentInteractionListener(this)
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmento, fragment)
             transaction.commit()
+        }else {
+            if (distance <= radiusInMeters) {
+                apagarmapa()
+                val fragment = inicio_fragment_juego7()
+                fragment.setOnFragmentInteractionListener(this)
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragmento, fragment)
+                transaction.commit()
 
-        } else {
-            openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            } else {
+                openGoogleMapsWithDirections(this, selectedMarkerLocation)
+            }
         }
     }
 
@@ -528,7 +575,6 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         }
     }
     override fun onDestroy() {
-        database.close()
         super.onDestroy()
         // Detener las actualizaciones de ubicación
         fusedLocationProviderClient.removeLocationUpdates(locationCallback)

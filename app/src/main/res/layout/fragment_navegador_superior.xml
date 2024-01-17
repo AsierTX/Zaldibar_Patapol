@@ -61,14 +61,29 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
-                android:layout_width="297dp"
-                android:layout_height="58dp"
-                android:background="@drawable/texto_fragments_borde"
+                android:layout_width="357dp"
+                android:layout_height="65dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.039">
+
+                <ImageButton
+                    android:id="@+id/salirbtn"
+                    android:layout_width="48dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/texto_fragments_borde"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@android:drawable/ic_delete"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.984"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.333"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -80,9 +95,10 @@
                     android:textSize="25dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.08"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.48" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -115,20 +131,36 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <Button
-                android:id="@+id/iniciar_activity"
+                android:id="@+id/sartubtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="@color/colorVerde"
                 android:text="@string/sartu"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.275"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.851" />
+
+            <Button
+                android:id="@+id/aterabtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/rojo"
+                android:text="@string/atera"
                 android:textColor="#000000"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.714"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.836" />
+                app:layout_constraintVertical_bias="0.851" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="379dp"
@@ -140,21 +172,20 @@
                 app:layout_constraintVertical_bias="0.615">
 
                 <EditText
-                    android:id="@+id/pasahitza"
-                    android:layout_width="244dp"
-                    android:layout_height="42dp"
-                    android:background="@drawable/bordestext"
-                    android:textColor="@color/white"
+                    android:id="@+id/textpasahitza"
+                    android:layout_width="276dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/texto_fragments_borde"
                     android:ems="10"
-                    android:hint="Pasahitza"
-                    android:textColorHint="@color/white"
-                    android:inputType="text"
+                    android:hint="@string/pasahitza"
+                    android:inputType="textPassword"
                     android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

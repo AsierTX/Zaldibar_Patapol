@@ -62,4 +62,7 @@ interface DBdao {
 
     @Query("UPDATE admin SET activado=1")
     fun updateactivado()
+
+    @Query("UPDATE admin SET activado=0")
+    fun updatedesactivado()
 }

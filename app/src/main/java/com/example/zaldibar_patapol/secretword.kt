@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.room.Room
@@ -21,6 +22,7 @@ import kotlinx.coroutines.launch
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+
 /**
  * A simple [Fragment] subclass.
  * Use the [secretword.newInstance] factory method to
@@ -31,6 +33,7 @@ class secretword : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -39,7 +42,7 @@ class secretword : Fragment() {
         }
     }
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -87,6 +90,13 @@ class secretword : Fragment() {
                 textT.text = getString(R.string.T)
             }
         }
+
+        val btnsalir = view.findViewById<ImageButton>(R.id.btnsalir2)!!
+
+        btnsalir.setOnClickListener{
+            val fragmentManager = requireActivity().supportFragmentManager
+            fragmentManager.beginTransaction().remove(this@secretword).commit()
+        }
         val hitza = view.findViewById<EditText>(R.id.pasahitza)
 
         val berriz = view.findViewById<Button>(R.id.berriz)
@@ -96,7 +106,7 @@ class secretword : Fragment() {
             builder.setTitle("KONTUZ!")
             builder.setMessage("Berriro hasi nahi duzu Zaldibarreko ibiblbidea?")
 
-            builder.setPositiveButton("Sí") { dialog, which ->
+            builder.setPositiveButton("Bai") { dialog, which ->
                 GlobalScope.launch(Dispatchers.IO) {
                     database.DBdao.removeletra()
 
@@ -143,7 +153,7 @@ class secretword : Fragment() {
                     }
             }
 
-            builder.setNegativeButton("No") { dialog, which ->
+            builder.setNegativeButton("Ez") { dialog, which ->
             }
             val dialog = builder.create()
             dialog.show()
@@ -207,4 +217,5 @@ class secretword : Fragment() {
     fun setOnFragmentInteractionListener(mapsactivityFull: MapsActivity_full) {
         TODO("Not yet implemented")
     }
+
 }

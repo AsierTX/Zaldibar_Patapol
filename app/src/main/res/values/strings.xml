@@ -43,6 +43,7 @@ Gertatu zenaren ondorioz manifestazioak, protestak… egiten hastetik abestiak e
     <string name="previous">Previous</string>
 
     <string name="sartu">Sartu</string>
+    <string name="atera">Atera</string>
     <string name="libre">Modu askea aktibatu!</string>
     <string name="librepas">Sartu pasahitza modu askean sartzeko:</string>
 
@@ -120,6 +121,10 @@ Gertatu zenaren ondorioz manifestazioak, protestak… egiten hastetik abestiak e
     <string name="button_estroprobak">Estroprobak</string>
     <string name="button_harrijasotze">Harrijasotze</string>
 
-    <string name="contraseña">1234</string>
+    <string name="sekretua">Hitz sekretua</string>
+
+    <string name="pasahitza">Pasahitza</string>
+
+    <string name="contraseña">1221</string>
 
 </resources>
