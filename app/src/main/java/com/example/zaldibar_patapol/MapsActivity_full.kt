@@ -12,7 +12,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -157,17 +156,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                 e.printStackTrace()
             }
         }
-        if (database.DBdao.selectactivado()==true) {
 
-            val builder = AlertDialog.Builder(this)
-
-            builder.setTitle("MODU LIBREA")
-                .setMessage("Modu librea aktibatuta!")
-                .setPositiveButton("Jarraitu") { dialog, which ->
-                }
-            val dialog: AlertDialog = builder.create()
-            dialog.show()
-        }
     }
 
     override fun onCerrarFragmento() {

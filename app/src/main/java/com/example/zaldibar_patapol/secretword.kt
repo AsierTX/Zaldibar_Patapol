@@ -106,7 +106,7 @@ class secretword : Fragment() {
             builder.setTitle("KONTUZ!")
             builder.setMessage("Berriro hasi nahi duzu Zaldibarreko ibiblbidea?")
 
-            builder.setPositiveButton("Sí") { dialog, which ->
+            builder.setPositiveButton("Bai") { dialog, which ->
                 GlobalScope.launch(Dispatchers.IO) {
                     database.DBdao.removeletra()
 
@@ -153,7 +153,7 @@ class secretword : Fragment() {
                     }
             }
 
-            builder.setNegativeButton("No") { dialog, which ->
+            builder.setNegativeButton("Ez") { dialog, which ->
             }
             val dialog = builder.create()
             dialog.show()

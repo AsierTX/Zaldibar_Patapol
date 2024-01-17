@@ -92,22 +92,26 @@ class navegador_superior : Fragment() {
                 GlobalScope.launch(Dispatchers.IO) {
                     database.DBdao.updateactivado()
                 }
+                constraintLayoutreal.visibility = View.INVISIBLE
+                constraintLayoutreal.isClickable = false
             }else{
                 dialog()
             }
         }
         aterabtn.setOnClickListener{
             val builder = AlertDialog.Builder(context)
-            builder.setTitle("KONTUZ!")
-            builder.setMessage("Berriro hasi nahi duzu Zaldibarreko ibiblbidea?")
+            builder.setTitle("MODU LIBREA")
+            builder.setMessage("Modu librea desaktibatu nahi duzu?")
 
-            builder.setPositiveButton("Sí") { dialog, which ->
+            builder.setPositiveButton("Bai") { dialog, which ->
                 GlobalScope.launch(Dispatchers.IO) {
                     database.DBdao.updatedesactivado()
                 }
+                constraintLayoutreal.visibility = View.INVISIBLE
+                constraintLayoutreal.isClickable = false
             }
 
-            builder.setNegativeButton("No") { dialog, which ->
+            builder.setNegativeButton("Ez") { dialog, which ->
             }
             val dialog = builder.create()
             dialog.show()
