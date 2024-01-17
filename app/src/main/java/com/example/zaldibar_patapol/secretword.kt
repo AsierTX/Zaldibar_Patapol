@@ -129,27 +129,13 @@ class secretword : Fragment() {
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
-                    if (database.DBdao.juegoganado("juego1") == true) {
-                        textZ.text = getString(R.string.Z)
-                    }
-                    if (database.DBdao.juegoganado("juego2") == true) {
-                        textL.text = getString(R.string.L)
-                    }
-                    if (database.DBdao.juegoganado("juego3") == true) {
-                        textA.text = getString(R.string.A)
-                    }
-                    if (database.DBdao.juegoganado("juego4") == true) {
-                        textEE.text = getString(R.string.E2)
-                    }
-                    if (database.DBdao.juegoganado("juego5") == true) {
-                        textI.text = getString(R.string.I)
-                    }
-                    if (database.DBdao.juegoganado("juego6") == true) {
-                        textE.text = getString(R.string.E)
-                    }
-                    if (database.DBdao.juegoganado("juego7") == true) {
-                        textT.text = getString(R.string.T)
-                    }
+                    textE.text = getString(R.string.X)
+                    textL.text = getString(R.string.X)
+                    textI.text = getString(R.string.X)
+                    textZ.text = getString(R.string.X)
+                    textA.text = getString(R.string.X)
+                    textT.text = getString(R.string.X)
+                    textEE.text = getString(R.string.X)
                     }
             }
 
