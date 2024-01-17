@@ -8,8 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.room.Room
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,12 +60,19 @@ class modulibrea_fragment : Fragment() {
         sartu = view.findViewById<Button>(R.id.iniciar_activity)!!
         sartu.setOnClickListener {
             if (contraseña.text.toString() == getString(R.id.pasahitza)){
-                database.DBdao.updateactivado()
+                GlobalScope.launch(Dispatchers.IO) {
+                    database.DBdao.updateactivado()
+                }
             }else{
                 dialog()
             }
         }
+        val btnsalir = view.findViewById<ImageButton>(R.id.btnsalir2)!!
 
+        btnsalir.setOnClickListener{
+            val fragmentManager = requireActivity().supportFragmentManager
+            fragmentManager.beginTransaction().remove(this@modulibrea_fragment).commit()
+        }
         return view
     }
 
