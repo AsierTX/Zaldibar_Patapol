@@ -71,6 +71,7 @@ class inicio_fragment_juego1 : Fragment() {
         val btnjuego = view.findViewById<Button>(R.id.iniciar_activity)!!
         btnjuego.setOnClickListener {
 
+            soundService.stopMediaPlayer()
             //llamamos a la funcion para enlazar el fragment con el activiy
             mListener?.onCerrarFragmento()
 

@@ -59,6 +59,9 @@ class inicio_fragment_juego7 : Fragment() {
         }
         val iniciaractivity = view.findViewById<Button>(R.id.iniciar_activity)
         iniciaractivity.setOnClickListener{
+
+            soundService.stopMediaPlayer()
+
             mListener?.onCerrarFragmento()
 
             // Cierra el fragmento

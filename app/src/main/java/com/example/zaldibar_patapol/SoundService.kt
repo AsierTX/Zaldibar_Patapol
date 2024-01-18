@@ -61,7 +61,7 @@ class SoundService(private val context: Context) {
         mediaPlayer?.start()
     }
 
-    private fun stopMediaPlayer() {
+    fun stopMediaPlayer() {
         mediaPlayer?.let {
             if (it.isPlaying) {
                 it.stop()
