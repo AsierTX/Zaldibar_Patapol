@@ -22,6 +22,9 @@
         android:theme="@style/Theme.Zaldibar_Patapol"
         tools:targetApi="31">
         <activity
+            android:name=".juegos_superados"
+            android:exported="false" />
+        <activity
             android:name=".SanMartinJokua"
             android:exported="false" />
         <activity

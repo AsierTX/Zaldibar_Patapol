@@ -8,13 +8,25 @@
     tools:context=".navtemporal">
 
     <Button
+        android:id="@+id/finaltext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="finaltext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
         android:id="@+id/juego1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Juego1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintHorizontal_bias="0.688"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25" />
@@ -113,6 +125,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
