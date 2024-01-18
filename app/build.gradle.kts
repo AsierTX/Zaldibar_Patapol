@@ -57,4 +57,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("androidx.room:room-runtime:2.3.0")
     kapt ("androidx.room:room-compiler:2.3.0")
+
+    implementation ("io.socket:socket.io-client:2.0.0")
 }

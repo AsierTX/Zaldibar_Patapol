@@ -15,6 +15,7 @@ class navtemporal : AppCompatActivity() {
     private lateinit var juego3: Button
     private lateinit var juego5: Button
     private lateinit var juego1: Button
+    private lateinit var finaltext: Button
 
 
 
@@ -22,6 +23,14 @@ class navtemporal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navtemporal)
+
+
+        finaltext = findViewById(R.id.finaltext)
+
+        finaltext.setOnClickListener{
+            val intentjuego = Intent(this, juegos_superados::class.java)
+            startActivity(intentjuego)
+        }
 
         juegozaborra = findViewById(R.id.juego6)
 
