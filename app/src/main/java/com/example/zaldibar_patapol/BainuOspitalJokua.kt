@@ -16,7 +16,6 @@ class BainuOspitalJokua : AppCompatActivity() {
     private var lastClickedImageView1: ImageView? = null
     private var lastClickedImageView2: ImageView? = null
     private lateinit var soundService: SoundService
-    private var isclicking = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,8 +91,7 @@ class BainuOspitalJokua : AppCompatActivity() {
         // Verificar si las dos últimas ImageViews clicadas tienen el mismo tag
         if (lastClickedImageView1 != null && lastClickedImageView2 == null) {
             lastClickedImageView2 = imageView
-            if (lastClickedImageView1?.tag == lastClickedImageView2?.tag && !isclicking) {
-                isclicking = true
+            if (lastClickedImageView1?.tag == lastClickedImageView2?.tag) {
                 // Las dos ImageViews tienen el mismo tag, por lo que las dejamos sin el ColorFilter y las desactivamos
                 lastClickedImageView1?.isClickable = false
                 lastClickedImageView2?.isClickable = false
@@ -102,7 +100,7 @@ class BainuOspitalJokua : AppCompatActivity() {
 
                 // Reproducir el sonido de correcto
                 soundService.playCorrectSound()
-            } else  if (isclicking) {
+            } else {
                 // Las dos ImageViews no tienen el mismo tag, por lo que volvemos a aplicar el ColorFilter después de 0.05 segundos
                 scope.launch {
                     delay(50) // Retrasar 0.05 segundos
@@ -110,7 +108,7 @@ class BainuOspitalJokua : AppCompatActivity() {
                     lastClickedImageView2?.setColorFilter(resources.getColor(android.R.color.black))
                     lastClickedImageView1 = null
                     lastClickedImageView2 = null
-                    isclicking = false
+
                 }
 
                 // Mostrar un Toast indicando que el par no es el mismo
