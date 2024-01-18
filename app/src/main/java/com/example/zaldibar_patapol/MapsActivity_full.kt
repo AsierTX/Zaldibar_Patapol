@@ -370,7 +370,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                     if (distance <= radiusInMeters) {
                         // Si estás dentro del radio, ejecutar la función específica
                         apagarmapa()
-                        val fragment = inicio_fragment_juego2()
+                        val fragment = inicio_fragment_juego1()
                         fragment.setOnFragmentInteractionListener(this)
                         val transaction = supportFragmentManager.beginTransaction()
                         transaction.replace(R.id.fragmento, fragment)
