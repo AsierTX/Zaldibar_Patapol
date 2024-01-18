@@ -13,8 +13,10 @@ class BainuOspitalJokua : AppCompatActivity() {
 
     private lateinit var imageLoaderService: ImageLoaderService
     private val scope = CoroutineScope(Dispatchers.Main)
-    private var lastClickedImageViews: Pair<ImageView?, ImageView?> = Pair(null, null)
+    private var lastClickedImageView1: ImageView? = null
+    private var lastClickedImageView2: ImageView? = null
     private lateinit var soundService: SoundService
+    private var isclicking = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,47 +61,56 @@ class BainuOspitalJokua : AppCompatActivity() {
             val pairImageViews = shuffledImageViews.slice(i * 2 until i * 2 + 2)
             val tag = "Pair${i + 1}"
             imageLoaderService.loadImage(imageResIds[i], pairImageViews, tag)
+        }
 
-            // Cambiar el color de la ImageView a negro con una animación
-            scope.launch {
-                delay(3000) // Retrasar 3 segundos
-                val animation = AnimationUtils.loadAnimation(this@BainuOspitalJokua, R.anim.fade_out)
-                pairImageViews.forEach { imageView ->
-                    imageView.startAnimation(animation)
-                    imageView.setColorFilter(resources.getColor(android.R.color.black))
+        // Cambiar el color de la ImageView a negro con una animación
+        scope.launch {
+            delay(3000) // Retrasar 3 segundos
+            val animation = AnimationUtils.loadAnimation(this@BainuOspitalJokua, R.anim.fade_out)
+            shuffledImageViews.forEach { imageView ->
+                imageView.startAnimation(animation)
+                imageView.setColorFilter(resources.getColor(android.R.color.black))
 
-                    // Establecer un OnClickListener para cada ImageView
-                    imageView.setOnClickListener {
-                        handleImageViewClick(imageView)
-                    }
+                // Establecer un OnClickListener para cada ImageView
+                imageView.setOnClickListener {
+                    handleImageViewClick(imageView)
                 }
             }
         }
     }
 
     private fun handleImageViewClick(imageView: ImageView) {
+        // Check if the clicked ImageView is already selected
+        if (imageView == lastClickedImageView1 || imageView == lastClickedImageView2) {
+            return  // Ignore the click if it's the same ImageView
+        }
+
         // Quitar el ColorFilter de la ImageView clicada
         imageView.clearColorFilter()
         soundService = SoundService(this)
 
         // Verificar si las dos últimas ImageViews clicadas tienen el mismo tag
-        if (lastClickedImageViews.first != null && lastClickedImageViews.second == null) {
-            lastClickedImageViews = Pair(lastClickedImageViews.first, imageView)
-            if (lastClickedImageViews.first?.tag == lastClickedImageViews.second?.tag) {
+        if (lastClickedImageView1 != null && lastClickedImageView2 == null) {
+            lastClickedImageView2 = imageView
+            if (lastClickedImageView1?.tag == lastClickedImageView2?.tag && !isclicking) {
+                isclicking = true
                 // Las dos ImageViews tienen el mismo tag, por lo que las dejamos sin el ColorFilter y las desactivamos
-                lastClickedImageViews.first?.isClickable = false
-                lastClickedImageViews.second?.isClickable = false
-                lastClickedImageViews = Pair(null, null)
+                lastClickedImageView1?.isClickable = false
+                lastClickedImageView2?.isClickable = false
+                lastClickedImageView1 = null
+                lastClickedImageView2 = null
 
                 // Reproducir el sonido de correcto
                 soundService.playCorrectSound()
-            } else {
-                // Las dos ImageViews no tienen el mismo tag, por lo que volvemos a aplicar el ColorFilter después de un segundo
+            } else  if (isclicking) {
+                // Las dos ImageViews no tienen el mismo tag, por lo que volvemos a aplicar el ColorFilter después de 0.05 segundos
                 scope.launch {
-                    delay(1000) // Retrasar 1 segundo
-                    lastClickedImageViews.first?.setColorFilter(resources.getColor(android.R.color.black))
-                    lastClickedImageViews.second?.setColorFilter(resources.getColor(android.R.color.black))
-                    lastClickedImageViews = Pair(null, null)
+                    delay(50) // Retrasar 0.05 segundos
+                    lastClickedImageView1?.setColorFilter(resources.getColor(android.R.color.black))
+                    lastClickedImageView2?.setColorFilter(resources.getColor(android.R.color.black))
+                    lastClickedImageView1 = null
+                    lastClickedImageView2 = null
+                    isclicking = false
                 }
 
                 // Mostrar un Toast indicando que el par no es el mismo
@@ -108,8 +119,8 @@ class BainuOspitalJokua : AppCompatActivity() {
                 // Reproducir el sonido de incorrecto
                 soundService.playIncorrectSound()
             }
-        } else if (lastClickedImageViews.first == null) {
-            lastClickedImageViews = Pair(imageView, null)
+        } else if (lastClickedImageView1 == null) {
+            lastClickedImageView1 = imageView
         }
     }
 
