@@ -2265,6 +2265,19 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView4"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/ibExit"
+            android:layout_width="45dp"
+            android:layout_height="37dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.038"
+            app:srcCompat="@drawable/punto" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout

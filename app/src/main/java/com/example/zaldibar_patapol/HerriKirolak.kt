@@ -1,9 +1,14 @@
 package com.example.zaldibar_patapol
 
+<<<<<<< Updated upstream
 import android.graphics.Color
+=======
+import android.content.Intent
+>>>>>>> Stashed changes
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
@@ -36,6 +41,32 @@ class HerriKirolak : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_herri_kirolak)
 
+<<<<<<< Updated upstream
+=======
+        val exit = findViewById<ImageButton>(R.id.ibExit)
+        exit.setOnClickListener() {
+            val intent = Intent(this, MapsActivity_full::class.java)
+            startActivity(intent)
+        }
+
+        database = Room.databaseBuilder(
+            application,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
+
+        try {
+            val fragment = navegador_superior()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmento2, fragment)
+            transaction.commit()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+>>>>>>> Stashed changes
         imageView = findViewById(R.id.imageView)
         buttons = listOf(
             findViewById(R.id.button1),
