@@ -63,7 +63,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     private var fragmentoVisible = false
 
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
-    private lateinit var myCurrentLocation: LatLng
+    private var myCurrentLocation: LatLng = LatLng(43.169689, -2.546189)
     private lateinit var selectedMarkerLocation: LatLng
     private val radiusInMeters = 30
 
@@ -345,14 +345,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     }
 
     private fun onMarker1Click() {
-        // Almacenar la ubicación del marcador seleccionado (en este caso, el marcador 1)
-        selectedMarkerLocation = LatLng(43.169689, -2.546189) // Coordenadas del marcador 1
 
-        // Obtener la ubicación actual
-        getCurrentLocation()
-
-        // Calcular la distancia entre la ubicación actual y la del marcador
-        val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
 
         // Realizar la consulta a la base de datos en un hilo secundario
         AsyncTask.execute {
@@ -366,6 +359,14 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                     transaction.replace(R.id.fragmento, fragment)
                     transaction.commit()
                 } else {
+                    // Almacenar la ubicación del marcador seleccionado (en este caso, el marcador 1)
+                    selectedMarkerLocation = LatLng(43.169689, -2.546189) // Coordenadas del marcador 1
+
+                    // Obtener la ubicación actual
+                    getCurrentLocation()
+
+                    // Calcular la distancia entre la ubicación actual y la del marcador
+                    val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
                     // Verificar si la distancia es menor o igual al radio
                     if (distance <= radiusInMeters) {
                         // Si estás dentro del radio, ejecutar la función específica
@@ -385,14 +386,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     }
 
     private fun onMarker2Click() {
-        // Almacenar la ubicación del marcador seleccionado (en este caso, el marcador 2)
-        selectedMarkerLocation = LatLng(43.170217, -2.547697)
 
-        // Obtener la ubicación actual
-        getCurrentLocation()
-
-        // Calcular la distancia entre la ubicación actual y la del marcador
-        val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
 
         // Realizar la consulta a la base de datos en un hilo secundario
         AsyncTask.execute {
@@ -406,6 +400,14 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                     transaction.replace(R.id.fragmento, fragment)
                     transaction.commit()
                 } else {
+                    // Almacenar la ubicación del marcador seleccionado (en este caso, el marcador 2)
+                    selectedMarkerLocation = LatLng(43.170217, -2.547697)
+
+                    // Obtener la ubicación actual
+                    getCurrentLocation()
+
+                    // Calcular la distancia entre la ubicación actual y la del marcador
+                    val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
                     // Verificar si la distancia es menor o igual al radio
                     if (distance <= radiusInMeters) {
                         // Si estás dentro del radio, ejecutar la función específica
@@ -425,11 +427,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     }
 
     private fun onMarker3Click() {
-        selectedMarkerLocation = LatLng(43.169050, -2.547347)
 
-        getCurrentLocation()
-
-        val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
 
         AsyncTask.execute {
             val activado = database.DBdao.selectactivado()
@@ -442,6 +440,11 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                     transaction.replace(R.id.fragmento, fragment)
                     transaction.commit()
                 } else {
+                    selectedMarkerLocation = LatLng(43.169050, -2.547347)
+
+                    getCurrentLocation()
+
+                    val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
                     if (distance <= radiusInMeters) {
                         apagarmapa()
                         val fragment = inicio_fragment_juego3()
@@ -458,11 +461,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         }
     }
     private fun onMarker4Click() {
-        selectedMarkerLocation = LatLng(43.168658, -2.547214)
 
-        getCurrentLocation()
-
-        val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
 
         AsyncTask.execute {
             val activado = database.DBdao.selectactivado()
@@ -475,6 +474,11 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                     transaction.replace(R.id.fragmento, fragment)
                     transaction.commit()
                 } else {
+                    selectedMarkerLocation = LatLng(43.168658, -2.547214)
+
+                    getCurrentLocation()
+
+                    val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
                     if (distance <= radiusInMeters) {
                         apagarmapa()
                         val fragment = inicio_fragment_juego4()
@@ -491,11 +495,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         }
     }
     private fun onMarker5Click() {
-        selectedMarkerLocation = LatLng(43.168128, -2.545681)
 
-        getCurrentLocation()
-
-        val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
         AsyncTask.execute {
             val activado = database.DBdao.selectactivado()
 
@@ -507,6 +507,11 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                     transaction.replace(R.id.fragmento, fragment)
                     transaction.commit()
                 } else {
+                    selectedMarkerLocation = LatLng(43.168128, -2.545681)
+
+                    getCurrentLocation()
+
+                    val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
                     if (distance <= radiusInMeters) {
                         apagarmapa()
                         val fragment = inicio_fragment_juego5()
@@ -523,11 +528,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         }
     }
     private fun onMarker6Click() {
-        selectedMarkerLocation = LatLng(43.171058, -2.545683)
 
-        getCurrentLocation()
-
-        val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
 
         AsyncTask.execute {
             val activado = database.DBdao.selectactivado()
@@ -540,6 +541,11 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                     transaction.replace(R.id.fragmento, fragment)
                     transaction.commit()
                 } else {
+                    selectedMarkerLocation = LatLng(43.171058, -2.545683)
+
+                    getCurrentLocation()
+
+                    val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
                     if (distance <= radiusInMeters) {
                         apagarmapa()
                         val fragment = inicio_fragment_juego6()
@@ -556,11 +562,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         }
     }
     private fun onMarker7Click() {
-        selectedMarkerLocation = LatLng(43.170783, -2.545906)
 
-        getCurrentLocation()
-
-        val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
 
         AsyncTask.execute {
             val activado = database.DBdao.selectactivado()
@@ -573,6 +575,11 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                     transaction.replace(R.id.fragmento, fragment)
                     transaction.commit()
                 } else {
+                    selectedMarkerLocation = LatLng(43.170783, -2.545906)
+
+                    getCurrentLocation()
+
+                    val distance = calculateDistance(myCurrentLocation, selectedMarkerLocation)
                     if (distance <= radiusInMeters) {
                         apagarmapa()
                         val fragment = inicio_fragment_juego7()
