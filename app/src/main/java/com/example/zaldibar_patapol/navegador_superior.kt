@@ -92,6 +92,8 @@ class navegador_superior : Fragment() {
                 GlobalScope.launch(Dispatchers.IO) {
                     database.DBdao.updateactivado()
                 }
+                recargarActividad()
+                textpasahitza.text.clear()
                 constraintLayoutreal.visibility = View.INVISIBLE
                 constraintLayoutreal.isClickable = false
             }else{
@@ -107,6 +109,7 @@ class navegador_superior : Fragment() {
                 GlobalScope.launch(Dispatchers.IO) {
                     database.DBdao.updatedesactivado()
                 }
+                recargarActividad()
                 constraintLayoutreal.visibility = View.INVISIBLE
                 constraintLayoutreal.isClickable = false
             }
@@ -150,5 +153,10 @@ class navegador_superior : Fragment() {
 
         val dialog: AlertDialog = builder.create()
         dialog.show()
+    }
+    private fun recargarActividad() {
+        if (activity != null) {
+            requireActivity().recreate()
+        }
     }
 }
