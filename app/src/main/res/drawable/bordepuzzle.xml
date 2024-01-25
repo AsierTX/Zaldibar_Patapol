@@ -5,7 +5,7 @@
     <!-- Borde negro -->
     <stroke
         android:width="2dp"
-        android:color="#000000" />
+        android:color="@color/black" />
 
     <!-- Tamaño del borde y redondez de las esquinas -->
     <corners android:radius="0dp" />
