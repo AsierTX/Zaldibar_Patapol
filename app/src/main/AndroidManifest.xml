@@ -21,6 +21,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zaldibar_Patapol"
         tools:targetApi="31">
+        <service
+            android:name=".timerservice"
+            android:enabled="true"
+            android:exported="true"></service>
+
         <activity
             android:name=".juegos_superados"
             android:exported="false" />
@@ -61,6 +66,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

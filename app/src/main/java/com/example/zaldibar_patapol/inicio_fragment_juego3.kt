@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 private lateinit var soundService: SoundService
+private lateinit var mytimerservice: timerservice
 
 /**
  * A simple [Fragment] subclass.
@@ -44,6 +45,8 @@ class inicio_fragment_juego3 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        mytimerservice = timerservice.getInstance()
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_inicio_juego3, container, false)
 
@@ -69,8 +72,9 @@ class inicio_fragment_juego3 : Fragment() {
             // Cierra el fragmento
             requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
 
-            cargarjuego()
+            mytimerservice.starttimer(requireContext())
 
+            cargarjuego()
         }
         soundService = SoundService(requireContext().applicationContext)
         soundService.playF3audio()

@@ -17,7 +17,6 @@ class HerriKirolak : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var buttons: List<Button>
     private lateinit var soundService: SoundService
-
     private val imageList = mutableListOf(
         R.drawable.estroprobak,
         R.drawable.harrijasotze,
@@ -39,6 +38,7 @@ class HerriKirolak : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_herri_kirolak)
+
 
         database = Room.databaseBuilder(
             application,
