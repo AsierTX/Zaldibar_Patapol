@@ -137,6 +137,7 @@ class secretword : Fragment() {
                     textT.text = getString(R.string.X)
                     textEE.text = getString(R.string.X)
                     }
+                recargarActividad()
             }
 
             builder.setNegativeButton("Ez") { dialog, which ->
@@ -203,5 +204,9 @@ class secretword : Fragment() {
     fun setOnFragmentInteractionListener(mapsactivityFull: MapsActivity_full) {
         TODO("Not yet implemented")
     }
-
+    private fun recargarActividad() {
+        if (activity != null) {
+            requireActivity().recreate()
+        }
+    }
 }

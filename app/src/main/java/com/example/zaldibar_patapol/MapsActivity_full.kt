@@ -226,47 +226,88 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         // Ajusta este valor según tus necesidades (0.5f significa la mitad del tamaño original)
         val scaleFactor = 0.2f
 
-        for (markerInfo in markerList) {
+        val modolibreactivado = database.DBdao.selectactivado()
+        if ( modolibreactivado== true) {
+            // Cargar todos los marcadores si el modo libre está activado
+            for (markerInfo in markerList) {
+                cargarMarcadorEnMapa(googleMap, markerInfo)
+            }
+        } else {
+            // Cargar solo el primer marcador si el modo libre no está activado
+            if (markerList.isNotEmpty()) {
+                val primerMarcador = markerList[0]
+                cargarMarcadorEnMapa(googleMap, primerMarcador)
+            }
+            val juego1completado = database.DBdao.juegoganado("juego1")
+            val juego2completado = database.DBdao.juegoganado("juego2")
+            val juego3completado = database.DBdao.juegoganado("juego3")
+            val juego4completado = database.DBdao.juegoganado("juego4")
+            val juego5completado = database.DBdao.juegoganado("juego5")
+            val juego6completado = database.DBdao.juegoganado("juego6")
+            val juego7completado = database.DBdao.juegoganado("juego7")
 
-            // Escala la imagen antes de establecerla como icono del marcador
-            val originalBitmap = BitmapFactory.decodeResource(resources, R.drawable.escudo_solo)
-            val originalWidth = originalBitmap.width
-            val originalHeight = originalBitmap.height
-
-            val scaledBitmap = Bitmap.createScaledBitmap(
-                originalBitmap,
-                (originalWidth * scaleFactor).toInt(),
-                (originalHeight * scaleFactor).toInt(),
-                false
-            )
-
-
-            val marker = googleMap.addMarker(
-                MarkerOptions()
-                    .position(markerInfo.coordinates)
-                    .title(markerInfo.name)
-                    .icon(BitmapDescriptorFactory.fromBitmap(scaledBitmap))
-
-            )
-
-            // Asocia la funcion al tag del marcador
-            if (marker != null) {
-                marker.tag = markerInfo.onClickFunction
-
-                }
-
-            // Configura los marcadores para que llamen a su funcion especifica
-            googleMap.setOnMarkerClickListener { clickedMarker ->
-                // Recupera la funcion del tag y la mete en el marcador
-                val onClickAction = clickedMarker.tag as? () -> Unit
-                onClickAction?.invoke()
-
-                true
+            if (juego1completado==true){
+                val primerMarcador = markerList[1]
+                cargarMarcadorEnMapa(googleMap, primerMarcador)
+            }
+            if (juego2completado==true){
+                val primerMarcador = markerList[2]
+                cargarMarcadorEnMapa(googleMap, primerMarcador)
+            }
+            if (juego3completado==true){
+                val primerMarcador = markerList[3]
+                cargarMarcadorEnMapa(googleMap, primerMarcador)
+            }
+            if (juego4completado==true){
+                val primerMarcador = markerList[4]
+                cargarMarcadorEnMapa(googleMap, primerMarcador)
+            }
+            if (juego5completado==true){
+                val primerMarcador = markerList[5]
+                cargarMarcadorEnMapa(googleMap, primerMarcador)
+            }
+            if (juego6completado==true){
+                val primerMarcador = markerList[6]
+                cargarMarcadorEnMapa(googleMap, primerMarcador)
             }
         }
-
     }
+    fun cargarMarcadorEnMapa(googleMap: GoogleMap, markerInfo: MarkerInfo) {
+        // Ajusta este valor según tus necesidades (0.5f significa la mitad del tamaño original)
+        val scaleFactor = 0.2f
 
+        // Escala la imagen antes de establecerla como icono del marcador
+        val originalBitmap = BitmapFactory.decodeResource(resources, R.drawable.escudo_solo)
+        val originalWidth = originalBitmap.width
+        val originalHeight = originalBitmap.height
+
+        val scaledBitmap = Bitmap.createScaledBitmap(
+            originalBitmap,
+            (originalWidth * scaleFactor).toInt(),
+            (originalHeight * scaleFactor).toInt(),
+            false
+        )
+
+        val marker = googleMap.addMarker(
+            MarkerOptions()
+                .position(markerInfo.coordinates)
+                .title(markerInfo.name)
+                .icon(BitmapDescriptorFactory.fromBitmap(scaledBitmap))
+        )
+
+        // Asocia la función al tag del marcador
+        if (marker != null) {
+            marker.tag = markerInfo.onClickFunction
+        }
+
+        // Configura los marcadores para que llamen a su función específica
+        googleMap.setOnMarkerClickListener { clickedMarker ->
+            // Recupera la función del tag y la ejecuta
+            val onClickAction = clickedMarker.tag as? () -> Unit
+            onClickAction?.invoke()
+            true
+        }
+    }
     private fun openGoogleMapsWithDirections(context: Context, selectedMarkerLocation:LatLng) {
 
         //desglosamos la variable en dos para usar el el url
@@ -371,7 +412,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
                     if (distance <= radiusInMeters) {
                         // Si estás dentro del radio, ejecutar la función específica
                         apagarmapa()
-                        val fragment = inicio_fragment_juego2()
+                        val fragment = inicio_fragment_juego1()
                         fragment.setOnFragmentInteractionListener(this)
                         val transaction = supportFragmentManager.beginTransaction()
                         transaction.replace(R.id.fragmento, fragment)
@@ -636,5 +677,4 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
         // Detener las actualizaciones de ubicación
         fusedLocationProviderClient.removeLocationUpdates(locationCallback)
     }
-
 }
