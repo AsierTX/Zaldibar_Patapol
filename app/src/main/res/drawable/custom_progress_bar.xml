@@ -2,17 +2,17 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@android:id/background">
         <shape>
-            <solid android:color="#DDDDDD" />
+            <solid android:color="@color/white" />
             <corners android:radius="25dp" /> <!-- Ajusta el radio para hacer los bordes redondeados -->
             <stroke
                 android:width="20dp"
-            android:color="#000000" /> <!-- Color del borde -->
+            android:color="@color/black" /> <!-- Color del borde -->
         </shape>
     </item>
     <item android:id="@android:id/progress">
         <clip>
             <shape>
-                <solid android:color="#00FF00" /> <!-- Color del progreso -->
+                <solid android:color="@color/colorVerde" /> <!-- Color del progreso -->
                 <corners android:radius="25dp" /> <!-- Ajusta el radio para hacer los bordes redondeados -->
             </shape>
         </clip>
