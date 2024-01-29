@@ -111,6 +111,7 @@ class BainuOspitalJokua : AppCompatActivity() {
                 // Si se han encontrado todos los pares, reproducir el sonido de aplausos
                 if (foundPairsCount == 7) {
                     soundService.playAplausosSound()
+                    // colocar intent a fragmento final del jogo
                 }
 
             } else {
