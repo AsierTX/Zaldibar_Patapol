@@ -2,6 +2,8 @@ package com.example.zaldibar_patapol
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import kotlinx.coroutines.*
@@ -16,6 +18,8 @@ class BainuOspitalJokua : AppCompatActivity() {
     private var lastClickedImageView1: ImageView? = null
     private var lastClickedImageView2: ImageView? = null
     private lateinit var soundService: SoundService
+    private lateinit var imageViews: List<ImageView>
+    private var foundPairsCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +28,7 @@ class BainuOspitalJokua : AppCompatActivity() {
         imageLoaderService = ImageLoaderService(this)
 
         // Cargar imágenes en ImageViews
-        val imageViews: List<ImageView> = listOf(
+        imageViews = listOf(
             findViewById(R.id.IMG_1),
             findViewById(R.id.IMG_2),
             findViewById(R.id.IMG_3),
@@ -68,14 +72,68 @@ class BainuOspitalJokua : AppCompatActivity() {
             imageLoaderService.loadImage(imageResIds[i], pairImageViews, tag)
         }
 
-        val animator = ObjectAnimator.ofFloat(imageView, "rotationY", 0.0f, 180.0f)
-        animator.duration = 1000
-        animator.start()
-
+        for (imageView in imageViews) {
+            imageView.setOnClickListener {
+                handleImageViewClick(it as ImageView)
+            }
+        }
     }
 
     private fun handleImageViewClick(imageView: ImageView) {
+        imageView.animate()
+            .rotationY(0f)
+            .setDuration(1000)
+            .start()
 
+        // Deshabilitar el ImageView después de que se ha hecho clic en él
+        imageView.isClickable = false
+
+        // Guardar los dos últimos ImageViews clicados
+        if (lastClickedImageView1 == null) {
+            lastClickedImageView1 = imageView
+        } else if (lastClickedImageView2 == null) {
+            lastClickedImageView2 = imageView
+
+            // Deshabilitar todos los ImageViews
+            for (iv in imageViews) {
+                iv.isClickable = false
+            }
+
+            // Comparar los tags de los dos ImageViews
+            if (lastClickedImageView1?.tag == lastClickedImageView2?.tag) {
+                // Los ImageViews tienen el mismo tag
+                Toast.makeText(this, "¡Coincidencia!", Toast.LENGTH_SHORT).show()
+                soundService.playCorrectSound()
+
+                // Incrementar el recuento de pares encontrados
+                foundPairsCount++
+
+                // Si se han encontrado todos los pares, reproducir el sonido de aplausos
+                if (foundPairsCount == 7) {
+                    soundService.playAplausosSound()
+                }
+
+            } else {
+                // Los ImageViews tienen diferentes tags
+                Toast.makeText(this, "No coinciden", Toast.LENGTH_SHORT).show()
+                soundService.playIncorrectSound()
+            }
+
+// Habilitar todos los ImageViews después de medio segundo
+            Handler(Looper.getMainLooper()).postDelayed({
+                for (iv in imageViews) {
+                    iv.isClickable = true
+                }
+
+                // Revertir la animación y habilitar los ImageViews
+                if (lastClickedImageView1?.tag != lastClickedImageView2?.tag) {
+                    lastClickedImageView1?.animate()?.rotationY(180f)?.setDuration(1000)?.start()
+                    lastClickedImageView2?.animate()?.rotationY(180f)?.setDuration(1000)?.start()
+                    lastClickedImageView1?.isClickable = true
+                    lastClickedImageView2?.isClickable = true
+                }
+            }, 500) // 500 milisegundos = medio segundo
+        }
     }
 
     override fun onDestroy() {
