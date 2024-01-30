@@ -4,13 +4,12 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
+import androidx.fragment.app.Fragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -87,9 +86,9 @@ class savegame_fragment : Fragment() {
     private fun dialog() {
         val builder = AlertDialog.Builder(context)
 
-        builder.setTitle("ERROR")
-            .setMessage("Idatzi zerbait!")
-            .setPositiveButton("Jarraitu") { dialog, which ->
+        builder.setTitle(getString(R.string.error))
+            .setMessage(getString(R.string.idatzi))
+            .setPositiveButton(getString(R.string.jarraitu)) { dialog, which ->
             }
         val dialog: AlertDialog = builder.create()
         dialog.show()

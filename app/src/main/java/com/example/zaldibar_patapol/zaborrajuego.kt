@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -106,10 +105,8 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 0.2f
                 }
             }
-            (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
             marron.setOnClickListener{
-                (Toast.makeText(this, "OSO ONDO!!!", Toast.LENGTH_SHORT).show())
                 marroia.alpha=0f
                 if (marroia2.alpha!=0f) {
                     marroia2.alpha = 1f
@@ -136,7 +133,6 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 1f
                 }
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
-                    (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego6pasado()
@@ -145,11 +141,9 @@ class zaborrajuego : AppCompatActivity() {
                 }
             }
             azul.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
             amarillo.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
         }
@@ -185,10 +179,8 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 0.2f
                 }
             }
-            (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
             marron.setOnClickListener{
-                (Toast.makeText(this, "OSO ONDO!!!", Toast.LENGTH_SHORT).show())
                 marroia2.alpha=0f
                 if (marroia.alpha!=0f) {
                     marroia.alpha = 1f
@@ -215,7 +207,6 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 1f
                 }
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
-                    (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego6pasado()
@@ -224,11 +215,9 @@ class zaborrajuego : AppCompatActivity() {
                 }
             }
             azul.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
             amarillo.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
         }
@@ -264,10 +253,8 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 0.2f
                 }
             }
-            (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
             marron.setOnClickListener{
-                (Toast.makeText(this, "OSO ONDO!!!", Toast.LENGTH_SHORT).show())
                 marroia3.alpha=0f
                 if (marroia.alpha!=0f) {
                     marroia.alpha = 1f
@@ -294,7 +281,6 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 1f
                 }
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
-                    (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego6pasado()
@@ -303,11 +289,9 @@ class zaborrajuego : AppCompatActivity() {
                 }
             }
             azul.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
             amarillo.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
         }
@@ -343,18 +327,14 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 0.2f
                 }
             }
-            (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
             marron.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
             azul.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
             amarillo.setOnClickListener{
-                (Toast.makeText(this, "OSO ONDO!!!", Toast.LENGTH_SHORT).show())
                 horia.alpha=0f
                 if (marroia.alpha!=0f) {
                     marroia.alpha = 1f
@@ -381,7 +361,6 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 1f
                 }
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
-                    (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego6pasado()
@@ -422,18 +401,14 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 0.2f
                 }
             }
-            (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
             marron.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
             azul.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
             amarillo.setOnClickListener{
-                (Toast.makeText(this, "OSO ONDO!!!", Toast.LENGTH_SHORT).show())
                 horia2.alpha=0f
                 if (marroia.alpha!=0f) {
                     marroia.alpha = 1f
@@ -460,7 +435,6 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 1f
                 }
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
-                    (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego6pasado()
@@ -501,18 +475,14 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 0.2f
                 }
             }
-            (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
             marron.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
             azul.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
             amarillo.setOnClickListener{
-                (Toast.makeText(this, "OSO ONDO!!!", Toast.LENGTH_SHORT).show())
                 horia3.alpha=0f
                 if (marroia.alpha!=0f) {
                     marroia.alpha = 1f
@@ -539,7 +509,6 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 1f
                 }
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
-                    (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego6pasado()
@@ -580,15 +549,12 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 0.2f
                 }
             }
-            (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
             marron.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
 
             }
             azul.setOnClickListener{
-                (Toast.makeText(this, "OSO ONDO!!!", Toast.LENGTH_SHORT).show())
                 urdina.alpha=0f
                 if (marroia.alpha!=0f) {
                     marroia.alpha = 1f
@@ -615,7 +581,6 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 1f
                 }
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
-                    (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego6pasado()
@@ -624,7 +589,6 @@ class zaborrajuego : AppCompatActivity() {
                 }
             }
             amarillo.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
         }
@@ -660,14 +624,11 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 0.2f
                 }
             }
-            (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
             marron.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
             azul.setOnClickListener{
-                (Toast.makeText(this, "OSO ONDO!!!", Toast.LENGTH_SHORT).show())
                 urdina2.alpha=0f
                 if (marroia.alpha!=0f) {
                     marroia.alpha = 1f
@@ -694,7 +655,6 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 1f
                 }
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
-                    (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego6pasado()
@@ -703,7 +663,6 @@ class zaborrajuego : AppCompatActivity() {
                 }
             }
             amarillo.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
         }
@@ -739,14 +698,11 @@ class zaborrajuego : AppCompatActivity() {
                     urdina3.alpha = 1f
                 }
             }
-            (Toast.makeText(this, "Edukiontzi horia, urdina edo marroia?", Toast.LENGTH_SHORT).show())
             pulsado = true
             marron.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
             azul.setOnClickListener{
-                (Toast.makeText(this, "OSO ONDO!!!", Toast.LENGTH_SHORT).show())
                 urdina3.alpha=0f
                 if (marroia.alpha!=0f) {
                     marroia.alpha = 1f
@@ -773,7 +729,6 @@ class zaborrajuego : AppCompatActivity() {
                     urdina2.alpha = 1f
                 }
                 if (marroia.alpha==0f && marroia2.alpha==0f && marroia3.alpha==0f && horia.alpha==0f && horia2.alpha==0f && horia3.alpha==0f && urdina.alpha==0f && urdina2.alpha==0f && urdina3.alpha==0f){
-                    (Toast.makeText(this, "ZORIONAK!", Toast.LENGTH_SHORT).show())
                     mediaplayer2.start()
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego6pasado()
@@ -782,7 +737,6 @@ class zaborrajuego : AppCompatActivity() {
                 }
             }
             amarillo.setOnClickListener{
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 mediaplayer.start()
             }
         }
@@ -815,9 +769,9 @@ class zaborrajuego : AppCompatActivity() {
     private fun dialog() {
         val builder = AlertDialog.Builder(this)
 
-        builder.setTitle("ERROR")
-            .setMessage("Lehenengoz zaborra hartu!")
-            .setPositiveButton("Jarraitu") { dialog, which ->
+        builder.setTitle(getString(R.string.error))
+            .setMessage(getString(R.string.zaborrahartu))
+            .setPositiveButton(getString(R.string.jarraitu)) { dialog, which ->
             }
         val dialog: AlertDialog = builder.create()
         dialog.show()

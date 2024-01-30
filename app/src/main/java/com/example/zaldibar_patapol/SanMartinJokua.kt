@@ -76,7 +76,6 @@ class SanMartinJokua : AppCompatActivity() {
             // Set the new random word
             textView.text = words[currentIndex]
         }   else {
-            textView.text = "No more words"
             imageButtons.forEach { it.isEnabled = false }
             openGameResultFragment()
             GlobalScope.launch(Dispatchers.IO) {
@@ -96,7 +95,6 @@ class SanMartinJokua : AppCompatActivity() {
             setRandomWord()
         } else {
             // error message
-            showToast("! Try again.")
             soundService.playIncorrectSound()
         }
     }
