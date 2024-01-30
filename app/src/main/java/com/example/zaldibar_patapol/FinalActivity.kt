@@ -52,7 +52,7 @@ class FinalActivity : AppCompatActivity() {
         val tiempo = mytimerservice.stoptimer(this)
         val tiempoformateado = formatMillisToTime(tiempo)
 
-        TV1.text = getString(R.string.Zorionak1) + nombrejugador
+        TV1.text = getString(R.string.Zorionak1) + " " + nombrejugador
         TV2.text = getString(R.string.tiempo) + tiempoformateado
 
         berrirohasi.setOnClickListener{
