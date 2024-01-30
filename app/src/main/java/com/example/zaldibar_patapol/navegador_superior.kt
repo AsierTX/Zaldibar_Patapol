@@ -92,6 +92,8 @@ class navegador_superior : Fragment() {
                 GlobalScope.launch(Dispatchers.IO) {
                     database.DBdao.updateactivado()
                 }
+                recargarActividad()
+                textpasahitza.text.clear()
                 constraintLayoutreal.visibility = View.INVISIBLE
                 constraintLayoutreal.isClickable = false
             }else{
@@ -100,18 +102,19 @@ class navegador_superior : Fragment() {
         }
         aterabtn.setOnClickListener{
             val builder = AlertDialog.Builder(context)
-            builder.setTitle("MODU LIBREA")
-            builder.setMessage("Modu librea desaktibatu nahi duzu?")
+            builder.setTitle(getString(R.string.librea))
+            builder.setMessage(getString(R.string.desaktibatu))
 
-            builder.setPositiveButton("Bai") { dialog, which ->
+            builder.setPositiveButton(getString(R.string.bai)) { dialog, which ->
                 GlobalScope.launch(Dispatchers.IO) {
                     database.DBdao.updatedesactivado()
                 }
+                recargarActividad()
                 constraintLayoutreal.visibility = View.INVISIBLE
                 constraintLayoutreal.isClickable = false
             }
 
-            builder.setNegativeButton("Ez") { dialog, which ->
+            builder.setNegativeButton(getString(R.string.ez)) { dialog, which ->
             }
             val dialog = builder.create()
             dialog.show()
@@ -143,12 +146,16 @@ class navegador_superior : Fragment() {
     private fun dialog() {
         val builder = AlertDialog.Builder(context)
 
-        builder.setTitle("ERROR")
-            .setMessage("Pasahitza ez da zuzena!")
-            .setPositiveButton("Jarraitu") { dialog, which ->
+        builder.setTitle(getString(R.string.error))
+            .setMessage(getString(R.string.ezdazuzena))
+            .setPositiveButton(getString(R.string.jarraitu)) { dialog, which ->
             }
-
         val dialog: AlertDialog = builder.create()
         dialog.show()
+    }
+    private fun recargarActividad() {
+        if (activity != null) {
+            requireActivity().recreate()
+        }
     }
 }

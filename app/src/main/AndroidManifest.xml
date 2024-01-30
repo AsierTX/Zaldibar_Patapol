@@ -22,8 +22,14 @@
         android:theme="@style/Theme.Zaldibar_Patapol"
         tools:targetApi="31">
         <activity
-            android:name=".BainuOspitalJokua"
+            android:name=".FinalActivity"
             android:exported="false" />
+
+        <service
+            android:name=".timerservice"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".juegos_superados"
             android:exported="false" />

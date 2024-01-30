@@ -13,6 +13,7 @@ class juegos_superados : AppCompatActivity() {
 
 private lateinit var socket: Socket
 private lateinit var textViewResult: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_juegos_superados)

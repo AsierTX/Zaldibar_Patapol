@@ -5,6 +5,12 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import androidx.room.Room
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class SanMartinJokua : AppCompatActivity() {
 
@@ -15,10 +21,23 @@ class SanMartinJokua : AppCompatActivity() {
     private lateinit var soundService: SoundService
     private var currentIndex = 0
 
+    companion object{
+        lateinit var database: appdatabase
+            private set
+    }
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_san_martin_jokua)
+
+        database = Room.databaseBuilder(
+            application,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
 
         textView = findViewById(R.id.textView)
         imageButtons = listOf(
@@ -31,7 +50,13 @@ class SanMartinJokua : AppCompatActivity() {
             findViewById(R.id.IBTN_7),
             findViewById(R.id.IBTN_8)
         )
-
+        database = Room.databaseBuilder(
+            application,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
         soundService = SoundService(this)
         // Set an initial random word
         setRandomWord()
@@ -51,8 +76,11 @@ class SanMartinJokua : AppCompatActivity() {
             // Set the new random word
             textView.text = words[currentIndex]
         }   else {
-            textView.text = "No more words"
             imageButtons.forEach { it.isEnabled = false }
+            openGameResultFragment()
+            GlobalScope.launch(Dispatchers.IO) {
+                database.DBdao.juego1pasado()
+            }
         }
     }
 
@@ -67,12 +95,20 @@ class SanMartinJokua : AppCompatActivity() {
             setRandomWord()
         } else {
             // error message
-            showToast("! Try again.")
             soundService.playIncorrectSound()
         }
     }
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+    private fun openGameResultFragment() {
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+
+        val gameResultFragment = final_fragment_juego1()
+        fragmentTransaction.replace(R.id.fragmento, gameResultFragment)
+
+        fragmentTransaction.commit()
     }
 }

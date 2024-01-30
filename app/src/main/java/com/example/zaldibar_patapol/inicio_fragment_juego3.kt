@@ -15,6 +15,7 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 private lateinit var soundService: SoundService
 
+
 /**
  * A simple [Fragment] subclass.
  * Use the [inicio_fragment_juego3.newInstance] factory method to
@@ -44,6 +45,7 @@ class inicio_fragment_juego3 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_inicio_juego3, container, false)
 
@@ -69,8 +71,8 @@ class inicio_fragment_juego3 : Fragment() {
             // Cierra el fragmento
             requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
 
-            cargarjuego()
 
+            cargarjuego()
         }
         soundService = SoundService(requireContext().applicationContext)
         soundService.playF3audio()
