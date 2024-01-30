@@ -1,9 +1,11 @@
 package com.example.zaldibar_patapol
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 
@@ -56,6 +58,20 @@ class inicio_fragment_juego2 : Fragment() {
             requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
 
         }
+        val btnjuego = view.findViewById<Button>(R.id.iniciar_activity)!!
+        btnjuego.setOnClickListener {
+
+            soundService.stopMediaPlayer()
+
+            //llamamos a la funcion para enlazar el fragment con el activiy
+            mListener?.onCerrarFragmento()
+
+            // Cierra el fragmento
+            requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+
+
+            cargarjuego()
+        }
         soundService = SoundService(requireContext().applicationContext)
         soundService.playF2audio()
         return view
@@ -83,5 +99,9 @@ class inicio_fragment_juego2 : Fragment() {
     }
     fun setOnFragmentInteractionListener(listener: inicio_fragment_juego1.OnFragmentInteractionListener) {
         mListener = listener
+    }
+    private fun cargarjuego(){
+        val intent = Intent(activity, BainuOspitalJokua::class.java)
+        startActivity(intent)
     }
 }

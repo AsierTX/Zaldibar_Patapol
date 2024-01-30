@@ -1,16 +1,19 @@
 package com.example.zaldibar_patapol
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.animation.AnimationUtils
 import android.widget.ImageView
-import kotlinx.coroutines.*
-import android.view.View
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import androidx.room.Room
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
 
 class BainuOspitalJokua : AppCompatActivity() {
 
@@ -21,7 +24,10 @@ class BainuOspitalJokua : AppCompatActivity() {
     private lateinit var soundService: SoundService
     private lateinit var imageViews: List<ImageView>
     private var foundPairsCount = 0
-
+    companion object{
+        lateinit var database: appdatabase
+            private set
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bainu_ospital_jokua)
@@ -29,6 +35,21 @@ class BainuOspitalJokua : AppCompatActivity() {
         imageLoaderService = ImageLoaderService(this)
         soundService = SoundService(this)
 
+        database = Room.databaseBuilder(
+            application,
+            appdatabase::class.java,
+            appdatabase.DATABASE_NAME
+        )
+            .allowMainThreadQueries()
+            .build()
+        try {
+            val fragment = navegador_superior()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmento2, fragment)
+            transaction.commit()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
 
         // Cargar imágenes en ImageViews
         imageViews = listOf(
@@ -108,7 +129,6 @@ class BainuOspitalJokua : AppCompatActivity() {
             // Comparar los tags de los dos ImageViews
             if (lastClickedImageView1?.tag == lastClickedImageView2?.tag) {
                 // Los ImageViews tienen el mismo tag
-                Toast.makeText(this, "¡Coincidencia!", Toast.LENGTH_SHORT).show()
                 soundService.playCorrectSound()
 
                 // Incrementar el recuento de pares encontrados
@@ -117,12 +137,14 @@ class BainuOspitalJokua : AppCompatActivity() {
                 // Si se han encontrado todos los pares, reproducir el sonido de aplausos
                 if (foundPairsCount == 7) {
                     soundService.playAplausosSound()
-                    showGameCompleteFragment()
+                    openGameResultFragment()
+                    GlobalScope.launch(Dispatchers.IO) {
+                        database.DBdao.juego2pasado()
+                    }
                 }
 
             } else {
                 // Los ImageViews tienen diferentes tags
-                Toast.makeText(this, "No coinciden", Toast.LENGTH_SHORT).show()
                 soundService.playIncorrectSound()
 
                 // Aplicar filtro de color azul nuevamente a las imágenes que no coinciden
@@ -153,11 +175,13 @@ class BainuOspitalJokua : AppCompatActivity() {
         scope.cancel() // Cancelar todas las corutinas cuando la actividad se destruye
     }
 
-    private fun showGameCompleteFragment() {
-        val fragment = final_fragment_juego2() // Crea una instancia del fragmento
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment) // Reemplaza el contenido actual con el fragmento
-            .addToBackStack(null) // Agrega la transacción a la pila de retroceso para que se pueda volver atrás
-            .commit()
+    private fun openGameResultFragment() {
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+
+        val gameResultFragment = final_fragment_juego2()
+        fragmentTransaction.replace(R.id.fragmento, gameResultFragment)
+
+        fragmentTransaction.commit()
     }
 }

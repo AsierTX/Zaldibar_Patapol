@@ -24,7 +24,9 @@
         <activity
             android:name=".FinalActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".BainuOspitalJokua"
+            android:exported="false" />
         <service
             android:name=".timerservice"
             android:enabled="true"

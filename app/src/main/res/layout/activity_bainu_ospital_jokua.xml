@@ -7,6 +7,23 @@
     tools:context=".BainuOspitalJokua"
     android:background="@drawable/baserri_background">
 
+    <FrameLayout
+        android:id="@+id/fragmento"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/fragmento2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+        </FrameLayout>
+    </FrameLayout>
+
     <ImageView
         android:id="@+id/IMG_1"
         android:layout_width="80dp"
@@ -165,29 +182,4 @@
         app:layout_constraintTop_toBottomOf="@+id/IMG_12"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.example.zaldibar_patapol.navegador_superior"
-        android:layout_width="406dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_container"
-        android:layout_width="404dp"
-        android:layout_height="587dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView"
-        app:layout_constraintVertical_bias="0.76" />
 </androidx.constraintlayout.widget.ConstraintLayout>
