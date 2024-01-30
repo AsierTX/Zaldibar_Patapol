@@ -1,10 +1,16 @@
 package com.example.zaldibar_patapol
 
+import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,12 +35,34 @@ class savegame_fragment : Fragment() {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_savegame_fragment, container, false)
+        val view = inflater.inflate(R.layout.fragment_savegame_fragment, container, false)
+
+        val izena = view.findViewById<EditText>(R.id.pasahitza)
+        val button = view.findViewById<Button>(R.id.iniciar)
+
+        button.setOnClickListener {
+            if (izena.text.toString() != "") {
+
+                val intent = Intent(activity, FinalActivity::class.java)
+                val bundle = Bundle()
+                bundle.putString("nombrejugador", izena.text.toString())
+                intent.putExtras(bundle)
+                startActivity(intent)
+
+                requireFragmentManager().beginTransaction().remove(this).commit()
+
+            } else {
+                dialog()
+            }
+        }
+
+        return view
     }
 
     companion object {
@@ -55,5 +83,15 @@ class savegame_fragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+    private fun dialog() {
+        val builder = AlertDialog.Builder(context)
+
+        builder.setTitle("ERROR")
+            .setMessage("Idatzi zerbait!")
+            .setPositiveButton("Jarraitu") { dialog, which ->
+            }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }

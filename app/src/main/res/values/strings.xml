@@ -126,4 +126,12 @@ Gertatu zenaren ondorioz manifestazioak, protestak… egiten hastetik abestiak e
 
     <string name="contraseña">1221</string>
 
+    <string name="Zorionak1">Zorionak, </string>
+    <string name="tiempo">Hau izan da erabili duzun denbora:</string>
+
+    <string name="HasiBerriro">Berriro jolastu </string>
+    <string name="Atera">Atera </string>
+
+
+
 </resources>

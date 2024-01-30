@@ -35,7 +35,6 @@ class final_fragment_juego3 : Fragment() {
         fun onCerrarFragmento()
     }
 
-    private lateinit var mytimerservice: timerservice
     private var mListener: final_fragment_juego3.OnFragmentInteractionListener? = null
 
     override fun onCreateView(
@@ -43,7 +42,6 @@ class final_fragment_juego3 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        mytimerservice = timerservice.getInstance()
 
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_final_juego3, container, false)
@@ -57,7 +55,6 @@ class final_fragment_juego3 : Fragment() {
             val intent = Intent(activity, MapsActivity_full::class.java)
             startActivity(intent)
 
-            mytimerservice.stoptimer(requireContext())
         }
         return view
     }

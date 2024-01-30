@@ -37,24 +37,20 @@ class timerservice : Service() {
         if (!isRunning) {
             startTime = SystemClock.elapsedRealtime()
             isRunning = true
-            Toast.makeText(context, "Empieza el tiempo", Toast.LENGTH_SHORT).show()
         }
     }
 
-    fun stoptimer(context: Context?) {
+    fun stoptimer(context: Context?): Long {
+        var tiempoTranscurrido: Long = 0
+
         if (isRunning) {
             isRunning = false
-            val tiempoTranscurrido = SystemClock.elapsedRealtime() - startTime
-            mostrarTiempoEnToast(context, tiempoTranscurrido)
+            tiempoTranscurrido = SystemClock.elapsedRealtime() - startTime
         }
+
+        return tiempoTranscurrido
     }
 
-    private fun mostrarTiempoEnToast(context: Context?, tiempo: Long) {
-        context?.let {
-            val segundos = tiempo / 1000
-            val milisegundos = tiempo % 1000
-            val mensaje = "Tiempo transcurrido: $segundos segundos $milisegundos milisegundos"
-            Toast.makeText(it.applicationContext, mensaje, Toast.LENGTH_SHORT).show()
-        }
-    }
+
+
 }

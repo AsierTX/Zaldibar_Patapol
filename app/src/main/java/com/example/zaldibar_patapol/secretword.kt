@@ -2,6 +2,7 @@ package com.example.zaldibar_patapol
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.room.Room
 import kotlinx.coroutines.Dispatchers
@@ -34,6 +36,7 @@ class secretword : Fragment() {
     private var param2: String? = null
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -47,6 +50,8 @@ class secretword : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
 
         database = Room.databaseBuilder(
             requireContext().applicationContext,
@@ -154,6 +159,15 @@ class secretword : Fragment() {
                     Handler().postDelayed({
                         hitza.setBackgroundResource(R.drawable.bordestext)
                     }, 3000)
+                    requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+
+
+                    // Abrir el fragment "savegame"
+                    val savegameFragment = savegame_fragment()
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragmento, savegameFragment)
+                        .addToBackStack(null)
+                        .commit()
                 } else {
                     hitza.setBackgroundResource(R.drawable.fondorojo)
                     Handler().postDelayed({

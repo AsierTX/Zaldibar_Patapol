@@ -8,37 +8,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="364dp"
+        android:layout_height="258dp"
         android:layout_marginTop="150dp"
         android:background="@drawable/modulibre">
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="322dp"
-            android:layout_height="81dp"
-            android:background="@drawable/texto_fragments_borde"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.039">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="295dp"
-                android:layout_height="40dp"
-                android:text="@string/zorionaksave"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.407"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.39" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout4"
@@ -47,10 +20,9 @@
             android:background="@drawable/texto_fragments_borde"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.315">
+            app:layout_constraintVertical_bias="0.165">
 
             <TextView
                 android:id="@+id/textView2"
@@ -69,7 +41,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/iniciar_activity"
+            android:id="@+id/iniciar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
@@ -79,10 +51,9 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.803" />
+            app:layout_constraintVertical_bias="0.923" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="379dp"
@@ -100,6 +71,7 @@
                 android:background="@drawable/bordestext"
                 android:ems="10"
                 android:hint="Izena"
+                android:textColor="@color/white"
                 android:inputType="text"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"

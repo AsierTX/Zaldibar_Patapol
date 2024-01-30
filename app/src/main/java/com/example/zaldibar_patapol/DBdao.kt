@@ -23,6 +23,9 @@ interface DBdao {
     @Query("DELETE FROM letrak")
     fun removeletra()
 
+    @Query("DELETE FROM admin")
+    fun removeadmin()
+
     @Query("SELECT * FROM ranking")
     fun getAllDatos(): List<DBentity>
     @Insert

@@ -66,6 +66,7 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     private var myCurrentLocation: LatLng = LatLng(43.169689, -2.546189)
     private lateinit var selectedMarkerLocation: LatLng
     private val radiusInMeters = 30
+    private lateinit var mytimerservice: timerservice
 
     private lateinit var locationCallback: LocationCallback
     private val locationRequest: LocationRequest = LocationRequest.create()
@@ -84,6 +85,9 @@ class MapsActivity_full : AppCompatActivity(), OnMapReadyCallback,inicio_fragmen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps_full)
+
+        mytimerservice = timerservice.getInstance()
+        mytimerservice.starttimer(this)
 
         // Inicializar FusedLocationProviderClient
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
