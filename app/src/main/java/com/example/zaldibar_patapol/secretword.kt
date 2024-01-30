@@ -2,7 +2,6 @@ package com.example.zaldibar_patapol
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -12,7 +11,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.room.Room
 import kotlinx.coroutines.Dispatchers
@@ -108,10 +106,10 @@ class secretword : Fragment() {
 
         berriz.setOnClickListener{
             val builder = AlertDialog.Builder(context)
-            builder.setTitle("KONTUZ!")
-            builder.setMessage("Berriro hasi nahi duzu Zaldibarreko ibiblbidea?")
+            builder.setTitle(getString(R.string.kontuz))
+            builder.setMessage(getString(R.string.berrirohasinahi))
 
-            builder.setPositiveButton("Bai") { dialog, which ->
+            builder.setPositiveButton(getString(R.string.bai)) { dialog, which ->
                 GlobalScope.launch(Dispatchers.IO) {
                     database.DBdao.removeletra()
 
@@ -145,7 +143,7 @@ class secretword : Fragment() {
                 recargarActividad()
             }
 
-            builder.setNegativeButton("Ez") { dialog, which ->
+            builder.setNegativeButton(getString(R.string.ez)) { dialog, which ->
             }
             val dialog = builder.create()
             dialog.show()
@@ -154,7 +152,7 @@ class secretword : Fragment() {
         btnkonprobatu.setOnClickListener {
             val textoIngresado = hitza.text.toString().toLowerCase()
             if (hitza.text.toString() != "") {
-                if (textoIngresado == "elizate") {
+                if (textoIngresado == getString(R.string.hitzsekretua)) {
                     hitza.setBackgroundResource(R.drawable.fondoverde)
                     Handler().postDelayed({
                         hitza.setBackgroundResource(R.drawable.bordestext)
@@ -207,9 +205,9 @@ class secretword : Fragment() {
     private fun dialog() {
         val builder = AlertDialog.Builder(context)
 
-        builder.setTitle("ERROR")
-            .setMessage("Idatzi zerbait!")
-            .setPositiveButton("Jarraitu") { dialog, which ->
+        builder.setTitle(getString(R.string.error))
+            .setMessage(getString(R.string.idatzi))
+            .setPositiveButton(getString(R.string.jarraitu)) { dialog, which ->
             }
         val dialog: AlertDialog = builder.create()
         dialog.show()

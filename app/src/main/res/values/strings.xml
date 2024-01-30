@@ -132,6 +132,19 @@ Gertatu zenaren ondorioz manifestazioak, protestak… egiten hastetik abestiak e
     <string name="HasiBerriro">Berriro jolastu </string>
     <string name="Atera">Atera </string>
 
+    <string name="error">ERROR</string>
+    <string name="zaborrahartu">Lehenengoz zaborra hartu!</string>
+    <string name="jarraitu">Jarraitu</string>
+    <string name="idatzi">Mesedez, idatzi zerbait.</string>
+    <string name="ezdazuzena">Pasahitza ez da zuzena!</string>
+    <string name="hitzsekretua">elizate</string>
+    <string name="librea">MODU LIBREA</string>
+    <string name="desaktibatu">Modu librea desaktibatu nahi duzu?</string>
+    <string name="bai">Bai</string>
+    <string name="ez">Ez</string>
+    <string name="kontuz">Kontuz!</string>
+    <string name="berrirohasinahi"> Berriro hasi nahi duzu Zaldibarreko ibiblbidea?</string>
+
 
 
 </resources>
