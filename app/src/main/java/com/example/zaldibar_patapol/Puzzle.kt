@@ -226,77 +226,62 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -364,7 +349,6 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
@@ -431,72 +415,58 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -557,13 +527,11 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
@@ -629,67 +597,54 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -750,19 +705,16 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -827,62 +779,50 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -943,23 +883,19 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -1024,57 +960,46 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -1135,29 +1060,24 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -1222,52 +1142,42 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -1328,34 +1238,28 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -1420,47 +1324,38 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -1521,38 +1416,31 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
                 c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                     soundService.playIncorrectSound()
 
                 }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -1617,42 +1505,34 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -1713,44 +1593,36 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -1815,37 +1687,30 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -1906,47 +1771,38 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -2011,32 +1867,26 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -2097,53 +1947,43 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -2208,27 +2048,22 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -2289,57 +2124,46 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -2404,22 +2228,18 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
 
@@ -2479,62 +2299,50 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -2599,17 +2407,14 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -2670,67 +2475,54 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -2795,12 +2587,10 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "Gilipollas", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -2861,73 +2651,59 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
 
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
 
             }
@@ -2992,7 +2768,6 @@ class puzzle : AppCompatActivity() {
                 }
             }
             c16.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
             }
 
         }
@@ -3051,63 +2826,48 @@ class puzzle : AppCompatActivity() {
 
             }
             c1.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c2.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c3.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c4.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c5.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c6.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c7.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c8.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c9.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c10.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c11.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c12.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c13.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c14.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c15.setOnClickListener {
-                (Toast.makeText(this, "EZ", Toast.LENGTH_SHORT).show())
                 soundService.playIncorrectSound()
             }
             c16.setOnClickListener {
