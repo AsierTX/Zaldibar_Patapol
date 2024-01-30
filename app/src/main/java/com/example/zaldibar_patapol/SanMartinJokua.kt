@@ -1,6 +1,8 @@
 package com.example.zaldibar_patapol
+
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -38,6 +40,15 @@ class SanMartinJokua : AppCompatActivity() {
         )
             .allowMainThreadQueries()
             .build()
+
+        try {
+            val fragment = navegador_superior()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmento2, fragment)
+            transaction.commit()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
 
         textView = findViewById(R.id.textView)
         imageButtons = listOf(
@@ -77,6 +88,7 @@ class SanMartinJokua : AppCompatActivity() {
             textView.text = words[currentIndex]
         }   else {
             imageButtons.forEach { it.isEnabled = false }
+            imageButtons.forEach { it.visibility = View.INVISIBLE } // Hacer los ImageButtons invisibles
             openGameResultFragment()
             GlobalScope.launch(Dispatchers.IO) {
                 database.DBdao.juego1pasado()

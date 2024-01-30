@@ -7,137 +7,6 @@
     android:background="@drawable/baserri_background"
     tools:context=".SanMartinJokua">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="195dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="108dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:textSize="30dp" />
-
-    <ImageButton
-        android:id="@+id/IBTN_1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/i_puerta"
-        android:tag="Atea"
-        app:layout_constraintBottom_toTopOf="@+id/IBTN_2"
-        app:layout_constraintEnd_toStartOf="@+id/IBTN_5"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/IBTN_2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/i_cristalera"
-        android:tag="Beiratea"
-        app:layout_constraintBottom_toTopOf="@+id/IBTN_3"
-        app:layout_constraintEnd_toStartOf="@+id/IBTN_6"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/IBTN_3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/i_tejado"
-        android:tag="Teilatua"
-        app:layout_constraintBottom_toTopOf="@+id/IBTN_4"
-        app:layout_constraintEnd_toStartOf="@+id/IBTN_7"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/IBTN_4"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="52dp"
-        android:src="@drawable/i_campanario"
-        android:tag="Kanpaiak"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/IBTN_8"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/IBTN_5"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/i_cruz"
-        android:tag="Gurutzea"
-        app:layout_constraintBottom_toTopOf="@+id/IBTN_6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/IBTN_6"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/i_sillas"
-        android:tag="Bankuak"
-        app:layout_constraintBottom_toTopOf="@+id/IBTN_7"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/IBTN_7"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/i_altar"
-        android:tag="Altarea"
-        app:layout_constraintBottom_toTopOf="@+id/IBTN_8"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/IBTN_8"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="52dp"
-        android:src="@drawable/i_virgen_m"
-        android:tag="Ama Birjina"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <FrameLayout
         android:id="@+id/fragmento"
         android:layout_width="match_parent"
@@ -154,4 +23,152 @@
 
         </FrameLayout>
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="195dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="108dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="30dp" />
+
+    <ImageButton
+        android:id="@+id/IBTN_1"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/i_puerta"
+        android:tag="Atea"
+        app:layout_constraintBottom_toTopOf="@+id/IBTN_2"
+        app:layout_constraintEnd_toStartOf="@+id/IBTN_5"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:srcCompat="@tools:sample/avatars"
+        android:scaleType="fitCenter"
+        android:background="@null"/>
+
+    <ImageButton
+        android:id="@+id/IBTN_2"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/i_cristalera"
+        android:tag="Beiratea"
+        app:layout_constraintBottom_toTopOf="@+id/IBTN_3"
+        app:layout_constraintEnd_toStartOf="@+id/IBTN_6"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:srcCompat="@tools:sample/avatars"
+        android:scaleType="fitCenter"
+        android:background="@null"/>
+
+    <ImageButton
+        android:id="@+id/IBTN_3"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/i_tejado"
+        android:tag="Teilatua"
+        app:layout_constraintBottom_toTopOf="@+id/IBTN_4"
+        app:layout_constraintEnd_toStartOf="@+id/IBTN_7"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:srcCompat="@tools:sample/avatars"
+        android:scaleType="fitCenter"
+        android:background="@null"/>
+
+    <ImageButton
+        android:id="@+id/IBTN_4"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/i_campanario"
+        android:tag="Kanpaiak"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/IBTN_8"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:srcCompat="@tools:sample/avatars"
+        android:scaleType="fitCenter"
+        android:background="@null"/>
+
+    <ImageButton
+        android:id="@+id/IBTN_5"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/i_cruz"
+        android:tag="Gurutzea"
+        app:layout_constraintBottom_toTopOf="@+id/IBTN_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:srcCompat="@tools:sample/avatars"
+        android:scaleType="fitCenter"
+        android:background="@null"/>
+
+    <ImageButton
+        android:id="@+id/IBTN_6"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/i_sillas"
+        android:tag="Bankuak"
+        app:layout_constraintBottom_toTopOf="@+id/IBTN_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:srcCompat="@tools:sample/avatars"
+        android:scaleType="fitCenter"
+        android:background="@null"/>
+
+    <ImageButton
+        android:id="@+id/IBTN_7"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/i_altar"
+        android:tag="Altarea"
+        app:layout_constraintBottom_toTopOf="@+id/IBTN_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:srcCompat="@tools:sample/avatars"
+        android:scaleType="fitCenter"
+        android:background="@null"/>
+
+    <ImageButton
+        android:id="@+id/IBTN_8"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/i_virgen_m"
+        android:tag="Ama Birjina"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:srcCompat="@tools:sample/avatars"
+        android:scaleType="fitCenter"
+        android:background="@null"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

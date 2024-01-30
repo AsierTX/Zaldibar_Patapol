@@ -3,6 +3,7 @@ package com.example.zaldibar_patapol
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -24,6 +25,9 @@ class BainuOspitalJokua : AppCompatActivity() {
     private lateinit var soundService: SoundService
     private lateinit var imageViews: List<ImageView>
     private var foundPairsCount = 0
+    private val clickedImageViews = mutableListOf<ImageView>()
+    private val unclickedImageViews = mutableListOf<ImageView>()
+
     companion object{
         lateinit var database: appdatabase
             private set
@@ -69,6 +73,8 @@ class BainuOspitalJokua : AppCompatActivity() {
             findViewById(R.id.IMG_14)
         )
 
+        unclickedImageViews.addAll(imageViews)
+
         // Set a fixed size for the ImageViews
         val imageSize = resources.getDimensionPixelSize(R.dimen.image_size)
         for (imageView in imageViews) {
@@ -104,27 +110,36 @@ class BainuOspitalJokua : AppCompatActivity() {
     }
 
     private fun handleImageViewClick(imageView: ImageView) {
-        imageView.animate()
-            .rotationY(0f)
-            .setDuration(1000)
-            .start()
+        // Verificar si el ImageView ya ha sido clicado
+        val isAlreadyClicked = clickedImageViews.contains(imageView)
 
-        // Deshabilitar el ImageView después de que se ha hecho clic en él
-        imageView.isClickable = false
+        if (!isAlreadyClicked) {
+            imageView.animate()
+                .rotationY(0f)
+                .setDuration(1000)
+                .start()
 
-        // Quitar el filtro de color azul de la imagen clicada
-        imageView.setColorFilter(null)
+            // Deshabilitar el ImageView después de que se ha hecho clic en él
+            imageView.isClickable = false
+
+            // Quitar el filtro de color azul de la imagen clicada
+            imageView.setColorFilter(null)
+
+            // Mover el ImageView de la lista de ImageViews no clicados a la lista de ImageViews clicados
+            unclickedImageViews.remove(imageView)
+            clickedImageViews.add(imageView)
+        }
+
+        // Verificar si se han seleccionado dos imágenes
+        if (lastClickedImageView1 != null && lastClickedImageView2 != null) {
+            return  // Salir de la función si ya se han seleccionado dos imágenes
+        }
 
         // Guardar los dos últimos ImageViews clicados
         if (lastClickedImageView1 == null) {
             lastClickedImageView1 = imageView
-        } else if (lastClickedImageView2 == null) {
+        } else if (lastClickedImageView2 == null && lastClickedImageView1 != imageView) {
             lastClickedImageView2 = imageView
-
-            // Deshabilitar todos los ImageViews
-            for (iv in imageViews) {
-                iv.isClickable = false
-            }
 
             // Comparar los tags de los dos ImageViews
             if (lastClickedImageView1?.tag == lastClickedImageView2?.tag) {
@@ -141,8 +156,13 @@ class BainuOspitalJokua : AppCompatActivity() {
                     GlobalScope.launch(Dispatchers.IO) {
                         database.DBdao.juego2pasado()
                     }
-                }
 
+                    // Ocultar y deshabilitar todos los ImageViews
+                    for (iv in imageViews) {
+                        iv.visibility = View.INVISIBLE
+                        iv.isClickable = false
+                    }
+                }
             } else {
                 // Los ImageViews tienen diferentes tags
                 soundService.playIncorrectSound()
@@ -151,16 +171,24 @@ class BainuOspitalJokua : AppCompatActivity() {
                 Handler(Looper.getMainLooper()).postDelayed({
                     lastClickedImageView1?.setColorFilter(ContextCompat.getColor(this, android.R.color.holo_blue_light))
                     lastClickedImageView2?.setColorFilter(ContextCompat.getColor(this, android.R.color.holo_blue_light))
-                    imageView.animate()
-                        .rotationY(180f)
-                        .setDuration(1000)
-                        .start()
+                    lastClickedImageView1?.animate()?.rotationY(180f)?.setDuration(1000)?.start()
+                    lastClickedImageView2?.animate()?.rotationY(180f)?.setDuration(1000)?.start()
+
+                    // Habilitar los ImageViews que no coinciden
+                    lastClickedImageView1?.isClickable = true
+                    lastClickedImageView2?.isClickable = true
+
+                    // Devolver los ImageViews a la lista de no clicados
+                    clickedImageViews.remove(lastClickedImageView1)
+                    clickedImageViews.remove(lastClickedImageView2)
+                    unclickedImageViews.add(lastClickedImageView1!!)
+                    unclickedImageViews.add(lastClickedImageView2!!)
                 }, 500) // 500 milisegundos = medio segundo
             }
 
             // Habilitar todos los ImageViews después de medio segundo
             Handler(Looper.getMainLooper()).postDelayed({
-                for (iv in imageViews) {
+                for (iv in unclickedImageViews) {
                     iv.isClickable = true
                 }
                 // Limpiar las variables que almacenan las últimas imágenes clicadas
@@ -169,6 +197,8 @@ class BainuOspitalJokua : AppCompatActivity() {
             }, 500) // 500 milisegundos = medio segundo
         }
     }
+
+
 
     override fun onDestroy() {
         super.onDestroy()
