@@ -16,6 +16,7 @@ class navtemporal : AppCompatActivity() {
     private lateinit var juego5: Button
     private lateinit var juego1: Button
     private lateinit var finaltext: Button
+    private lateinit var jogo2: Button
 
 
 
@@ -29,6 +30,13 @@ class navtemporal : AppCompatActivity() {
 
         finaltext.setOnClickListener{
             val intentjuego = Intent(this, juegos_superados::class.java)
+            startActivity(intentjuego)
+        }
+
+        jogo2 = findViewById(R.id.btn_jogo2)
+
+        jogo2.setOnClickListener{
+            val intentjuego = Intent(this, BainuOspitalJokua::class.java)
             startActivity(intentjuego)
         }
 

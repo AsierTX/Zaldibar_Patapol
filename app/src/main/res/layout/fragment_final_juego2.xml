@@ -17,13 +17,13 @@
             android:id="@+id/constraintLayout9"
             android:layout_width="105dp"
             android:layout_height="111dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/texto_fragments_borde"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/hurrengo_jokoa"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.248"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.743">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
             <TextView
                 android:id="@+id/textView6"
@@ -37,20 +37,18 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.466" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout1"
             android:layout_width="309dp"
             android:layout_height="58dp"
+            android:layout_marginTop="36dp"
             android:background="@drawable/texto_fragments_borde"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.069">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textView4"
@@ -70,12 +68,11 @@
             android:id="@+id/constraintLayout"
             android:layout_width="315dp"
             android:layout_height="89dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/texto_fragments_borde"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.262">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout1">
 
             <TextView
                 android:id="@+id/textView5"
@@ -96,12 +93,11 @@
             android:id="@+id/constraintLayout3"
             android:layout_width="309dp"
             android:layout_height="41dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/texto_fragments_borde"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.478">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
             <TextView
                 android:id="@+id/textView3"
@@ -121,6 +117,8 @@
             android:id="@+id/hurrengo_jokoa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="10dp"
             android:backgroundTint="#FFFFFF"
             android:text="@string/hurrengo"
             android:textColor="#000000"
@@ -129,20 +127,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.935" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+            app:layout_constraintVertical_bias="0.616" />
 
         <ImageView
             android:id="@+id/imageView15"
             android:layout_width="99dp"
             android:layout_height="111dp"
+            android:layout_marginTop="5dp"
             android:src="@drawable/bag"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/hurrengo_jokoa"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.746"
+            app:layout_constraintHorizontal_bias="0.785"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.741" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
